@@ -1,3 +1,6 @@
 [submodule "Protocol"]
 	path = Protocol
 	url = https://github.com/MyTooliT/Protocol.git
+[submodule "State Machines"]
+	path = State Machines
+	url = https://github.com/MyTooliT/State-Machines.git
