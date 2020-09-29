@@ -4,3 +4,6 @@
 [submodule "State Machines"]
 	path = State Machines
 	url = https://github.com/MyTooliT/State-Machines.git
+[submodule "Testing"]
+	path = Testing
+	url = https://github.com/MyTooliT/Testing.git
