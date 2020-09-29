@@ -7,3 +7,6 @@
 [submodule "Testing"]
 	path = Testing
 	url = https://github.com/MyTooliT/Testing.git
+[submodule "EEPROM"]
+	path = EEPROM
+	url = https://github.com/MyTooliT/EEPROM.git
