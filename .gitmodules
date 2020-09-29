@@ -2,7 +2,7 @@
 	path = Protocol
 	url = https://github.com/MyTooliT/Protocol.git
 [submodule "State Machines"]
-	path = State Machines
+	path = Diagrams
 	url = https://github.com/MyTooliT/State-Machines.git
 [submodule "Testing"]
 	path = Testing
