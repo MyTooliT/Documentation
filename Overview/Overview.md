@@ -32,4 +32,4 @@ are all part of a [single monolithic code base](https://github.com/MyTooliT/ICOc
 
   - Scripts that use data stored by ICOc to analyze captured data
 
-![Overview](../Diagrams/Graphs/ICOtronic.svg)
+![Overview](https://raw.githubusercontent.com/MyTooliT/Diagrams/master/Graphs/ICOtronic.svg)
