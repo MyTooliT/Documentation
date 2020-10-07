@@ -28,7 +28,7 @@ are all part of a [single monolithic code base](https://github.com/MyTooliT/ICOc
   - Test environment for sensor hardware (STH, STU)
   - Tests if the hardware works correctly
 
-- **Tools**
+- **ICOtools**
 
   - Scripts that use data stored by ICOc to analyze captured data
 
