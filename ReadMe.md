@@ -28,6 +28,9 @@ You can use [bookdown](http://bookdown.org) to generate
 versions of this documentation. To do that please use the following commands:
 
 ```sh
+# Remove old output
+rm -rf Bookdown
+
 # Work around non-accessible images for PDF and EPUB output
 cp -r Protocol/Figures Figures
 
