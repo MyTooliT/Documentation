@@ -9,6 +9,8 @@ output:
 output_dir: Bookdown
 rmd_files:
   - ReadMe.md
+  - General/Akronyms.md
+  - General/Terms.md
   - Protocol/Protocol.md
   - Protocol/Commands.md
 rmd_subdir:
