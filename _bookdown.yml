@@ -7,5 +7,8 @@ rmd_files:
   - General/Akronyms.md
   - General/Terms.md
   - Overview/Overview.md
+  - EEPROM/EEPROM.md
+  - EEPROM/EEPROM-STH.md
+  - EEPROM/EEPROM-STU.md
   - Protocol/Protocol.md
   - Protocol/Commands.md
