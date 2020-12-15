@@ -13,5 +13,3 @@ rmd_files:
   - General/Terms.md
   - Protocol/Protocol.md
   - Protocol/Commands.md
-rmd_subdir:
-  - Protocol
