@@ -32,6 +32,6 @@ are all part of a [single monolithic code base](https://github.com/MyTooliT/ICOc
 
   - Scripts that use data stored by ICOc to analyze captured data
 
-```{r ext-graphics, out.width = "80%", echo=FALSE}
+```{r, fig.align="center", out.width = "45%", echo=FALSE}
 knitr::include_graphics("Pictures/ICOtronic.svg", auto_pdf = TRUE)
 ```
