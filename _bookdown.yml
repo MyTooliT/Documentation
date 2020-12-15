@@ -1,11 +1,6 @@
 book_filename:
   Documentation
 delete_merged_file: true
-output:
-  bookdown::gitbook: default
-  bookdown::epub_book: default
-  bookdown::pdf_book:
-    latex_engine: xelatex
 output_dir: Bookdown
 rmd_files:
   - ReadMe.md
