@@ -25,33 +25,15 @@ You can use [bookdown](http://bookdown.org) to generate
 - [EPUB](https://en.m.wikipedia.org/wiki/EPUB), and
 - PDF
 
-versions of this documentation. To do that please use the following commands:
+versions of this documentation. To do that please use the following [make](https://en.m.wikipedia.org/wiki/Makefile) commands:
 
 ```sh
-# Remove old output
-rm -rf Bookdown
+# Generate HTML documentation
+make html
 
-# Work around non-accessible images for PDF and EPUB output
-cp -r Protocol/Figures Figures
+# Generate PDF
+make pdf
 
-# Generate (GitBook) HTML document
-Rscript -e "bookdown::render_book('ReadMe.md', 'bookdown::gitbook')"
-# Rename HTML output directory
-mv Bookdown HTML
-# Copy images into HTML directory
-cp -r Protocol/Figures HTML
-# Put HTML output into subdirectory of original output directory
-mkdir Bookdown
-mv HTML Bookdown
-
-# Generate PDF document
-Rscript -e "bookdown::render_book('ReadMe.md', 'bookdown::pdf_book')"
-
-# Generate EBook
-Rscript -e "bookdown::render_book('ReadMe.md', 'bookdown::epub_book')"
-
-# Remove copied images
-rm -r Figures
-# Remove unnecessary reference key file
-rm Bookdown/reference-keys.txt
+# Generate EPUB document
+make epub
 ```
