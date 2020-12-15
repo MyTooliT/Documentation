@@ -1,4 +1,4 @@
-all: epub html pdf
+all: init bookdown-epub bookdown-html bookdown-pdf cleanup
 
 init:
 	# Move pictures into repository root
