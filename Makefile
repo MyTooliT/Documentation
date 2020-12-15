@@ -3,6 +3,8 @@ all: init bookdown-epub bookdown-html bookdown-pdf cleanup
 init:
 	# Move pictures into repository root
 	cp -r Protocol/Pictures Pictures
+	# Move pictures into repository root
+	cp -r Diagrams/Pictures/* Pictures
 
 cleanup:
 	# Remove pictures from repository root
