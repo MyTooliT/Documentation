@@ -1645,16 +1645,16 @@ y = f(x) = k·x + d
 <table>
 <thead>
 <tr class="header">
-<th>Identifier</th>
-<th>DLC</th>
-<th>Payload</th>
+<th align="center">Identifier</th>
+<th align="center">DLC</th>
+<th align="center">Payload</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>29 Bits</td>
-<td>4 Bits</td>
-<td>0 – 8 Bytes</td>
+<td align="center">29 Bits</td>
+<td align="center">4 Bits</td>
+<td align="center">0 – 8 Bytes</td>
 </tr>
 </tbody>
 </table>
@@ -1669,24 +1669,24 @@ y = f(x) = k·x + d
 <table>
 <thead>
 <tr class="header">
-<th></th>
-<th>V</th>
-<th>Command</th>
-<th>R1</th>
-<th>Sender</th>
-<th>R2</th>
-<th>Receiver</th>
+<th align="center"></th>
+<th align="center">V</th>
+<th align="center">Command</th>
+<th align="center">R1</th>
+<th align="center">Sender</th>
+<th align="center">R2</th>
+<th align="center">Receiver</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Bit</td>
-<td>0</td>
-<td>1 – 16</td>
-<td>17</td>
-<td>18 – 22</td>
-<td>23</td>
-<td>24 – 28</td>
+<td align="center">Bit</td>
+<td align="center">0</td>
+<td align="center">1 – 16</td>
+<td align="center">17</td>
+<td align="center">18 – 22</td>
+<td align="center">23</td>
+<td align="center">24 – 28</td>
 </tr>
 </tbody>
 </table>
@@ -1698,29 +1698,29 @@ y = f(x) = k·x + d
 </colgroup>
 <thead>
 <tr class="header">
-<th>Field</th>
+<th align="center">Field</th>
 <th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>V</td>
+<td align="center">V</td>
 <td>Version number <br/> • Must be <code>0</code> or the frame will be discarded</td>
 </tr>
 <tr class="even">
-<td>Command</td>
+<td align="center">Command</td>
 <td>Command to be executed or acknowledged</td>
 </tr>
 <tr class="odd">
-<td>R1/R2</td>
+<td align="center">R1/R2</td>
 <td>Reserved</td>
 </tr>
 <tr class="even">
-<td>Sender</td>
+<td align="center">Sender</td>
 <td>Number of the original sender (frames may hop) <br/> • <code>0</code> Not allowed</td>
 </tr>
 <tr class="odd">
-<td>Receiver</td>
+<td align="center">Receiver</td>
 <td>Number of the target receiver (frames may hop) <br/> • <code>0</code> broadcasts at field bus (local network) with ACK <br/> • <code>0x1F</code> broadcasts at field bus(local network) without ACK</td>
 </tr>
 </tbody>
@@ -1731,18 +1731,18 @@ y = f(x) = k·x + d
 <table>
 <thead>
 <tr class="header">
-<th></th>
-<th>Command Number</th>
-<th>A</th>
-<th>E</th>
+<th align="center"></th>
+<th align="center">Command Number</th>
+<th align="center">A</th>
+<th align="center">E</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Bit</td>
-<td>0 – 13</td>
-<td>14</td>
-<td>15</td>
+<td align="center">Bit</td>
+<td align="center">0 – 13</td>
+<td align="center">14</td>
+<td align="center">15</td>
 </tr>
 </tbody>
 </table>
@@ -1750,14 +1750,14 @@ y = f(x) = k·x + d
 <table>
 <thead>
 <tr class="header">
-<th>Block</th>
-<th>Block Command</th>
+<th align="center">Block</th>
+<th align="center">Block Command</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0 – 5</td>
-<td>6 – 13</td>
+<td align="center">0 – 5</td>
+<td align="center">6 – 13</td>
 </tr>
 </tbody>
 </table>
@@ -1769,21 +1769,21 @@ y = f(x) = k·x + d
 </colgroup>
 <thead>
 <tr class="header">
-<th>Field</th>
+<th align="center">Field</th>
 <th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Command Number</td>
+<td align="center">Command Number</td>
 <td>• 64 command blocks (6 Bit) <br/> • A command block supports up to 256 (8 Bit) block commands <br/> • Values: 1 – 16383 (14 bit), <code>0</code> is not valid <br/> • Commands are described <a href="Commands.md">here</a></td>
 </tr>
 <tr class="even">
-<td>A</td>
+<td align="center">A</td>
 <td>Acknowledge field <br/> • <code>1</code> for a request <br/> • <code>0</code> for an acknowledgement <br/> Note that a single command may trigger multiple acknowledges (streaming).</td>
 </tr>
 <tr class="odd">
-<td>E</td>
+<td align="center">E</td>
 <td>Error Bit <br/> • Indicates an error <br/> • <code>1</code> if it is an error <br/> • <code>0</code> if it is not an error <br/> • An error code is supported via the payload <br/> • The error format is 8 bytes long. The first byte describes the error number and the following 7 bytes are used for an error description. Furthermore, there are general errors (1 – 255) that are followed by <code>0</code> and specific errors that are followed by variable bits.</td>
 </tr>
 </tbody>
