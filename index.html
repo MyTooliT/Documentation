@@ -365,29 +365,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </colgroup>
 <thead>
 <tr class="header">
-<th>Page Number</th>
+<th align="right">Page Number</th>
 <th>Name</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
+<td align="right">0</td>
 <td><a href="#page:system-configuration">System Configuration</a></td>
 <td>Store system specific data e.g. Bluetooth name and advertisement time</td>
 </tr>
 <tr class="even">
-<td>4</td>
+<td align="right">4</td>
 <td><a href="#page:product-data">Product Data</a></td>
 <td>Store product data e.g. serial number</td>
 </tr>
 <tr class="odd">
-<td>5</td>
+<td align="right">5</td>
 <td><a href="#page:statistics">Statistics</a></td>
 <td>Store statistic data e.g. power on/off cycles</td>
 </tr>
 <tr class="even">
-<td>8</td>
+<td align="right">8</td>
 <td><a href="#page:calibration">Calibration</a></td>
 <td>Store configuration data like slope (<code>k</code>) and offset (<code>d</code>) values to derive SI value from ADC value</td>
 </tr>
@@ -407,8 +407,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </colgroup>
 <thead>
 <tr class="header">
-<th>Byte</th>
-<th>Length</th>
+<th align="right">Byte</th>
+<th align="right">Length</th>
 <th>Name</th>
 <th>Comment</th>
 <th>Format</th>
@@ -417,48 +417,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
-<td>1</td>
+<td align="right">0</td>
+<td align="right">1</td>
 <td>Init</td>
 <td>• <code>0xac</code>: Initialized <br/> • <code>0xca</code>: Locked <br/> • Other Value: Uninitialized)</td>
 <td>-</td>
 <td>-</td>
 </tr>
 <tr class="even">
-<td>1</td>
-<td>8</td>
+<td align="right">1</td>
+<td align="right">8</td>
 <td>Radio Name</td>
 <td>Bluetooth advertisement name</td>
 <td>ASCII</td>
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>9</td>
-<td>4</td>
+<td align="right">9</td>
+<td align="right">4</td>
 <td>Sleep Time 1</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Unsigned</td>
 <td>ms</td>
 </tr>
 <tr class="even">
-<td>13</td>
-<td>2</td>
+<td align="right">13</td>
+<td align="right">2</td>
 <td>Advertisement Time 1</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Unsigned</td>
 <td>ms</td>
 </tr>
 <tr class="odd">
-<td>15</td>
-<td>4</td>
+<td align="right">15</td>
+<td align="right">4</td>
 <td>Sleep Time 2</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Unsigned</td>
 <td>ms</td>
 </tr>
 <tr class="even">
-<td>19</td>
-<td>2</td>
+<td align="right">19</td>
+<td align="right">2</td>
 <td>Advertisement Time 2</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Unsigned</td>
@@ -483,8 +483,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <table>
 <thead>
 <tr class="header">
-<th>Byte</th>
-<th>Length</th>
+<th align="right">Byte</th>
+<th align="right">Length</th>
 <th>Name</th>
 <th>Comment</th>
 <th>Format</th>
@@ -492,92 +492,92 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
-<td>8</td>
+<td align="right">0</td>
+<td align="right">8</td>
 <td>Global Trade Identification Number (GTIN)</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td>8</td>
-<td>5</td>
+<td align="right">8</td>
+<td align="right">5</td>
 <td>Hardware Revision: Reserved</td>
 <td></td>
 <td>–</td>
 </tr>
 <tr class="odd">
-<td>13</td>
-<td>1</td>
+<td align="right">13</td>
+<td align="right">1</td>
 <td>Hardware Revision: Major</td>
 <td></td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td>14</td>
-<td>1</td>
+<td align="right">14</td>
+<td align="right">1</td>
 <td>Hardware Revision: Minor</td>
 <td></td>
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
-<td>15</td>
-<td>1</td>
+<td align="right">15</td>
+<td align="right">1</td>
 <td>Hardware Revision: Patch</td>
 <td></td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td>16</td>
-<td>5</td>
+<td align="right">16</td>
+<td align="right">5</td>
 <td>Firmware Version: Reserved</td>
 <td></td>
 <td>–</td>
 </tr>
 <tr class="odd">
-<td>21</td>
-<td>1</td>
+<td align="right">21</td>
+<td align="right">1</td>
 <td>Firmware Version: Major</td>
 <td></td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td>22</td>
-<td>1</td>
+<td align="right">22</td>
+<td align="right">1</td>
 <td>Firmware Version: Minor</td>
 <td></td>
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
-<td>23</td>
-<td>1</td>
+<td align="right">23</td>
+<td align="right">1</td>
 <td>Firmware Version: Patch</td>
 <td></td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td>24</td>
-<td>8</td>
+<td align="right">24</td>
+<td align="right">8</td>
 <td><a href="#value:release-name">Release Name</a></td>
 <td></td>
 <td>UTF-8</td>
 </tr>
 <tr class="odd">
-<td>32</td>
-<td>32</td>
+<td align="right">32</td>
+<td align="right">32</td>
 <td><a href="#value:serial-number">Serial Number</a></td>
 <td></td>
 <td>UTF-8</td>
 </tr>
 <tr class="even">
-<td>64</td>
-<td>128</td>
+<td align="right">64</td>
+<td align="right">128</td>
 <td><a href="#value:product-name">Product Name</a></td>
 <td></td>
 <td>UTF-8</td>
 </tr>
 <tr class="odd">
-<td>192</td>
-<td>64</td>
+<td align="right">192</td>
+<td align="right">64</td>
 <td><a href="#value:oem-free-use">OEM Free Use</a></td>
 <td></td>
 <td>-</td>
@@ -638,8 +638,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <table>
 <thead>
 <tr class="header">
-<th>Byte</th>
-<th>Length</th>
+<th align="right">Byte</th>
+<th align="right">Length</th>
 <th>Name</th>
 <th>Comment</th>
 <th>Format</th>
@@ -648,72 +648,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
-<td>4</td>
+<td align="right">0</td>
+<td align="right">4</td>
 <td><a href="#value:power-on-cycles">Power On Cycles</a></td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Unsigned</td>
 <td>-</td>
 </tr>
 <tr class="even">
-<td>4</td>
-<td>4</td>
+<td align="right">4</td>
+<td align="right">4</td>
 <td>Power Off Cycles</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Unsigned</td>
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>8</td>
-<td>4</td>
+<td align="right">8</td>
+<td align="right">4</td>
 <td>Operating Time</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Unsigned</td>
 <td>s</td>
 </tr>
 <tr class="even">
-<td>12</td>
-<td>4</td>
+<td align="right">12</td>
+<td align="right">4</td>
 <td><a href="#value:under-voltage-counter">Under Voltage Counter</a></td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Unsigned</td>
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>16</td>
-<td>4</td>
+<td align="right">16</td>
+<td align="right">4</td>
 <td>Watchdog Reset Counter</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Unsigned</td>
 <td>-</td>
 </tr>
 <tr class="even">
-<td>20</td>
-<td>4</td>
+<td align="right">20</td>
+<td align="right">4</td>
 <td>Production Date: Year</td>
 <td></td>
 <td>ASCII</td>
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>24</td>
-<td>2</td>
+<td align="right">24</td>
+<td align="right">2</td>
 <td>Production Date: Month</td>
 <td></td>
 <td>ASCII</td>
 <td>-</td>
 </tr>
 <tr class="even">
-<td>26</td>
-<td>2</td>
+<td align="right">26</td>
+<td align="right">2</td>
 <td>Production Date: Day</td>
 <td></td>
 <td>ASCII</td>
 <td>-</td>
 </tr>
 <tr class="odd">
-<td>28</td>
-<td>4</td>
+<td align="right">28</td>
+<td align="right">4</td>
 <td>Batch Number</td>
 <td>Consecutive number for manufactured devices</td>
 <td>ASCII</td>
@@ -738,8 +738,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <table>
 <thead>
 <tr class="header">
-<th>Byte</th>
-<th>Length</th>
+<th align="right">Byte</th>
+<th align="right">Length</th>
 <th>Name</th>
 <th>Comment</th>
 <th>Format</th>
@@ -747,127 +747,127 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
-<td>4</td>
+<td align="right">0</td>
+<td align="right">4</td>
 <td>Acceleration X: Slope</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Float</td>
 </tr>
 <tr class="even">
-<td>4</td>
-<td>4</td>
+<td align="right">4</td>
+<td align="right">4</td>
 <td>Acceleration X: Offset</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Float</td>
 </tr>
 <tr class="odd">
-<td>8</td>
-<td>4</td>
+<td align="right">8</td>
+<td align="right">4</td>
 <td>Acceleration Y: Slope</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Float</td>
 </tr>
 <tr class="even">
-<td>12</td>
-<td>4</td>
+<td align="right">12</td>
+<td align="right">4</td>
 <td>Acceleration Y: Offset</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Float</td>
 </tr>
 <tr class="odd">
-<td>16</td>
-<td>4</td>
+<td align="right">16</td>
+<td align="right">4</td>
 <td>Acceleration Z: Slope</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Float</td>
 </tr>
 <tr class="even">
-<td>20</td>
-<td>4</td>
+<td align="right">20</td>
+<td align="right">4</td>
 <td>Acceleration Z: Offset</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Float</td>
 </tr>
 <tr class="odd">
-<td>24</td>
-<td>4</td>
+<td align="right">24</td>
+<td align="right">4</td>
 <td>Voltage Battery: Slope</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Float</td>
 </tr>
 <tr class="even">
-<td>28</td>
-<td>4</td>
+<td align="right">28</td>
+<td align="right">4</td>
 <td>Voltage Battery: Offset</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Float</td>
 </tr>
 <tr class="odd">
-<td>32</td>
-<td>4</td>
+<td align="right">32</td>
+<td align="right">4</td>
 <td>Voltage 2: Slope</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Float</td>
 </tr>
 <tr class="even">
-<td>36</td>
-<td>4</td>
+<td align="right">36</td>
+<td align="right">4</td>
 <td>Voltage 2: Offset</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Float</td>
 </tr>
 <tr class="odd">
-<td>40</td>
-<td>4</td>
+<td align="right">40</td>
+<td align="right">4</td>
 <td>Voltage 3: Slope</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Float</td>
 </tr>
 <tr class="even">
-<td>44</td>
-<td>4</td>
+<td align="right">44</td>
+<td align="right">4</td>
 <td>Voltage 3: Offset</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Float</td>
 </tr>
 <tr class="odd">
-<td>48</td>
-<td>4</td>
+<td align="right">48</td>
+<td align="right">4</td>
 <td>Internal Temperature: Slope</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Float</td>
 </tr>
 <tr class="even">
-<td>52</td>
-<td>4</td>
+<td align="right">52</td>
+<td align="right">4</td>
 <td>Internal Temperature: Offset</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Float</td>
 </tr>
 <tr class="odd">
-<td>56</td>
-<td>4</td>
+<td align="right">56</td>
+<td align="right">4</td>
 <td>Temperature 2: Slope</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Float</td>
 </tr>
 <tr class="even">
-<td>60</td>
-<td>4</td>
+<td align="right">60</td>
+<td align="right">4</td>
 <td>Temperature 2: Offset</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Float</td>
 </tr>
 <tr class="odd">
-<td>64</td>
-<td>4</td>
+<td align="right">64</td>
+<td align="right">4</td>
 <td>Temperature 3: Slope</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Float</td>
 </tr>
 <tr class="even">
-<td>68</td>
-<td>4</td>
+<td align="right">68</td>
+<td align="right">4</td>
 <td>Temperature 3: Offset</td>
 <td><a href="#term:little-endian">Little Endian</a></td>
 <td>Float</td>
@@ -894,25 +894,25 @@ y = f(x) = k·x + d
 <table>
 <thead>
 <tr class="header">
-<th>Page Number</th>
+<th align="right">Page Number</th>
 <th>Page Name</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0x0</code></td>
+<td align="right"><code>0x0</code></td>
 <td><a href="#page:system-configuration">System Configuration</a></td>
 </tr>
 <tr class="even">
-<td><code>0x4</code></td>
+<td align="right"><code>0x4</code></td>
 <td><a href="#page:product-data">Product Data</a></td>
 </tr>
 <tr class="odd">
-<td><code>0x5</code></td>
+<td align="right"><code>0x5</code></td>
 <td><a href="#page:statistics">Statistics</a></td>
 </tr>
 <tr class="even">
-<td><code>0x8</code></td>
+<td align="right"><code>0x8</code></td>
 <td><a href="#page:calibration">Calibration</a></td>
 </tr>
 </tbody>
@@ -934,8 +934,8 @@ y = f(x) = k·x + d
 <thead>
 <tr class="header">
 <th>Name</th>
-<th>Address</th>
-<th>Length</th>
+<th align="right">Address</th>
+<th align="right">Length</th>
 <th>Read Only</th>
 <th>Value</th>
 <th>Comment</th>
@@ -946,8 +946,8 @@ y = f(x) = k·x + d
 <tbody>
 <tr class="odd">
 <td>EEPROM Status</td>
-<td>0</td>
-<td>1</td>
+<td align="right">0</td>
+<td align="right">1</td>
 <td>True</td>
 <td><code>0xac</code></td>
 <td>Value for initialized EEPROM</td>
@@ -956,8 +956,8 @@ y = f(x) = k·x + d
 </tr>
 <tr class="even">
 <td>STH Name</td>
-<td>1</td>
-<td>8</td>
+<td align="right">1</td>
+<td align="right">8</td>
 <td>False</td>
 <td><a href="https://github.com/MyTooliT/ICOc/tree/master/Scripts#mac-address-conversion">Base64 encoded Bluetooth MAC address</a> or firmware name</td>
 <td>e.g. <code>CGvXAd6B</code> (<code>08:6b:d7:01:de:81</code>), <code>Tanja</code></td>
@@ -966,8 +966,8 @@ y = f(x) = k·x + d
 </tr>
 <tr class="odd">
 <td>Sleep Time 1</td>
-<td>9</td>
-<td>4</td>
+<td align="right">9</td>
+<td align="right">4</td>
 <td>False</td>
 <td>300000</td>
 <td>5 minutes</td>
@@ -976,8 +976,8 @@ y = f(x) = k·x + d
 </tr>
 <tr class="even">
 <td>Advertisement Time 1</td>
-<td>13</td>
-<td>2</td>
+<td align="right">13</td>
+<td align="right">2</td>
 <td>False</td>
 <td>2000</td>
 <td>2 seconds</td>
@@ -986,8 +986,8 @@ y = f(x) = k·x + d
 </tr>
 <tr class="odd">
 <td>Sleep Time 2</td>
-<td>15</td>
-<td>4</td>
+<td align="right">15</td>
+<td align="right">4</td>
 <td>False</td>
 <td>259200000</td>
 <td>3 days</td>
@@ -996,8 +996,8 @@ y = f(x) = k·x + d
 </tr>
 <tr class="even">
 <td>Advertisement Time 2</td>
-<td>19</td>
-<td>2</td>
+<td align="right">19</td>
+<td align="right">2</td>
 <td>False</td>
 <td>4000</td>
 <td>4 seconds</td>
@@ -1018,8 +1018,8 @@ y = f(x) = k·x + d
 <thead>
 <tr class="header">
 <th>Name</th>
-<th>Address</th>
-<th>Length</th>
+<th align="right">Address</th>
+<th align="right">Length</th>
 <th>Read Only</th>
 <th>Value</th>
 <th>Format</th>
@@ -1028,88 +1028,88 @@ y = f(x) = k·x + d
 <tbody>
 <tr class="odd">
 <td>GTIN</td>
-<td>0</td>
-<td>8</td>
+<td align="right">0</td>
+<td align="right">8</td>
 <td>True</td>
 <td>0</td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
 <td><a href="#value:hardware-revision">Hardware Revision: Major</a></td>
-<td>13</td>
-<td>1</td>
+<td align="right">13</td>
+<td align="right">1</td>
 <td>False</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
 <td><a href="#value:hardware-revision">Hardware Revision: Minor</a></td>
-<td>14</td>
-<td>1</td>
+<td align="right">14</td>
+<td align="right">1</td>
 <td>False</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
 <td><a href="#value:hardware-revision">Hardware Revision: Patch</a></td>
-<td>15</td>
-<td>1</td>
+<td align="right">15</td>
+<td align="right">1</td>
 <td>False</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
 <td><a href="#value:firmware-version">Firmware Version: Major</a></td>
-<td>21</td>
-<td>1</td>
+<td align="right">21</td>
+<td align="right">1</td>
 <td>False</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
 <td><a href="#value:firmware-version">Firmware Version: Minor</a></td>
-<td>22</td>
-<td>1</td>
+<td align="right">22</td>
+<td align="right">1</td>
 <td>False</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
 <td><a href="#value:firmware-version">Firmware Version: Patch</a></td>
-<td>23</td>
-<td>1</td>
+<td align="right">23</td>
+<td align="right">1</td>
 <td>False</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
 <td><a href="#value:release-name">Release Name</a></td>
-<td>24</td>
-<td>8</td>
+<td align="right">24</td>
+<td align="right">8</td>
 <td>False</td>
 <td>Tanja</td>
 <td>UTF-8</td>
 </tr>
 <tr class="odd">
 <td><a href="#value:serial-number">Serial Number</a></td>
-<td>32</td>
-<td>32</td>
+<td align="right">32</td>
+<td align="right">32</td>
 <td>True</td>
 <td>0</td>
 <td>UTF-8</td>
 </tr>
 <tr class="even">
 <td><a href="#value:product-name">Product Name</a></td>
-<td>64</td>
-<td>128</td>
+<td align="right">64</td>
+<td align="right">128</td>
 <td>True</td>
 <td>0</td>
 <td>UTF-8</td>
 </tr>
 <tr class="odd">
 <td><a href="#value:oem-free-use">OEM Free Use</a></td>
-<td>192</td>
-<td>64</td>
+<td align="right">192</td>
+<td align="right">64</td>
 <td>True</td>
 <td>0</td>
 <td>-</td>
@@ -1135,10 +1135,10 @@ y = f(x) = k·x + d
 <thead>
 <tr class="header">
 <th>Name</th>
-<th>Address</th>
-<th>Length</th>
+<th align="right">Address</th>
+<th align="right">Length</th>
 <th>Read Only</th>
-<th>Value</th>
+<th align="right">Value</th>
 <th>Unit</th>
 <th>Format</th>
 </tr>
@@ -1146,82 +1146,82 @@ y = f(x) = k·x + d
 <tbody>
 <tr class="odd">
 <td>Power On Cycles</td>
-<td>0</td>
-<td>4</td>
+<td align="right">0</td>
+<td align="right">4</td>
 <td>True</td>
-<td>0</td>
+<td align="right">0</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
 <td>Power Off Cycles</td>
-<td>4</td>
-<td>4</td>
+<td align="right">4</td>
+<td align="right">4</td>
 <td>True</td>
-<td>0</td>
+<td align="right">0</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
 <td>Operating Time</td>
-<td>8</td>
-<td>4</td>
+<td align="right">8</td>
+<td align="right">4</td>
 <td>True</td>
-<td>0</td>
+<td align="right">0</td>
 <td>s</td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
 <td>Under Voltage Counter</td>
-<td>12</td>
-<td>4</td>
+<td align="right">12</td>
+<td align="right">4</td>
 <td>True</td>
-<td>0</td>
+<td align="right">0</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
 <td>Watchdog Reset Counter</td>
-<td>16</td>
-<td>4</td>
+<td align="right">16</td>
+<td align="right">4</td>
 <td>True</td>
-<td>0</td>
+<td align="right">0</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
 <td><a href="#value:production-date">Production Date: Year</a></td>
-<td>20</td>
-<td>4</td>
+<td align="right">20</td>
+<td align="right">4</td>
 <td>False</td>
-<td>-</td>
+<td align="right">-</td>
 <td>-</td>
 <td>ASCII</td>
 </tr>
 <tr class="odd">
 <td><a href="#value:production-date">Production Date: Month</a></td>
-<td>24</td>
-<td>2</td>
+<td align="right">24</td>
+<td align="right">2</td>
 <td>False</td>
-<td>-</td>
+<td align="right">-</td>
 <td>-</td>
 <td>ASCII</td>
 </tr>
 <tr class="even">
 <td><a href="#value:production-date">Production Date: Day</a></td>
-<td>26</td>
-<td>2</td>
+<td align="right">26</td>
+<td align="right">2</td>
 <td>False</td>
-<td>-</td>
+<td align="right">-</td>
 <td>-</td>
 <td>ASCII</td>
 </tr>
 <tr class="odd">
 <td><a href="#value:batch-number">Batch Number</a></td>
-<td>28</td>
-<td>4</td>
+<td align="right">28</td>
+<td align="right">4</td>
 <td>True</td>
-<td>-</td>
+<td align="right">-</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
@@ -1239,8 +1239,8 @@ y = f(x) = k·x + d
 <thead>
 <tr class="header">
 <th>Name</th>
-<th>Address</th>
-<th>Length</th>
+<th align="right">Address</th>
+<th align="right">Length</th>
 <th>Read Only</th>
 <th>Value</th>
 <th>Format</th>
@@ -1249,16 +1249,16 @@ y = f(x) = k·x + d
 <tbody>
 <tr class="odd">
 <td><a href="#value:acceleration-x-slope">Acceleration X: Slope</a></td>
-<td>0</td>
-<td>4</td>
+<td align="right">0</td>
+<td align="right">4</td>
 <td>False</td>
 <td>-</td>
 <td>Float</td>
 </tr>
 <tr class="even">
 <td><a href="#value:acceleration-x-offset">Acceleration X: Offset</a></td>
-<td>4</td>
-<td>4</td>
+<td align="right">4</td>
+<td align="right">4</td>
 <td>False</td>
 <td>-</td>
 <td>Float</td>
@@ -1296,21 +1296,21 @@ y = f(x) = k·x + d
 <table>
 <thead>
 <tr class="header">
-<th>Page Number</th>
+<th align="right">Page Number</th>
 <th>Page Name</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0x0</code></td>
+<td align="right"><code>0x0</code></td>
 <td><a href="#page:system-configuration">System Configuration</a></td>
 </tr>
 <tr class="even">
-<td><code>0x4</code></td>
+<td align="right"><code>0x4</code></td>
 <td><a href="#page:product-data">Product Data</a></td>
 </tr>
 <tr class="odd">
-<td><code>0x5</code></td>
+<td align="right"><code>0x5</code></td>
 <td><a href="#page:statistics">Statistics</a></td>
 </tr>
 </tbody>
@@ -1321,8 +1321,8 @@ y = f(x) = k·x + d
 <thead>
 <tr class="header">
 <th>Name</th>
-<th>Address</th>
-<th>Length</th>
+<th align="right">Address</th>
+<th align="right">Length</th>
 <th>Read Only</th>
 <th>Value</th>
 <th>Comment</th>
@@ -1333,8 +1333,8 @@ y = f(x) = k·x + d
 <tbody>
 <tr class="odd">
 <td>EEPROM Status</td>
-<td>0</td>
-<td>1</td>
+<td align="right">0</td>
+<td align="right">1</td>
 <td>True</td>
 <td><code>0xac</code></td>
 <td>Value for initialized EEPROM</td>
@@ -1343,8 +1343,8 @@ y = f(x) = k·x + d
 </tr>
 <tr class="even">
 <td>STH Name</td>
-<td>1</td>
-<td>8</td>
+<td align="right">1</td>
+<td align="right">8</td>
 <td>False</td>
 <td>Firmware version name</td>
 <td>e.g. <code>Valerie</code></td>
@@ -1365,8 +1365,8 @@ y = f(x) = k·x + d
 <thead>
 <tr class="header">
 <th>Name</th>
-<th>Address</th>
-<th>Length</th>
+<th align="right">Address</th>
+<th align="right">Length</th>
 <th>Read Only</th>
 <th>Value</th>
 <th>Format</th>
@@ -1375,88 +1375,88 @@ y = f(x) = k·x + d
 <tbody>
 <tr class="odd">
 <td>GTIN</td>
-<td>0</td>
-<td>8</td>
+<td align="right">0</td>
+<td align="right">8</td>
 <td>True</td>
 <td>0</td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
 <td><a href="#value:hardware-revision">Hardware Revision: Major</a></td>
-<td>13</td>
-<td>1</td>
+<td align="right">13</td>
+<td align="right">1</td>
 <td>True</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
 <td><a href="#value:hardware-revision">Hardware Revision: Minor</a></td>
-<td>14</td>
-<td>1</td>
+<td align="right">14</td>
+<td align="right">1</td>
 <td>True</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
 <td><a href="#value:hardware-revision">Hardware Revision: Patch</a></td>
-<td>15</td>
-<td>1</td>
+<td align="right">15</td>
+<td align="right">1</td>
 <td>True</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
 <td><a href="#value:firmware-version">Firmware Version: Major</a></td>
-<td>21</td>
-<td>1</td>
+<td align="right">21</td>
+<td align="right">1</td>
 <td>True</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
 <td><a href="#value:firmware-version">Firmware Version: Minor</a></td>
-<td>22</td>
-<td>1</td>
+<td align="right">22</td>
+<td align="right">1</td>
 <td>True</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
 <td><a href="#value:firmware-version">Firmware Version: Patch</a></td>
-<td>23</td>
-<td>1</td>
+<td align="right">23</td>
+<td align="right">1</td>
 <td>True</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
 <td><a href="#value:release-name">Release Name</a></td>
-<td>24</td>
-<td>8</td>
+<td align="right">24</td>
+<td align="right">8</td>
 <td>True</td>
 <td>Valerie</td>
 <td>UTF-8</td>
 </tr>
 <tr class="odd">
 <td><a href="#value:serial-number">Serial Number</a></td>
-<td>32</td>
-<td>32</td>
+<td align="right">32</td>
+<td align="right">32</td>
 <td>True</td>
 <td>0</td>
 <td>UTF-8</td>
 </tr>
 <tr class="even">
 <td><a href="#value:product-name">Product Name</a></td>
-<td>64</td>
-<td>128</td>
+<td align="right">64</td>
+<td align="right">128</td>
 <td>True</td>
 <td>0</td>
 <td>UTF-8</td>
 </tr>
 <tr class="odd">
 <td><a href="#value:oem-free-use">OEM Free Use</a></td>
-<td>192</td>
-<td>64</td>
+<td align="right">192</td>
+<td align="right">64</td>
 <td>True</td>
 <td>0</td>
 <td>-</td>
@@ -1482,10 +1482,10 @@ y = f(x) = k·x + d
 <thead>
 <tr class="header">
 <th>Name</th>
-<th>Address</th>
-<th>Length</th>
+<th align="right">Address</th>
+<th align="right">Length</th>
 <th>Read Only</th>
-<th>Value</th>
+<th align="right">Value</th>
 <th>Unit</th>
 <th>Format</th>
 </tr>
@@ -1493,82 +1493,82 @@ y = f(x) = k·x + d
 <tbody>
 <tr class="odd">
 <td>Power On Cycles</td>
-<td>0</td>
-<td>4</td>
+<td align="right">0</td>
+<td align="right">4</td>
 <td>True</td>
-<td>0</td>
+<td align="right">0</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
 <td>Power Off Cycles</td>
-<td>4</td>
-<td>4</td>
+<td align="right">4</td>
+<td align="right">4</td>
 <td>True</td>
-<td>0</td>
+<td align="right">0</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
 <td>Operating Time</td>
-<td>8</td>
-<td>4</td>
+<td align="right">8</td>
+<td align="right">4</td>
 <td>True</td>
-<td>0</td>
+<td align="right">0</td>
 <td>s</td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
 <td>Under Voltage Counter</td>
-<td>12</td>
-<td>4</td>
+<td align="right">12</td>
+<td align="right">4</td>
 <td>True</td>
-<td>0</td>
+<td align="right">0</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
 <td>Watchdog Reset Counter</td>
-<td>16</td>
-<td>4</td>
+<td align="right">16</td>
+<td align="right">4</td>
 <td>True</td>
-<td>0</td>
+<td align="right">0</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
 <td><a href="#value:production-date">Production Date: Year</a></td>
-<td>20</td>
-<td>4</td>
+<td align="right">20</td>
+<td align="right">4</td>
 <td>True</td>
-<td>-</td>
+<td align="right">-</td>
 <td>-</td>
 <td>ASCII</td>
 </tr>
 <tr class="odd">
 <td><a href="#value:production-date">Production Date: Month</a></td>
-<td>24</td>
-<td>2</td>
+<td align="right">24</td>
+<td align="right">2</td>
 <td>True</td>
-<td>-</td>
+<td align="right">-</td>
 <td>-</td>
 <td>ASCII</td>
 </tr>
 <tr class="even">
 <td><a href="#value:production-date">Production Date: Day</a></td>
-<td>26</td>
-<td>2</td>
+<td align="right">26</td>
+<td align="right">2</td>
 <td>True</td>
-<td>-</td>
+<td align="right">-</td>
 <td>-</td>
 <td>ASCII</td>
 </tr>
 <tr class="odd">
 <td><a href="#value:batch-number">Batch Number</a></td>
-<td>28</td>
-<td>4</td>
+<td align="right">28</td>
+<td align="right">4</td>
 <td>True</td>
-<td>-</td>
+<td align="right">-</td>
 <td>-</td>
 <td>Unsigned</td>
 </tr>
