@@ -3219,61 +3219,57 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <ul>
 <li><p>The <a name="value:data-sets"><code>Data Sets</code></a> bits used in the sections below can have the following values:</p>
 <table>
-<colgroup>
-<col width="2%" />
-<col width="7%" />
-<col width="89%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="right">Value</th>
 <th>Data Amount</th>
-<th>Possible Data</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="right">0</td>
 <td>Stop (stream)</td>
-<td>• value 1 <br/> • value 2 <br/> • value 3 <br/> • value 1 / value 2 / value 3 <br/> • value 1 / value 2 <br/> • value 1 / value 3 <br/> • value 2 / value 3 <br/></td>
 </tr>
 <tr class="even">
 <td align="right">1</td>
 <td>1 data set</td>
-<td></td>
 </tr>
 <tr class="odd">
 <td align="right">2</td>
 <td>3 data sets</td>
-<td></td>
 </tr>
 <tr class="even">
 <td align="right">3</td>
 <td>6 data sets</td>
-<td></td>
 </tr>
 <tr class="odd">
 <td align="right">4</td>
 <td>10 data sets</td>
-<td></td>
 </tr>
 <tr class="even">
 <td align="right">5</td>
 <td>15 data sets</td>
-<td></td>
 </tr>
 <tr class="odd">
 <td align="right">6</td>
 <td>20 data sets</td>
-<td></td>
 </tr>
 <tr class="even">
 <td align="right">7</td>
 <td>30 data sets</td>
-<td>• value 1 <br/> • value 2 <br/> • value 3</td>
 </tr>
 </tbody>
 </table>
+<p>The streaming data itself can have the following structure:</p>
+<ul>
+<li>value 1</li>
+<li>value 2</li>
+<li>value 3</li>
+<li>value 1 / value 2 / value 3</li>
+<li>value 1 / value 2</li>
+<li>value 1 / value 3</li>
+<li>value 2 / value 3</li>
+</ul>
 <p>The chronological order starts with the oldest set (BP) and continues with newer values (BP + t), where t is the time point.</p></li>
 <li><p><a name="value:request"><code>Request</code></a>:</p>
 <table>
