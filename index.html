@@ -1931,44 +1931,44 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </colgroup>
 <thead>
 <tr class="header">
-<th>Block</th>
+<th align="right">Block</th>
 <th>Short Description</th>
 <th>Extended Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0x00</code></td>
+<td align="right"><code>0x00</code></td>
 <td><a href="#block:system">System</a></td>
 <td>System commands are used to modify/request the state of each unit (e.g. reset) or an the overall system state (e.g. transmission speed)</td>
 </tr>
 <tr class="even">
-<td><code>0x04</code></td>
+<td align="right"><code>0x04</code></td>
 <td><a href="#block:streaming">Streaming</a></td>
 <td>Streaming commands are used to transmit data streams, but may be also used for single requests. The super frame is also located in this block.</td>
 </tr>
 <tr class="odd">
-<td><code>0x08</code></td>
+<td align="right"><code>0x08</code></td>
 <td><a href="#block:Statistical-Data-and-Quantity">Statistical Data and Quantity</a></td>
 <td>This command group is used to store statistical data that can be used for histograms such as operating time and the number of power on/off cycles</td>
 </tr>
 <tr class="even">
-<td><code>0x28</code></td>
+<td align="right"><code>0x28</code></td>
 <td><a href="#block:Configuration">Configuration</a></td>
 <td>This command block is used to set configuration data (e.g. you can set the sampling rate of acceleration data here).</td>
 </tr>
 <tr class="odd">
-<td><code>0x3D</code></td>
+<td align="right"><code>0x3D</code></td>
 <td><a href="#block:EEPROM">EEPROM</a></td>
 <td>Used for writing and reading EEPROM data directly</td>
 </tr>
 <tr class="even">
-<td><code>0x3E</code></td>
+<td align="right"><code>0x3E</code></td>
 <td><a href="#block:ProductionData-and-RFID">ProductData and RFID</a></td>
 <td>Used to store product data like a serial number. Furthermore, this block provides access to RFID information that is supported via connected tools.</td>
 </tr>
 <tr class="odd">
-<td><code>0x3F</code></td>
+<td align="right"><code>0x3F</code></td>
 <td><a href="#block:Test">Test</a></td>
 <td>Test Config Page</td>
 </tr>
@@ -1981,7 +1981,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Number</th>
+<th align="right">Number</th>
 <th>Block Command</th>
 <th>Access</th>
 <th>Permanently Stored</th>
@@ -1989,37 +1989,37 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0x00</code></td>
+<td align="right"><code>0x00</code></td>
 <td><a href="#command:verboten">Verboten</a></td>
 <td>–</td>
 <td>–</td>
 </tr>
 <tr class="even">
-<td><code>0x01</code></td>
+<td align="right"><code>0x01</code></td>
 <td><a href="#command:reset">Reset</a></td>
 <td>Event</td>
 <td>–</td>
 </tr>
 <tr class="odd">
-<td><code>0x02</code></td>
+<td align="right"><code>0x02</code></td>
 <td><a href="#command:get-set-state">Get/Set State</a></td>
 <td>Read/Write</td>
 <td>–</td>
 </tr>
 <tr class="even">
-<td><code>0x05</code></td>
+<td align="right"><code>0x05</code></td>
 <td><a href="#command:get-node-status">Get Node Status</a></td>
 <td>Read/Write</td>
 <td>–</td>
 </tr>
 <tr class="odd">
-<td><code>0x06</code></td>
+<td align="right"><code>0x06</code></td>
 <td><a href="#command:get-error-status">Get Error Status</a></td>
 <td>Read/Write</td>
 <td>–</td>
 </tr>
 <tr class="even">
-<td><code>0x0B</code></td>
+<td align="right"><code>0x0B</code></td>
 <td><a href="#command:bluetooth">Bluetooth</a></td>
 <td>Read</td>
 <td>–</td>
@@ -2051,17 +2051,17 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Get State</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Set State</td>
 </tr>
 </tbody>
@@ -2070,25 +2070,25 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>No Change</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Bootloader</td>
 </tr>
 <tr class="odd">
-<td><code>2</code></td>
+<td align="right"><code>2</code></td>
 <td>Application</td>
 </tr>
 <tr class="even">
-<td><code>3</code></td>
+<td align="right"><code>3</code></td>
 <td>Reserved</td>
 </tr>
 </tbody>
@@ -2101,41 +2101,41 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Failure (No acknowledgement will be sent; <br/> Only power on resets this state)</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Error (No active communication)</td>
 </tr>
 <tr class="odd">
-<td><code>2</code></td>
+<td align="right"><code>2</code></td>
 <td>Turn Off/Standby</td>
 </tr>
 <tr class="even">
-<td><code>3</code></td>
+<td align="right"><code>3</code></td>
 <td>Graceful degradation level 2</td>
 </tr>
 <tr class="odd">
-<td><code>4</code></td>
+<td align="right"><code>4</code></td>
 <td>Graceful degradation level 1</td>
 </tr>
 <tr class="even">
-<td><code>5</code></td>
+<td align="right"><code>5</code></td>
 <td>Operating</td>
 </tr>
 <tr class="odd">
-<td><code>6</code></td>
+<td align="right"><code>6</code></td>
 <td>Startup</td>
 </tr>
 <tr class="even">
-<td><code>7</code></td>
+<td align="right"><code>7</code></td>
 <td>No change</td>
 </tr>
 </tbody>
@@ -2144,17 +2144,17 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Set state not available</td>
 </tr>
 <tr class="even">
-<td><code>2</code></td>
+<td align="right"><code>2</code></td>
 <td>Wrong subscriber (e.g. accessing application as bootloader)</td>
 </tr>
 </tbody>
@@ -2166,27 +2166,27 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
+<th align="center">Byte 1</th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Bit 7</td>
-<td>Bit 6</td>
-<td>Bit 5 – 4</td>
-<td>Bit 3</td>
-<td>Bit 2 – 0</td>
+<td align="center">Bit 7</td>
+<td align="center">Bit 6</td>
+<td align="center">Bit 5 – 4</td>
+<td align="center">Bit 3</td>
+<td align="center">Bit 2 – 0</td>
 </tr>
 <tr class="even">
-<td><a href="#value:get-set-state"><code>Get/Set State</code></a></td>
-<td>Reserved</td>
-<td><a href="#value:location"><code>Location</code></a></td>
-<td>Reserved</td>
-<td><a href="#value:state"><code>State</code></a></td>
+<td align="center"><a href="#value:get-set-state"><code>Get/Set State</code></a></td>
+<td align="center">Reserved</td>
+<td align="center"><a href="#value:location"><code>Location</code></a></td>
+<td align="center">Reserved</td>
+<td align="center"><a href="#value:state"><code>State</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -2211,12 +2211,12 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 2</th>
+<th align="center">Byte 2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#value:error-reason"><code>Error Reason</code></a></td>
+<td align="center"><a href="#value:error-reason"><code>Error Reason</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -2257,17 +2257,17 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>No Error</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Error</td>
 </tr>
 </tbody>
@@ -2276,41 +2276,41 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Failure</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Error</td>
 </tr>
 <tr class="odd">
-<td><code>2</code></td>
+<td align="right"><code>2</code></td>
 <td>Standby</td>
 </tr>
 <tr class="even">
-<td><code>3</code></td>
+<td align="right"><code>3</code></td>
 <td>Graceful Degradation 2</td>
 </tr>
 <tr class="odd">
-<td><code>4</code></td>
+<td align="right"><code>4</code></td>
 <td>Graceful Degradation 1</td>
 </tr>
 <tr class="even">
-<td><code>5</code></td>
+<td align="right"><code>5</code></td>
 <td>Operating</td>
 </tr>
 <tr class="odd">
-<td><code>6</code></td>
+<td align="right"><code>6</code></td>
 <td>Startup</td>
 </tr>
 <tr class="even">
-<td><code>7</code></td>
+<td align="right"><code>7</code></td>
 <td>No Change</td>
 </tr>
 </tbody>
@@ -2319,17 +2319,17 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Radio Port Disabled</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Radio Port Enabled</td>
 </tr>
 </tbody>
@@ -2338,17 +2338,17 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>CAN Port Disabled</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>CAN Port Enabled</td>
 </tr>
 </tbody>
@@ -2357,17 +2357,17 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Disconnected from Bluetooth</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Connected to Bluetooth</td>
 </tr>
 </tbody>
@@ -2384,21 +2384,21 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
-<th></th>
-<th></th>
+<th align="center">Byte 1</th>
+<th align="center"></th>
+<th align="center"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Bit 7 – 4</td>
-<td>Bit 3 – 1</td>
-<td>Bit 0</td>
+<td align="center">Bit 7 – 4</td>
+<td align="center">Bit 3 – 1</td>
+<td align="center">Bit 0</td>
 </tr>
 <tr class="even">
-<td>Reserved</td>
-<td><a href="#value:network-state"><code>Network State</code></a></td>
-<td><a href="#value:error-bit"><code>Error Bit</code></a></td>
+<td align="center">Reserved</td>
+<td align="center"><a href="#value:network-state"><code>Network State</code></a></td>
+<td align="center"><a href="#value:error-bit"><code>Error Bit</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -2416,30 +2416,30 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </colgroup>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
+<th align="center">Byte 1</th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Bit 7</td>
-<td>Bit 6</td>
-<td>Bit 5</td>
-<td>Bit 4</td>
-<td>Bit 3 – 1</td>
-<td>Bit 0</td>
+<td align="center">Bit 7</td>
+<td align="center">Bit 6</td>
+<td align="center">Bit 5</td>
+<td align="center">Bit 4</td>
+<td align="center">Bit 3 – 1</td>
+<td align="center">Bit 0</td>
 </tr>
 <tr class="even">
-<td>Reserved</td>
-<td><a href="#value:radio-activity"><code>Radio Activity</code></a></td>
-<td><a href="#value:can-port"><code>CAN Port</code></a> Enabled</td>
-<td><a href="#value:radio-port"><code>Radio Port</code></a> Enabled</td>
-<td><a href="#value:network-state"><code>Network State</code></a></td>
-<td><a href="#value:error-bit"><code>Error Bit</code></a></td>
+<td align="center">Reserved</td>
+<td align="center"><a href="#value:radio-activity"><code>Radio Activity</code></a></td>
+<td align="center"><a href="#value:can-port"><code>CAN Port</code></a> Enabled</td>
+<td align="center"><a href="#value:radio-port"><code>Radio Port</code></a> Enabled</td>
+<td align="center"><a href="#value:network-state"><code>Network State</code></a></td>
+<td align="center"><a href="#value:error-bit"><code>Error Bit</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -2449,84 +2449,84 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 2</th>
+<th align="center">Byte 2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Reserved</td>
+<td align="center">Reserved</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 3</th>
+<th align="center">Byte 3</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Reserved</td>
+<td align="center">Reserved</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 4</th>
+<th align="center">Byte 4</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Reserved</td>
+<td align="center">Reserved</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 5</th>
+<th align="center">Byte 5</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Status Word Mask</td>
+<td align="center">Status Word Mask</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 6</th>
+<th align="center">Byte 6</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Status Word Mask</td>
+<td align="center">Status Word Mask</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 7</th>
+<th align="center">Byte 7</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Status Word Mask</td>
+<td align="center">Status Word Mask</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 8</th>
+<th align="center">Byte 8</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Status Word Mask</td>
+<td align="center">Status Word Mask</td>
 </tr>
 </tbody>
 </table>
@@ -2546,72 +2546,72 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
+<th align="center">Byte 1</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Mask Used Not Allowed</td>
+<td align="center">Mask Used Not Allowed</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 4</th>
+<th align="center">Byte 4</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Status Word</td>
+<td align="center">Status Word</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 5</th>
+<th align="center">Byte 5</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Status Word</td>
+<td align="center">Status Word</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 6</th>
+<th align="center">Byte 6</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Status Word</td>
+<td align="center">Status Word</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 7</th>
+<th align="center">Byte 7</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Status Word</td>
+<td align="center">Status Word</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 8</th>
+<th align="center">Byte 8</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Status Word</td>
+<td align="center">Status Word</td>
 </tr>
 </tbody>
 </table>
@@ -2648,17 +2648,17 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>No Transmission Failure</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Transmission Failure</td>
 </tr>
 </tbody>
@@ -2667,17 +2667,17 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>No ADC Overrun Error</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>ADC Overrun Error</td>
 </tr>
 </tbody>
@@ -2694,21 +2694,21 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
-<th></th>
-<th></th>
+<th align="center">Byte 1</th>
+<th align="center"></th>
+<th align="center"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Bit 7 – 2</td>
-<td>Bit 1</td>
-<td>Bit 0</td>
+<td align="center">Bit 7 – 2</td>
+<td align="center">Bit 1</td>
+<td align="center">Bit 0</td>
 </tr>
 <tr class="even">
-<td>Reserved</td>
-<td><a href="#value:adc-overrun"><code>ADC Overrun</code></a></td>
-<td>Bluetooth <a href="#value:transmission-failure"><code>Transmission Failure</code></a></td>
+<td align="center">Reserved</td>
+<td align="center"><a href="#value:adc-overrun"><code>ADC Overrun</code></a></td>
+<td align="center">Bluetooth <a href="#value:transmission-failure"><code>Transmission Failure</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -2718,18 +2718,18 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
-<th></th>
+<th align="center">Byte 1</th>
+<th align="center"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Bit 7 – 2</td>
-<td>Bit 0</td>
+<td align="center">Bit 7 – 2</td>
+<td align="center">Bit 0</td>
 </tr>
 <tr class="even">
-<td>Reserved</td>
-<td>CAN <a href="#value:transmission-failure"><code>Transmission Failure</code></a></td>
+<td align="center">Reserved</td>
+<td align="center">CAN <a href="#value:transmission-failure"><code>Transmission Failure</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -2739,84 +2739,84 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 2</th>
+<th align="center">Byte 2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Reserved</td>
+<td align="center">Reserved</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 3</th>
+<th align="center">Byte 3</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Reserved</td>
+<td align="center">Reserved</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 4</th>
+<th align="center">Byte 4</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Reserved</td>
+<td align="center">Reserved</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 5</th>
+<th align="center">Byte 5</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Status Word Mask</td>
+<td align="center">Status Word Mask</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 6</th>
+<th align="center">Byte 6</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Status Word Mask</td>
+<td align="center">Status Word Mask</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 7</th>
+<th align="center">Byte 7</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Status Word Mask</td>
+<td align="center">Status Word Mask</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 8</th>
+<th align="center">Byte 8</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Status Word Mask</td>
+<td align="center">Status Word Mask</td>
 </tr>
 </tbody>
 </table>
@@ -2847,85 +2847,85 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Reserved</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Connect</td>
 </tr>
 <tr class="odd">
-<td><code>2</code></td>
+<td align="right"><code>2</code></td>
 <td>Get number of available devices</td>
 </tr>
 <tr class="even">
-<td><code>3</code></td>
+<td align="right"><code>3</code></td>
 <td>Write device name #1 and set device name #2 to <code>NULL</code></td>
 </tr>
 <tr class="odd">
-<td><code>4</code></td>
+<td align="right"><code>4</code></td>
 <td>Write device name #2 and push it to STH (read will be equivalent in the future)</td>
 </tr>
 <tr class="even">
-<td><code>5</code></td>
+<td align="right"><code>5</code></td>
 <td>Read first part (6 bytes) of device name</td>
 </tr>
 <tr class="odd">
-<td><code>6</code></td>
+<td align="right"><code>6</code></td>
 <td>Read second part (2 bytes) of device name</td>
 </tr>
 <tr class="even">
-<td><code>7</code></td>
+<td align="right"><code>7</code></td>
 <td>Connect to device (with device number)</td>
 </tr>
 <tr class="odd">
-<td><code>8</code></td>
+<td align="right"><code>8</code></td>
 <td>Check if connected</td>
 </tr>
 <tr class="even">
-<td><code>9</code></td>
+<td align="right"><code>9</code></td>
 <td>Disconnect</td>
 </tr>
 <tr class="odd">
-<td><code>10</code></td>
+<td align="right"><code>10</code></td>
 <td>Get send counter</td>
 </tr>
 <tr class="even">
-<td><code>11</code></td>
+<td align="right"><code>11</code></td>
 <td>Received RX frames</td>
 </tr>
 <tr class="odd">
-<td><code>12</code></td>
+<td align="right"><code>12</code></td>
 <td>Absolute RSSI indicator (number must be interpreted as negative)</td>
 </tr>
 <tr class="even">
-<td><code>13</code></td>
+<td align="right"><code>13</code></td>
 <td>Read energy mode reduced</td>
 </tr>
 <tr class="odd">
-<td><code>14</code></td>
+<td align="right"><code>14</code></td>
 <td>Write energy mode reduced</td>
 </tr>
 <tr class="even">
-<td><code>15</code></td>
+<td align="right"><code>15</code></td>
 <td>Read energy mode lowest</td>
 </tr>
 <tr class="odd">
-<td><code>16</code></td>
+<td align="right"><code>16</code></td>
 <td>Write energy mode lowest</td>
 </tr>
 <tr class="even">
-<td><code>17</code></td>
+<td align="right"><code>17</code></td>
 <td>Bluetooth MAC address</td>
 </tr>
 <tr class="odd">
-<td><code>18</code></td>
+<td align="right"><code>18</code></td>
 <td>Connect to device (with Bluetooth MAC address)</td>
 </tr>
 </tbody>
@@ -2934,86 +2934,86 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li><p><a name="value:bluetooth-value"><code>Bluetooth Value</code></a></p>
 <table>
 <colgroup>
-<col width="26%" />
-<col width="73%" />
+<col width="25%" />
+<col width="74%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th><a href="#value:bluetooth-subcommand"><code>Bluetooth Subcommand</code></a></th>
+<th align="right"><a href="#value:bluetooth-subcommand"><code>Bluetooth Subcommand</code></a></th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>–</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>–</td>
 </tr>
 <tr class="odd">
-<td><code>2</code></td>
+<td align="right"><code>2</code></td>
 <td>–</td>
 </tr>
 <tr class="even">
-<td><code>3</code></td>
+<td align="right"><code>3</code></td>
 <td>ASCII string</td>
 </tr>
 <tr class="odd">
-<td><code>4</code></td>
+<td align="right"><code>4</code></td>
 <td>ASCII string (<code>NULL</code>)</td>
 </tr>
 <tr class="even">
-<td><code>5</code></td>
+<td align="right"><code>5</code></td>
 <td>–</td>
 </tr>
 <tr class="odd">
-<td><code>6</code></td>
+<td align="right"><code>6</code></td>
 <td>–</td>
 </tr>
 <tr class="even">
-<td><code>7</code></td>
+<td align="right"><code>7</code></td>
 <td>–</td>
 </tr>
 <tr class="odd">
-<td><code>8</code></td>
+<td align="right"><code>8</code></td>
 <td>–</td>
 </tr>
 <tr class="even">
-<td><code>9</code></td>
+<td align="right"><code>9</code></td>
 <td>–</td>
 </tr>
 <tr class="odd">
-<td><code>10</code></td>
+<td align="right"><code>10</code></td>
 <td>–</td>
 </tr>
 <tr class="even">
-<td><code>11</code></td>
+<td align="right"><code>11</code></td>
 <td>–</td>
 </tr>
 <tr class="odd">
-<td><code>12</code></td>
+<td align="right"><code>12</code></td>
 <td>–</td>
 </tr>
 <tr class="even">
-<td><code>13</code></td>
+<td align="right"><code>13</code></td>
 <td>–</td>
 </tr>
 <tr class="odd">
-<td><code>14</code></td>
+<td align="right"><code>14</code></td>
 <td>Byte 3 – 6: Time form normal to reduced energy mode in ms <br/> Byte 7 – 8: Advertisement time for reduced energy mode in ms <br/> Big endian</td>
 </tr>
 <tr class="even">
-<td><code>15</code></td>
+<td align="right"><code>15</code></td>
 <td>–</td>
 </tr>
 <tr class="odd">
-<td><code>16</code></td>
+<td align="right"><code>16</code></td>
 <td>Byte 3 – 6: Time form reduced to lowest energy mode in ms <br/> Byte 7 – 8: Advertisement time for lowest energy mode in ms <br/> Little endian 0 = read</td>
 </tr>
 <tr class="even">
-<td><code>17</code></td>
+<td align="right"><code>17</code></td>
 <td>Byte 3: Value <code>255</code> (self addressing)</td>
 </tr>
 </tbody>
@@ -3026,81 +3026,81 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </colgroup>
 <thead>
 <tr class="header">
-<th><a href="#value:bluetooth-subcommand"><code>Bluetooth Subcommand</code></a></th>
+<th align="right"><a href="#value:bluetooth-subcommand"><code>Bluetooth Subcommand</code></a></th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td><code>NULL</code></td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td><code>NULL</code></td>
 </tr>
 <tr class="odd">
-<td><code>2</code></td>
+<td align="right"><code>2</code></td>
 <td>ASCII string containing the number of available devices</td>
 </tr>
 <tr class="even">
-<td><code>3</code></td>
+<td align="right"><code>3</code></td>
 <td>ASCII string containing the first 6 characters of the Bluetooth advertisement name</td>
 </tr>
 <tr class="odd">
-<td><code>4</code></td>
+<td align="right"><code>4</code></td>
 <td>ASCII string containing the last 2 characters of the Bluetooth advertisement name</td>
 </tr>
 <tr class="even">
-<td><code>5</code></td>
+<td align="right"><code>5</code></td>
 <td>ASCII string</td>
 </tr>
 <tr class="odd">
-<td><code>6</code></td>
+<td align="right"><code>6</code></td>
 <td>ASCI string of connected device or <code>NULL</code> if not connected</td>
 </tr>
 <tr class="even">
-<td><code>7</code></td>
+<td align="right"><code>7</code></td>
 <td><code>NULL</code> (Byte 3 is <code>true</code> if in search mode, at least single device was found, no legacy mode and scanning mode active; <code>false</code> otherwise)</td>
 </tr>
 <tr class="odd">
-<td><code>8</code></td>
+<td align="right"><code>8</code></td>
 <td><code>NULL</code> if not connected <br/> Not <code>NULL</code> otherwise</td>
 </tr>
 <tr class="even">
-<td><code>9</code></td>
+<td align="right"><code>9</code></td>
 <td><code>NULL</code></td>
 </tr>
 <tr class="odd">
-<td><code>10</code></td>
+<td align="right"><code>10</code></td>
 <td>6 Byte <code>unsigned int</code></td>
 </tr>
 <tr class="even">
-<td><code>11</code></td>
+<td align="right"><code>11</code></td>
 <td>6 Byte <code>unsigned int</code></td>
 </tr>
 <tr class="odd">
-<td><code>12</code></td>
+<td align="right"><code>12</code></td>
 <td>Byte 3: <code>uint8_t</code> deviceType <br/> Byte 4: <code>int8_t</code> <br/> Byte 5 – 8: <code>NULL</code></td>
 </tr>
 <tr class="even">
-<td><code>13</code></td>
+<td align="right"><code>13</code></td>
 <td>Byte 3 – 6: Time form normal to reduced energy mode in ms <br/> Byte 7 – 8: Advertisement time for reduced energy mode in ms <br/> Big Endian</td>
 </tr>
 <tr class="odd">
-<td><code>14</code></td>
+<td align="right"><code>14</code></td>
 <td>Byte 3 – 6: Time form normal to reduced energy mode in ms <br/> Byte 7 – 8: Advertisement time for reduced energy mode in ms <br/> Big Endian</td>
 </tr>
 <tr class="even">
-<td><code>15</code></td>
+<td align="right"><code>15</code></td>
 <td>Byte 3 – 6: Time form reduced to lowest energy mode in ms <br/> Byte 7 – 8: Advertisement time for lowest energy mode in ms <br/> Little Endian</td>
 </tr>
 <tr class="odd">
-<td><code>16</code></td>
+<td align="right"><code>16</code></td>
 <td>Byte 3 – 6: Time form reduced to lowest energy mode in ms <br/> Byte 7 – 8: Advertisement time for lowest energy mode in ms <br/> Little Endian</td>
 </tr>
 <tr class="even">
-<td><code>17</code></td>
+<td align="right"><code>17</code></td>
 <td>Byte 3 – 6: Bluetooth MAC address in little endian format</td>
 </tr>
 </tbody>
@@ -3111,36 +3111,36 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
+<th align="center">Byte 1</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#value:bluetooth-subcommand"><code>Bluetooth Subcommand</code></a></td>
+<td align="center"><a href="#value:bluetooth-subcommand"><code>Bluetooth Subcommand</code></a></td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 2</th>
+<th align="center">Byte 2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#value:bluetooth-device-number"><code>Device Number</code></a></td>
+<td align="center"><a href="#value:bluetooth-device-number"><code>Device Number</code></a></td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 3 – 8</th>
+<th align="center">Byte 3 – 8</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#value:bluetooth-value"><code>Bluetooth Value</code></a></td>
+<td align="center"><a href="#value:bluetooth-value"><code>Bluetooth Value</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -3151,36 +3151,36 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
+<th align="center">Byte 1</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Same as Payload</td>
+<td align="center">Same as Payload</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 2</th>
+<th align="center">Byte 2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Same as Payload</td>
+<td align="center">Same as Payload</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 3 – 8</th>
+<th align="center">Byte 3 – 8</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#value:bluetooth-return-value"><code>Bluetooth Return Value</code></a></td>
+<td align="center"><a href="#value:bluetooth-return-value"><code>Bluetooth Return Value</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -3226,49 +3226,49 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </colgroup>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Data Amount</th>
 <th>Possible Data</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
+<td align="right">0</td>
 <td>Stop (stream)</td>
 <td>• value 1 <br/> • value 2 <br/> • value 3 <br/> • value 1 / value 2 / value 3 <br/> • value 1 / value 2 <br/> • value 1 / value 3 <br/> • value 2 / value 3 <br/></td>
 </tr>
 <tr class="even">
-<td>1</td>
+<td align="right">1</td>
 <td>1 data set</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>2</td>
+<td align="right">2</td>
 <td>3 data sets</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>3</td>
+<td align="right">3</td>
 <td>6 data sets</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>4</td>
+<td align="right">4</td>
 <td>10 data sets</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>5</td>
+<td align="right">5</td>
 <td>15 data sets</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>6</td>
+<td align="right">6</td>
 <td>20 data sets</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>7</td>
+<td align="right">7</td>
 <td>30 data sets</td>
 <td>• value 1 <br/> • value 2 <br/> • value 3</td>
 </tr>
@@ -3279,17 +3279,17 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Stream</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Single Request</td>
 </tr>
 </tbody>
@@ -3298,17 +3298,17 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>2 Bytes for each data point</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>3 Byte for data point</td>
 </tr>
 </tbody>
@@ -3317,17 +3317,17 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Data for specified data point will not be measured/sent</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Data for specified data point will be measured/sent</td>
 </tr>
 </tbody>
@@ -3354,30 +3354,30 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
+<th align="center">Byte 1</th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Bit 7</td>
-<td>Bit 6</td>
-<td>Bit 5</td>
-<td>Bit 4</td>
-<td>Bit 3</td>
-<td>Bit 2 – 0</td>
+<td align="center">Bit 7</td>
+<td align="center">Bit 6</td>
+<td align="center">Bit 5</td>
+<td align="center">Bit 4</td>
+<td align="center">Bit 3</td>
+<td align="center">Bit 2 – 0</td>
 </tr>
 <tr class="even">
-<td><a href="#value:request"><code>Request</code></a></td>
-<td><a href="#value:bytes"><code>Bytes</code></a></td>
-<td>X-Axis <a href="#value:active"><code>Active</code></a></td>
-<td>Y-Axis <a href="#value:active"><code>Active</code></a></td>
-<td>Z-Axis <a href="#value:active"><code>Active</code></a></td>
-<td><a href="#value:data-sets"><code>Data Sets</code></a></td>
+<td align="center"><a href="#value:request"><code>Request</code></a></td>
+<td align="center"><a href="#value:bytes"><code>Bytes</code></a></td>
+<td align="center">X-Axis <a href="#value:active"><code>Active</code></a></td>
+<td align="center">Y-Axis <a href="#value:active"><code>Active</code></a></td>
+<td align="center">Z-Axis <a href="#value:active"><code>Active</code></a></td>
+<td align="center"><a href="#value:data-sets"><code>Data Sets</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -3387,24 +3387,24 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
+<th align="center">Byte 1</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Same as Payload</td>
+<td align="center">Same as Payload</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 2</th>
+<th align="center">Byte 2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Sequence Counter</td>
+<td align="center">Sequence Counter</td>
 </tr>
 </tbody>
 </table>
@@ -3413,24 +3413,24 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 3</th>
+<th align="center">Byte 3</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>MSB (BP)</td>
+<td align="center">MSB (BP)</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 4</th>
+<th align="center">Byte 4</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>LSB (BP + 1)</td>
+<td align="center">LSB (BP + 1)</td>
 </tr>
 </tbody>
 </table>
@@ -3440,36 +3440,36 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 3</th>
+<th align="center">Byte 3</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>MSB (BP)</td>
+<td align="center">MSB (BP)</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 4</th>
+<th align="center">Byte 4</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>(BP + 1)</td>
+<td align="center">(BP + 1)</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 5</th>
+<th align="center">Byte 5</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>LSB (BP + 2)</td>
+<td align="center">LSB (BP + 2)</td>
 </tr>
 </tbody>
 </table>
@@ -3491,30 +3491,30 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
+<th align="center">Byte 1</th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Bit 7</td>
-<td>Bit 6</td>
-<td>Bit 5</td>
-<td>Bit 4</td>
-<td>Bit 3</td>
-<td>Bit 2 – 0</td>
+<td align="center">Bit 7</td>
+<td align="center">Bit 6</td>
+<td align="center">Bit 5</td>
+<td align="center">Bit 4</td>
+<td align="center">Bit 3</td>
+<td align="center">Bit 2 – 0</td>
 </tr>
 <tr class="even">
-<td><a href="#value:request"><code>Request</code></a></td>
-<td><a href="#value:bytes"><code>Bytes</code></a></td>
-<td>Voltage 1 <a href="#value:active"><code>Active</code></a></td>
-<td>Voltage 2 <a href="#value:active"><code>Active</code></a></td>
-<td>Voltage 3 <a href="#value:active"><code>Active</code></a></td>
-<td><a href="#value:data-sets"><code>Data Sets</code></a></td>
+<td align="center"><a href="#value:request"><code>Request</code></a></td>
+<td align="center"><a href="#value:bytes"><code>Bytes</code></a></td>
+<td align="center">Voltage 1 <a href="#value:active"><code>Active</code></a></td>
+<td align="center">Voltage 2 <a href="#value:active"><code>Active</code></a></td>
+<td align="center">Voltage 3 <a href="#value:active"><code>Active</code></a></td>
+<td align="center"><a href="#value:data-sets"><code>Data Sets</code></a></td>
 </tr>
 </tbody>
 </table>
@@ -3531,7 +3531,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Number</th>
+<th align="right">Number</th>
 <th>Block Command</th>
 <th>Access</th>
 <th>Permanently Stored</th>
@@ -3539,31 +3539,31 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0x00</code></td>
+<td align="right"><code>0x00</code></td>
 <td><a href="#command:Power-On-Cycles-Power-Off-Cycles">Power On Cycles, Power Off Cycles</a></td>
 <td>Read</td>
 <td>x</td>
 </tr>
 <tr class="even">
-<td><code>0x01</code></td>
+<td align="right"><code>0x01</code></td>
 <td><a href="#command:Operating-time">Operating time</a></td>
 <td>Read</td>
 <td>x</td>
 </tr>
 <tr class="odd">
-<td><code>0x02</code></td>
+<td align="right"><code>0x02</code></td>
 <td><a href="#command:Under-Voltage-Counter">Under Voltage Counter</a></td>
 <td>Read</td>
 <td>x</td>
 </tr>
 <tr class="even">
-<td><code>0x03</code></td>
+<td align="right"><code>0x03</code></td>
 <td><a href="#command:Watchdog-Reset-Counter">Watchdog Reset Counter</a></td>
 <td>Read</td>
 <td>x</td>
 </tr>
 <tr class="odd">
-<td><code>0x04</code></td>
+<td align="right"><code>0x04</code></td>
 <td><a href="#command:Production-Date">Production Date</a></td>
 <td>Read</td>
 <td>x</td>
@@ -3585,24 +3585,24 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1 (MSB) - Byte 4 (LSB)</th>
+<th align="center">Byte 1 (MSB) - Byte 4 (LSB)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Power On Cycles</td>
+<td align="center">Power On Cycles</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 5 (MSB) - Byte 8 (LSB)</th>
+<th align="center">Byte 5 (MSB) - Byte 8 (LSB)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Power Off Cycles</td>
+<td align="center">Power Off Cycles</td>
 </tr>
 </tbody>
 </table>
@@ -3623,24 +3623,24 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1 (MSB) - Byte 4 (LSB)</th>
+<th align="center">Byte 1 (MSB) - Byte 4 (LSB)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Seconds since reset</td>
+<td align="center">Seconds since reset</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 5 (MSB) - Byte 8 (LSB)</th>
+<th align="center">Byte 5 (MSB) - Byte 8 (LSB)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Seconds since first power on</td>
+<td align="center">Seconds since first power on</td>
 </tr>
 </tbody>
 </table>
@@ -3654,12 +3654,12 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1 (MSB) - Byte 4 (LSB)</th>
+<th align="center">Byte 1 (MSB) - Byte 4 (LSB)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Under voltage counter since first power on</td>
+<td align="center">Under voltage counter since first power on</td>
 </tr>
 </tbody>
 </table>
@@ -3673,12 +3673,12 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1 (MSB) - Byte 4 (LSB)</th>
+<th align="center">Byte 1 (MSB) - Byte 4 (LSB)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Watchdog Resets since first power on</td>
+<td align="center">Watchdog Resets since first power on</td>
 </tr>
 </tbody>
 </table>
@@ -3695,12 +3695,12 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </colgroup>
 <thead>
 <tr class="header">
-<th>Byte 1 (MSB) - Byte 4 (LSB)</th>
+<th align="center">Byte 1 (MSB) - Byte 4 (LSB)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>ASCII String of the Production Date in the format: yyyymmdd where y=year, m=month, d=day</td>
+<td align="center">ASCII String of the Production Date in the format: yyyymmdd where y=year, m=month, d=day</td>
 </tr>
 </tbody>
 </table>
@@ -3759,7 +3759,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <h4><span class="header-section-number">11.5.1.1</span> Notes</h4>
 <div id="sampling-rate" class="section level5">
 <h5><span class="header-section-number">11.5.1.1.1</span> Sampling Rate</h5>
-<p><span class="math display">\[ \frac{f_{CLOCK}}{(Prescaler+1)·(AcquisitionTime + 12+1) · OverSamplingRate} \]</span></p>
+<p><span class="math display">\[ \frac{f\_{CLOCK}}{(Prescaler+1)·(AcquisitionTime + 12+1) · OverSamplingRate} \]</span></p>
 <p><span class="math display">\[f_{clock}=38400000 Hz\]</span></p>
 </div>
 <div id="prescaler" class="section level5">
@@ -3833,42 +3833,42 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
-<th></th>
+<th align="center">Byte 1</th>
+<th align="center"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Bit 7</td>
-<td>Bit 6 – 0</td>
+<td align="center">Bit 7</td>
+<td align="center">Bit 6 – 0</td>
 </tr>
 <tr class="even">
-<td><a href="#value:get-set-state2"><code>Get/Set State</code></a></td>
-<td>Reserved</td>
+<td align="center"><a href="#value:get-set-state2"><code>Get/Set State</code></a></td>
+<td align="center">Reserved</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 2</th>
+<th align="center">Byte 2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>ADC Prescaler</td>
+<td align="center">ADC Prescaler</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 3</th>
+<th align="center">Byte 3</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Acquisition time (See Note)</td>
+<td align="center">Acquisition time (See Note)</td>
 </tr>
 </tbody>
 </table>
@@ -3878,36 +3878,36 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </colgroup>
 <thead>
 <tr class="header">
-<th>Byte 4</th>
+<th align="center">Byte 4</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Power of over sampling rate e.g. 10-&gt;1024 OverSampling Rate, 0=no Over Sampling</td>
+<td align="center">Power of over sampling rate e.g. 10-&gt;1024 OverSampling Rate, 0=no Over Sampling</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 5</th>
+<th align="center">Byte 5</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Reference: Voltage*20 e.g. 3.3V-&gt;66</td>
+<td align="center">Reference: Voltage*20 e.g. 3.3V-&gt;66</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 6 - Byte 8</th>
+<th align="center">Byte 6 - Byte 8</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Reserved</td>
+<td align="center">Reserved</td>
 </tr>
 </tbody>
 </table>
@@ -3929,21 +3929,21 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Acceleration</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Temperature</td>
 </tr>
 <tr class="odd">
-<td><code>32</code></td>
+<td align="right"><code>32</code></td>
 <td>Voltage</td>
 </tr>
 </tbody>
@@ -3952,25 +3952,25 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Reserved</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>x-Axis / First measure point</td>
 </tr>
 <tr class="odd">
-<td><code>2</code></td>
+<td align="right"><code>2</code></td>
 <td>y-Axis / Second measure point</td>
 </tr>
 <tr class="even">
-<td><code>3</code></td>
+<td align="right"><code>3</code></td>
 <td>z-Axis / Third measure point</td>
 </tr>
 </tbody>
@@ -3979,17 +3979,17 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Get Value</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Set Value</td>
 </tr>
 </tbody>
@@ -4001,54 +4001,54 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
+<th align="center">Byte 1</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#value:calibration-element"><code>Calibration Element</code></a></td>
+<td align="center"><a href="#value:calibration-element"><code>Calibration Element</code></a></td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 2</th>
+<th align="center">Byte 2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#value:number-of-axis"><code>Number or axis</code></a></td>
+<td align="center"><a href="#value:number-of-axis"><code>Number or axis</code></a></td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 3</th>
-<th></th>
+<th align="center">Byte 3</th>
+<th align="center"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Bit 7</td>
-<td>Bit 6 – 0</td>
+<td align="center">Bit 7</td>
+<td align="center">Bit 6 – 0</td>
 </tr>
 <tr class="even">
-<td><a href="#value:get-set-value"><code>Get/Set Value</code></a></td>
-<td>Reserved</td>
+<td align="center"><a href="#value:get-set-value"><code>Get/Set Value</code></a></td>
+<td align="center">Reserved</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 4</th>
+<th align="center">Byte 4</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Reserved</td>
+<td align="center">Reserved</td>
 </tr>
 </tbody>
 </table>
@@ -4058,12 +4058,12 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </colgroup>
 <thead>
 <tr class="header">
-<th>Byte 5 (MSB) - Byte 8 (LSB)</th>
+<th align="center">Byte 5 (MSB) - Byte 8 (LSB)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>k (Slope) according to IEEE 754 single precision (float)<br /><br />Calibration=kx+d (Also calculation to SI value or any other value)</td>
+<td align="center">k (Slope) according to IEEE 754 single precision (float)<br /><br />Calibration=kx+d (Also calculation to SI value or any other value)</td>
 </tr>
 </tbody>
 </table>
@@ -4073,48 +4073,48 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
+<th align="center">Byte 1</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#value:calibration-element"><code>Calibration Element</code></a></td>
+<td align="center"><a href="#value:calibration-element"><code>Calibration Element</code></a></td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 2</th>
+<th align="center">Byte 2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#value:number-of-axis"><code>Number or axis</code></a></td>
+<td align="center"><a href="#value:number-of-axis"><code>Number or axis</code></a></td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 3</th>
+<th align="center">Byte 3</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Reserved</td>
+<td align="center">Reserved</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 4</th>
+<th align="center">Byte 4</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Reserved</td>
+<td align="center">Reserved</td>
 </tr>
 </tbody>
 </table>
@@ -4124,12 +4124,12 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </colgroup>
 <thead>
 <tr class="header">
-<th>Byte 5 (MSB) - Byte 8 (LSB)</th>
+<th align="center">Byte 5 (MSB) - Byte 8 (LSB)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>k (Slope) according to IEEE 754 single precision (float)<br /><br />Calibration=kx+d (Also calculation to SI value or any other value)</td>
+<td align="center">k (Slope) according to IEEE 754 single precision (float)<br /><br />Calibration=kx+d (Also calculation to SI value or any other value)</td>
 </tr>
 </tbody>
 </table>
@@ -4150,17 +4150,17 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Get (Ignores the remaining bits of this byte)</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Set</td>
 </tr>
 </tbody>
@@ -4169,25 +4169,25 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Reserved</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Inject</td>
 </tr>
 <tr class="odd">
-<td><code>2</code></td>
+<td align="right"><code>2</code></td>
 <td>Eject</td>
 </tr>
 <tr class="even">
-<td><code>3</code></td>
+<td align="right"><code>3</code></td>
 <td>Measure</td>
 </tr>
 </tbody>
@@ -4196,37 +4196,37 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Acceleration</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Temperature (for VREF=1250 temperature gets calculated to m°C)</td>
 </tr>
 <tr class="odd">
-<td><code>32</code></td>
+<td align="right"><code>32</code></td>
 <td>Voltage</td>
 </tr>
 <tr class="even">
-<td><code>96</code></td>
+<td align="right"><code>96</code></td>
 <td>VSS(Ground)</td>
 </tr>
 <tr class="odd">
-<td><code>97</code></td>
+<td align="right"><code>97</code></td>
 <td>VDD (Supply)</td>
 </tr>
 <tr class="even">
-<td><code>98</code></td>
+<td align="right"><code>98</code></td>
 <td>Regulated Internal Power</td>
 </tr>
 <tr class="odd">
-<td><code>99</code></td>
+<td align="right"><code>99</code></td>
 <td>Operation Amplifier Output</td>
 </tr>
 </tbody>
@@ -4235,25 +4235,25 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Reserved</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>1. Dimension(x)</td>
 </tr>
 <tr class="odd">
-<td><code>2</code></td>
+<td align="right"><code>2</code></td>
 <td>2. Dimension(y)</td>
 </tr>
 <tr class="even">
-<td><code>3</code></td>
+<td align="right"><code>3</code></td>
 <td>3. Dimension(z)</td>
 </tr>
 </tbody>
@@ -4265,72 +4265,72 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
-<th></th>
-<th></th>
-<th></th>
+<th align="center">Byte 1</th>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Bit 7</td>
-<td>Bit 6 - Bit 5</td>
-<td>Bit 4</td>
-<td>Bit 3 - Bit 0</td>
+<td align="center">Bit 7</td>
+<td align="center">Bit 6 - Bit 5</td>
+<td align="center">Bit 4</td>
+<td align="center">Bit 3 - Bit 0</td>
 </tr>
 <tr class="even">
-<td><a href="#value:calibration-Get-Set"><code>Calibration Get/Set</code></a></td>
-<td><a href="#value:calibration-Method"><code>Calibration Method</code></a></td>
-<td>Reset</td>
-<td>Reserved</td>
+<td align="center"><a href="#value:calibration-Get-Set"><code>Calibration Get/Set</code></a></td>
+<td align="center"><a href="#value:calibration-Method"><code>Calibration Method</code></a></td>
+<td align="center">Reset</td>
+<td align="center">Reserved</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 2</th>
+<th align="center">Byte 2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#value:calibration-Measurement-Element"><code>Calibration Measurement Element</code></a></td>
+<td align="center"><a href="#value:calibration-Measurement-Element"><code>Calibration Measurement Element</code></a></td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 3</th>
+<th align="center">Byte 3</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#value:Dimension"><code>Dimension</code></a></td>
+<td align="center"><a href="#value:Dimension"><code>Dimension</code></a></td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 4</th>
+<th align="center">Byte 4</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Reserved</td>
+<td align="center">Reserved</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 5 - Byte 8</th>
+<th align="center">Byte 5 - Byte 8</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Reserved</td>
+<td align="center">Reserved</td>
 </tr>
 </tbody>
 </table>
@@ -4340,24 +4340,24 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1 - Byte 4</th>
+<th align="center">Byte 1 - Byte 4</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Same as Payload</td>
+<td align="center">Same as Payload</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 5 - Byte 8</th>
+<th align="center">Byte 5 - Byte 8</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Result</td>
+<td align="center">Result</td>
 </tr>
 </tbody>
 </table>
@@ -4373,17 +4373,17 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Get Sampling Rate</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Set Sampling Rate</td>
 </tr>
 </tbody>
@@ -4392,17 +4392,17 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Reserved</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>LED</td>
 </tr>
 </tbody>
@@ -4411,21 +4411,21 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Reserved</td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>On (Reset value)</td>
 </tr>
 <tr class="odd">
-<td><code>2</code></td>
+<td align="right"><code>2</code></td>
 <td>Off</td>
 </tr>
 </tbody>
@@ -4437,66 +4437,66 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
-<th></th>
+<th align="center">Byte 1</th>
+<th align="center"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Bit 7</td>
-<td>Bit 6 - Bit 0</td>
+<td align="center">Bit 7</td>
+<td align="center">Bit 6 - Bit 0</td>
 </tr>
 <tr class="even">
-<td><a href="#value:Get-Set-Sampling-Rate"><code>Get/Set Sampling Rate</code></a></td>
-<td><a href="#value:LED"><code>LED</code></a></td>
+<td align="center"><a href="#value:Get-Set-Sampling-Rate"><code>Get/Set Sampling Rate</code></a></td>
+<td align="center"><a href="#value:LED"><code>LED</code></a></td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 2</th>
+<th align="center">Byte 2</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Number (0-255)</td>
+<td align="center">Number (0-255)</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 3</th>
+<th align="center">Byte 3</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#value:ON-OFF"><code>ON/OFF</code></a></td>
+<td align="center"><a href="#value:ON-OFF"><code>ON/OFF</code></a></td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 4</th>
+<th align="center">Byte 4</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Reserved</td>
+<td align="center">Reserved</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr class="header">
-<th>Byte 5 - Byte 8</th>
+<th align="center">Byte 5 - Byte 8</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Reserved</td>
+<td align="center">Reserved</td>
 </tr>
 </tbody>
 </table>
@@ -4515,7 +4515,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Number</th>
+<th align="right">Number</th>
 <th>Block Command</th>
 <th>Access</th>
 <th>Permanently Stored</th>
@@ -4523,13 +4523,13 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0x00</code></td>
+<td align="right"><code>0x00</code></td>
 <td><a href="#command:EEPROM-Read">EEPROM Read</a></td>
 <td>Read</td>
 <td>x</td>
 </tr>
 <tr class="even">
-<td><code>0x01</code></td>
+<td align="right"><code>0x01</code></td>
 <td><a href="#command:EEPROM-Write">EEPROM Write</a></td>
 <td>Write</td>
 <td>x</td>
@@ -4550,18 +4550,18 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
-<th>Byte 2</th>
-<th>Byte 3</th>
-<th>Byte 4 - Byte 8</th>
+<th align="center">Byte 1</th>
+<th align="center">Byte 2</th>
+<th align="center">Byte 3</th>
+<th align="center">Byte 4 - Byte 8</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Page</td>
-<td>Offset</td>
-<td>Length</td>
-<td>Reserved</td>
+<td align="center">Page</td>
+<td align="center">Offset</td>
+<td align="center">Length</td>
+<td align="center">Reserved</td>
 </tr>
 </tbody>
 </table>
@@ -4571,20 +4571,20 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
-<th>Byte 2</th>
-<th>Byte 3</th>
-<th>Byte 4</th>
-<th>Byte 5 - Byte 8</th>
+<th align="center">Byte 1</th>
+<th align="center">Byte 2</th>
+<th align="center">Byte 3</th>
+<th align="center">Byte 4</th>
+<th align="center">Byte 5 - Byte 8</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Page</td>
-<td>Offset</td>
-<td>Length</td>
-<td>Reserved</td>
-<td>Data</td>
+<td align="center">Page</td>
+<td align="center">Offset</td>
+<td align="center">Length</td>
+<td align="center">Reserved</td>
+<td align="center">Data</td>
 </tr>
 </tbody>
 </table>
@@ -4605,20 +4605,20 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Byte 1</th>
-<th>Byte 2</th>
-<th>Byte 3</th>
-<th>Byte 4</th>
-<th>Byte 5 - Byte 8</th>
+<th align="center">Byte 1</th>
+<th align="center">Byte 2</th>
+<th align="center">Byte 3</th>
+<th align="center">Byte 4</th>
+<th align="center">Byte 5 - Byte 8</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Page</td>
-<td>Offset</td>
-<td>Length</td>
-<td>Reserved</td>
-<td>Data</td>
+<td align="center">Page</td>
+<td align="center">Offset</td>
+<td align="center">Length</td>
+<td align="center">Reserved</td>
+<td align="center">Data</td>
 </tr>
 </tbody>
 </table>
@@ -4982,21 +4982,21 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
+<td align="right">0</td>
 <td>Reserved</td>
 </tr>
 <tr class="even">
-<td>1</td>
+<td align="right">1</td>
 <td>Line</td>
 </tr>
 <tr class="odd">
-<td>2</td>
+<td align="right">2</td>
 <td>Ramp</td>
 </tr>
 </tbody>
@@ -5018,21 +5018,21 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0</td>
+<td align="right">0</td>
 <td>Reserved</td>
 </tr>
 <tr class="even">
-<td>1</td>
+<td align="right">1</td>
 <td>Line</td>
 </tr>
 <tr class="odd">
-<td>2</td>
+<td align="right">2</td>
 <td>Ramp</td>
 </tr>
 </tbody>
@@ -5054,49 +5054,49 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Value</th>
+<th align="right">Value</th>
 <th>Description</th>
 <th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>0</code></td>
+<td align="right"><code>0</code></td>
 <td>Specific Error</td>
 <td></td>
 </tr>
 <tr class="even">
-<td><code>1</code></td>
+<td align="right"><code>1</code></td>
 <td>Not available</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td><code>2</code></td>
+<td align="right"><code>2</code></td>
 <td>General Error</td>
 <td></td>
 </tr>
 <tr class="even">
-<td><code>3</code></td>
+<td align="right"><code>3</code></td>
 <td>Write not allowed</td>
 <td>Setting of memory area in word not allowed</td>
 </tr>
 <tr class="odd">
-<td><code>4</code></td>
+<td align="right"><code>4</code></td>
 <td>Unsupported format</td>
 <td>64 Byte Data via CAN2.0 is not possible</td>
 </tr>
 <tr class="even">
-<td><code>5</code></td>
+<td align="right"><code>5</code></td>
 <td>Wrong key/magic number</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td><code>6</code></td>
+<td align="right"><code>6</code></td>
 <td>No SuperFrame inside SuperFrame</td>
 <td></td>
 </tr>
 <tr class="even">
-<td><code>7</code></td>
+<td align="right"><code>7</code></td>
 <td>EEPROM defect</td>
 <td></td>
 </tr>
