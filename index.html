@@ -2971,7 +2971,11 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tr>
 </tbody>
 </table></li>
-<li><p><a name="value:bluetooth-device-number"><code>Device Number</code></a>: Sequential positive number assigned by STU to available STH nodes; For a single STH this number will be <code>0</code>.</p></li>
+<li><p><a name="value:bluetooth-device-number"><code>Device Number</code></a>: Sequential positive number assigned by STU to available STH nodes</p>
+<ul>
+<li>For a single STH this number will be <code>0</code></li>
+<li>The number <code>255</code> (<code>0xff</code>) is reserved for “self addressing” (used for example when we ask a connected STH for its own MAC address)</li>
+</ul></li>
 <li><p><a name="value:bluetooth-value"><code>Bluetooth Value</code></a></p>
 <table>
 <colgroup>
@@ -3055,7 +3059,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tr>
 <tr class="even">
 <td align="right"><code>17</code></td>
-<td>Byte 3: Value <code>255</code> (self addressing)</td>
+<td>–</td>
 </tr>
 </tbody>
 </table></li>
