@@ -3062,8 +3062,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li><p><a name="value:bluetooth-return-value"><code>Bluetooth Return Value</code></a></p>
 <table>
 <colgroup>
-<col width="27%" />
-<col width="72%" />
+<col width="25%" />
+<col width="75%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -3102,11 +3102,11 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tr>
 <tr class="even">
 <td align="right"><code>7</code></td>
-<td><code>NULL</code> (Byte 3 is <code>true</code> if in search mode, at least single device was found, no legacy mode and scanning mode active; <code>false</code> otherwise)</td>
+<td>First byte is: <br/> •<code>true</code> (<code>1</code>) if in search mode, at least single device was found, no legacy mode and scanning mode active <br/> • <code>false</code> (<code>0</code>) otherwise</td>
 </tr>
 <tr class="odd">
 <td align="right"><code>8</code></td>
-<td><code>NULL</code> if not connected <br/> Not <code>NULL</code> otherwise</td>
+<td>First byte is: <br/> • <code>true</code> (<code>1</code>) if connected <br/> • <code>false</code> (<code>0</code>) otherwise</td>
 </tr>
 <tr class="even">
 <td align="right"><code>9</code></td>
