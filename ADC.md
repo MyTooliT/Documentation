@@ -5,7 +5,7 @@
 
 # Sources
 
-- ADC stuff in BGM data sheets: search for SFDR - spuriousFreeDynRange (same as max. frequency, but good search query keyword)
+- ADC stuff in BGM data sheets: search for SFDR - Spurious-free dynamic range (same as max. frequency, but good search query keyword)
 - 1MS/s as adc info (max. adc)
 - oversample rates taken from Walther documentation, since result gets to 8kHz (what we use) this seems plausible
 
