@@ -1,7 +1,7 @@
 # guesstimates
 
-- 3.9kS/s \* 256 oversamples = 1MS/S --> 500kHz max. unambigous signal detection (nyquist)
-- 15.6 kS/s \* 64 oversamples = 15.6kS/s --> 8kHz max. unambigous signal detection (nyquist)
+- $\frac{3.9 kS}{s} · 256 ~ \text{oversamples} = \frac{1 MS}{s}$ → 500kHz max. unambigous signal detection (nyquist)
+- $\frac{15.6 kS}{s} · 64 ~ \text{oversamples} = \frac{15.6 kS}{s}$ → 8kHz max. unambigous signal detection (nyquist)
 
 # sources:
 
