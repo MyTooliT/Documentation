@@ -2880,6 +2880,13 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <div id="command-bluetooth" class="section level3">
 <h3><span class="header-section-number">12.2.6</span> Command <code>Bluetooth</code></h3>
 <ul>
+<li><p>In general you need at least the following commands to connect to an STH</p>
+<ol style="list-style-type: decimal">
+<li><code>Activate</code>: Activate Bluetooth on the STU</li>
+<li><code>Get number of available devices</code>: Check which STHs are available at the STU</li>
+<li><code>Connect to device (with Bluetooth MAC address)</code> or <code>Connect to device (with device number)</code>: Connect to the STH at the specified STU</li>
+</ol>
+<p>Connecting to the STH will not work, if you do not <strong>check for available devices first</strong></p></li>
 <li><p><a name="value:bluetooth-subcommand"><code>Bluetooth Subcommand</code></a></p>
 <table>
 <colgroup>
@@ -3086,7 +3093,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tr>
 <tr class="even">
 <td align="right"><code>1</code></td>
-<td><code>NULL</code></td>
+<td>6 Bytes containing <code>NULL</code> (<code>0</code>)</td>
 </tr>
 <tr class="odd">
 <td align="right"><code>2</code></td>
@@ -3114,11 +3121,11 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tr>
 <tr class="odd">
 <td align="right"><code>8</code></td>
-<td>First byte is: <br/> • <code>true</code> (<code>1</code>) if connected <br/> • <code>false</code> (<code>0</code>) otherwise</td>
+<td>First byte is: <br/> • <code>true</code> (<code>1</code>) if connected <br/> • <code>false</code> (<code>0</code>) otherwise <br/> Followed by 5 bytes containing <code>NULL</code> (<code>0</code>)</td>
 </tr>
 <tr class="even">
 <td align="right"><code>9</code></td>
-<td><code>NULL</code></td>
+<td>6 Bytes containing <code>NULL</code> (<code>0</code>)</td>
 </tr>
 <tr class="odd">
 <td align="right"><code>10</code></td>
