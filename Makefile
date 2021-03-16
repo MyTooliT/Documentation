@@ -1,13 +1,13 @@
 all: init bookdown-epub bookdown-html bookdown-pdf cleanup
 
+# Move pictures into repository root
 init:
-	# Move pictures into repository root
-	cp -r Protocol/Pictures Pictures
-	# Move pictures into repository root
-	cp -r Diagrams/Pictures/* Pictures
+	Rscript -e "dir.create('Pictures')"
+	Rscript -e "file.copy('Protocol/Pictures/', '.', recursive=T)"
+	Rscript -e "file.copy('Diagrams/Pictures/', '.', recursive=T)"
 
+# Remove pictures from repository root
 cleanup:
-	# Remove pictures from repository root
 	rm -rf Pictures
 
 epub: init bookdown-epub cleanup
@@ -16,19 +16,18 @@ html: init bookdown-html cleanup
 
 pdf: init bookdown-pdf cleanup
 
+# Generate EPUB document
 bookdown-epub:
-	# Generate EPUB document
 	Rscript -e "bookdown::render_book('ReadMe.md', 'bookdown::epub_book')"
 
+# Generate (GitBook) HTML document
 bookdown-html:
-	# Generate (GitBook) HTML document
 	Rscript -e "bookdown::render_book('ReadMe.md', 'bookdown::gitbook')"
-	# Rename main HTML file for GitHub pages
 	Rscript -e "file.rename('Bookdown/Documentation.html', 'Bookdown/index.html')"
 
+# Generate PDF
 bookdown-pdf:
-	# Generate PDF
 	Rscript -e "bookdown::render_book('ReadMe.md', 'bookdown::pdf_book')"
 
 clean: cleanup
-	rm -rf Bookdown
+	Rscript -e "unlink('Bookdown', recursive = TRUE)"
