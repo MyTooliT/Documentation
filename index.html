@@ -942,23 +942,23 @@ y = f(x) = k·x + d
 <tbody>
 <tr class="odd">
 <td align="right"><code>0x0</code></td>
-<td><a href="#page:system-configuration">System Configuration</a></td>
+<td><a href="#page:sth-system-configuration">System Configuration</a></td>
 </tr>
 <tr class="even">
 <td align="right"><code>0x4</code></td>
-<td><a href="#page:product-data">Product Data</a></td>
+<td><a href="#page:sth-product-data">Product Data</a></td>
 </tr>
 <tr class="odd">
 <td align="right"><code>0x5</code></td>
-<td><a href="#page:statistics">Statistics</a></td>
+<td><a href="#page:sth-statistics">Statistics</a></td>
 </tr>
 <tr class="even">
 <td align="right"><code>0x8</code></td>
-<td><a href="#page:calibration">Calibration</a></td>
+<td><a href="#page:sth-calibration">Calibration</a></td>
 </tr>
 </tbody>
 </table>
-<p><a name="page:system-configuration"></a></p>
+<p><a name="page:sth-system-configuration"></a></p>
 <div id="page-system-configuration-1" class="section level3">
 <h3><span class="header-section-number">9.1.1</span> Page <code>System Configuration</code></h3>
 <table>
@@ -1050,7 +1050,7 @@ y = f(x) = k·x + d
 <div id="initialization" class="section level4">
 <h4><span class="header-section-number">9.1.1.1</span> Initialization</h4>
 <p>All of the values of the system configuration are set to default values on reset of the STH, if the EEPROM status (byte) is <strong>not</strong> set to <code>Initialized</code> (<code>0xac</code>) or <code>Locked</code> (<code>0xca</code>). The default values are described above. The name is set to the firmware version name (<code>Tanja</code>) and does not use the Base64 encoded Bluetooth MAC address.</p>
-<p><a name="page:product-data"></a></p>
+<p><a name="page:sth-product-data"></a></p>
 </div>
 </div>
 <div id="page-product-data-1" class="section level3">
@@ -1076,7 +1076,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td><a href="#value:hardware-revision">Hardware Revision: Major</a></td>
+<td><a href="#value:sth-hardware-revision">Hardware Revision: Major</a></td>
 <td align="right">13</td>
 <td align="right">1</td>
 <td>False</td>
@@ -1084,7 +1084,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
-<td><a href="#value:hardware-revision">Hardware Revision: Minor</a></td>
+<td><a href="#value:sth-hardware-revision">Hardware Revision: Minor</a></td>
 <td align="right">14</td>
 <td align="right">1</td>
 <td>False</td>
@@ -1092,7 +1092,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td><a href="#value:hardware-revision">Hardware Revision: Patch</a></td>
+<td><a href="#value:sth-hardware-revision">Hardware Revision: Patch</a></td>
 <td align="right">15</td>
 <td align="right">1</td>
 <td>False</td>
@@ -1100,7 +1100,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
-<td><a href="#value:firmware-version">Firmware Version: Major</a></td>
+<td><a href="#value:sth-firmware-version">Firmware Version: Major</a></td>
 <td align="right">21</td>
 <td align="right">1</td>
 <td>False</td>
@@ -1108,7 +1108,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td><a href="#value:firmware-version">Firmware Version: Minor</a></td>
+<td><a href="#value:sth-firmware-version">Firmware Version: Minor</a></td>
 <td align="right">22</td>
 <td align="right">1</td>
 <td>False</td>
@@ -1116,7 +1116,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
-<td><a href="#value:firmware-version">Firmware Version: Patch</a></td>
+<td><a href="#value:sth-firmware-version">Firmware Version: Patch</a></td>
 <td align="right">23</td>
 <td align="right">1</td>
 <td>False</td>
@@ -1124,7 +1124,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td><a href="#value:release-name">Release Name</a></td>
+<td><a href="#value:sth-release-name">Release Name</a></td>
 <td align="right">24</td>
 <td align="right">8</td>
 <td>False</td>
@@ -1132,7 +1132,7 @@ y = f(x) = k·x + d
 <td>UTF-8</td>
 </tr>
 <tr class="odd">
-<td><a href="#value:serial-number">Serial Number</a></td>
+<td><a href="#value:sth-serial-number">Serial Number</a></td>
 <td align="right">32</td>
 <td align="right">32</td>
 <td>True</td>
@@ -1140,7 +1140,7 @@ y = f(x) = k·x + d
 <td>UTF-8</td>
 </tr>
 <tr class="even">
-<td><a href="#value:product-name">Product Name</a></td>
+<td><a href="#value:sth-product-name">Product Name</a></td>
 <td align="right">64</td>
 <td align="right">128</td>
 <td>True</td>
@@ -1148,7 +1148,7 @@ y = f(x) = k·x + d
 <td>UTF-8</td>
 </tr>
 <tr class="odd">
-<td><a href="#value:oem-free-use">OEM Free Use</a></td>
+<td><a href="#value:sth-oem-free-use">OEM Free Use</a></td>
 <td align="right">192</td>
 <td align="right">64</td>
 <td>True</td>
@@ -1160,14 +1160,14 @@ y = f(x) = k·x + d
 <div id="version-numbers-1" class="section level4">
 <h4><span class="header-section-number">9.1.2.1</span> Version Numbers</h4>
 <ul>
-<li><a name="value:hardware-revision"></a> <strong>Hardware Revision</strong>: This number depends on the hardware revision (printed on the PCB). The value itself can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">main configuration file of ICOc</a></li>
-<li><a name="value:firmware-version"></a> <strong>Firmware Version</strong>: This number depends on the current <a href="https://github.com/MyTooliT/STH/releases">STH software version</a></li>
-<li><a name="value:release-name"></a> <strong>Release Name</strong>: This text can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a></li>
-<li><a name="value:serial-number"></a> <strong>Serial Number</strong>: This text can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a></li>
-<li><a name="value:product-name"></a> <strong>Product Name</strong>: This text can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a></li>
-<li><a name="value:oem-free-use"></a> <strong>OEM Free Use</strong>: This value can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a>.</li>
+<li><a name="value:sth-hardware-revision"></a> <strong>Hardware Revision</strong>: This number depends on the hardware revision (printed on the PCB). The value itself can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">main configuration file of ICOc</a></li>
+<li><a name="value:sth-firmware-version"></a> <strong>Firmware Version</strong>: This number depends on the current <a href="https://github.com/MyTooliT/STH/releases">STH software version</a></li>
+<li><a name="value:sth-release-name"></a> <strong>Release Name</strong>: This text can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a></li>
+<li><a name="value:sth-serial-number"></a> <strong>Serial Number</strong>: This text can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a></li>
+<li><a name="value:sth-product-name"></a> <strong>Product Name</strong>: This text can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a></li>
+<li><a name="value:sth-oem-free-use"></a> <strong>OEM Free Use</strong>: This value can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a>.</li>
 </ul>
-<p><a name="page:statistics"></a></p>
+<p><a name="page:sth-statistics"></a></p>
 </div>
 </div>
 <div id="page-statistics-1" class="section level3">
@@ -1231,7 +1231,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td><a href="#value:production-date">Production Date: Year</a></td>
+<td><a href="#value:sth-production-date">Production Date: Year</a></td>
 <td align="right">20</td>
 <td align="right">4</td>
 <td>False</td>
@@ -1240,7 +1240,7 @@ y = f(x) = k·x + d
 <td>ASCII</td>
 </tr>
 <tr class="odd">
-<td><a href="#value:production-date">Production Date: Month</a></td>
+<td><a href="#value:sth-production-date">Production Date: Month</a></td>
 <td align="right">24</td>
 <td align="right">2</td>
 <td>False</td>
@@ -1249,7 +1249,7 @@ y = f(x) = k·x + d
 <td>ASCII</td>
 </tr>
 <tr class="even">
-<td><a href="#value:production-date">Production Date: Day</a></td>
+<td><a href="#value:sth-production-date">Production Date: Day</a></td>
 <td align="right">26</td>
 <td align="right">2</td>
 <td>False</td>
@@ -1258,7 +1258,7 @@ y = f(x) = k·x + d
 <td>ASCII</td>
 </tr>
 <tr class="odd">
-<td><a href="#value:batch-number">Batch Number</a></td>
+<td><a href="#value:sth-batch-number">Batch Number</a></td>
 <td align="right">28</td>
 <td align="right">4</td>
 <td>True</td>
@@ -1269,10 +1269,10 @@ y = f(x) = k·x + d
 </tbody>
 </table>
 <ul>
-<li><a name="value:production-date"><strong>Production Date</strong>:</a> This date depends on the production date of the STH (printed on the PCB). It can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a>.</li>
-<li><a name="value:batch-number"><strong>Batch Number</strong>:</a> This value can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a>.</li>
+<li><a name="value:sth-production-date"><strong>Production Date</strong>:</a> This date depends on the production date of the STH (printed on the PCB). It can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a>.</li>
+<li><a name="value:sth-batch-number"><strong>Batch Number</strong>:</a> This value can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a>.</li>
 </ul>
-<p><a name="page:calibration"></a></p>
+<p><a name="page:sth-calibration"></a></p>
 </div>
 <div id="page-calibration-1" class="section level3">
 <h3><span class="header-section-number">9.1.4</span> Page <code>Calibration</code></h3>
@@ -1344,15 +1344,15 @@ y = f(x) = k·x + d
 <tbody>
 <tr class="odd">
 <td align="right"><code>0x0</code></td>
-<td><a href="#page:system-configuration">System Configuration</a></td>
+<td><a href="#page:stu-system-configuration">System Configuration</a></td>
 </tr>
 <tr class="even">
 <td align="right"><code>0x4</code></td>
-<td><a href="#page:product-data">Product Data</a></td>
+<td><a href="#page:stu-product-data">Product Data</a></td>
 </tr>
 <tr class="odd">
 <td align="right"><code>0x5</code></td>
-<td><a href="#page:statistics">Statistics</a></td>
+<td><a href="#page:stu-statistics">Statistics</a></td>
 </tr>
 </tbody>
 </table>
@@ -1397,7 +1397,7 @@ y = f(x) = k·x + d
 <div id="initialization-1" class="section level4">
 <h4><span class="header-section-number">10.1.1.1</span> Initialization</h4>
 <p>All of the values of the system configuration are set to the default values above on reset of the STU, if the EEPROM status (byte) is <strong>not</strong> set to <code>Initialized</code> (<code>0xac</code>) or <code>Locked</code> (<code>0xca</code>). The values for the sleep times and advertisement times are set (to the same values the STH uses) on initialization too. However, since the STU is not battery-powered these timing values are probably not relevant.</p>
-<p><a name="page:product-data"></a></p>
+<p><a name="page:stu-product-data"></a></p>
 </div>
 </div>
 <div id="page-product-data-2" class="section level3">
@@ -1423,7 +1423,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td><a href="#value:hardware-revision">Hardware Revision: Major</a></td>
+<td><a href="#value:stu-hardware-revision">Hardware Revision: Major</a></td>
 <td align="right">13</td>
 <td align="right">1</td>
 <td>True</td>
@@ -1431,7 +1431,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
-<td><a href="#value:hardware-revision">Hardware Revision: Minor</a></td>
+<td><a href="#value:stu-hardware-revision">Hardware Revision: Minor</a></td>
 <td align="right">14</td>
 <td align="right">1</td>
 <td>True</td>
@@ -1439,7 +1439,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td><a href="#value:hardware-revision">Hardware Revision: Patch</a></td>
+<td><a href="#value:stu-hardware-revision">Hardware Revision: Patch</a></td>
 <td align="right">15</td>
 <td align="right">1</td>
 <td>True</td>
@@ -1447,7 +1447,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
-<td><a href="#value:firmware-version">Firmware Version: Major</a></td>
+<td><a href="#value:stu-firmware-version">Firmware Version: Major</a></td>
 <td align="right">21</td>
 <td align="right">1</td>
 <td>True</td>
@@ -1455,7 +1455,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td><a href="#value:firmware-version">Firmware Version: Minor</a></td>
+<td><a href="#value:stu-firmware-version">Firmware Version: Minor</a></td>
 <td align="right">22</td>
 <td align="right">1</td>
 <td>True</td>
@@ -1463,7 +1463,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
-<td><a href="#value:firmware-version">Firmware Version: Patch</a></td>
+<td><a href="#value:stu-firmware-version">Firmware Version: Patch</a></td>
 <td align="right">23</td>
 <td align="right">1</td>
 <td>True</td>
@@ -1471,7 +1471,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td><a href="#value:release-name">Release Name</a></td>
+<td><a href="#value:stu-release-name">Release Name</a></td>
 <td align="right">24</td>
 <td align="right">8</td>
 <td>True</td>
@@ -1479,7 +1479,7 @@ y = f(x) = k·x + d
 <td>UTF-8</td>
 </tr>
 <tr class="odd">
-<td><a href="#value:serial-number">Serial Number</a></td>
+<td><a href="#value:stu-serial-number">Serial Number</a></td>
 <td align="right">32</td>
 <td align="right">32</td>
 <td>True</td>
@@ -1487,7 +1487,7 @@ y = f(x) = k·x + d
 <td>UTF-8</td>
 </tr>
 <tr class="even">
-<td><a href="#value:product-name">Product Name</a></td>
+<td><a href="#value:stu-product-name">Product Name</a></td>
 <td align="right">64</td>
 <td align="right">128</td>
 <td>True</td>
@@ -1495,7 +1495,7 @@ y = f(x) = k·x + d
 <td>UTF-8</td>
 </tr>
 <tr class="odd">
-<td><a href="#value:oem-free-use">OEM Free Use</a></td>
+<td><a href="#value:stu-oem-free-use">OEM Free Use</a></td>
 <td align="right">192</td>
 <td align="right">64</td>
 <td>True</td>
@@ -1507,14 +1507,14 @@ y = f(x) = k·x + d
 <div id="version-numbers-2" class="section level4">
 <h4><span class="header-section-number">10.1.2.1</span> Version Numbers</h4>
 <ul>
-<li><a name="value:hardware-revision"></a> <strong>Hardware Revision</strong>: This number depends on the hardware revision (printed on the PCB). The value itself can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">main configuration file of ICOc</a></li>
-<li><a name="value:firmware-version"></a> <strong>Firmware Version</strong>: This number depends on the current <a href="https://github.com/MyTooliT/STU/releases">STU software version</a></li>
-<li><a name="value:release-name"></a> <strong>Release Name</strong>: This text can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a></li>
-<li><a name="value:serial-number"></a> <strong>Serial Number</strong>: This text can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a></li>
-<li><a name="value:product-name"></a> <strong>Product Name</strong>: This text can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a></li>
-<li><a name="value:oem-free-use"></a> <strong>OEM Free Use</strong>: This value can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a>.</li>
+<li><a name="value:stu-hardware-revision"></a> <strong>Hardware Revision</strong>: This number depends on the hardware revision (printed on the PCB). The value itself can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">main configuration file of ICOc</a></li>
+<li><a name="value:stu-firmware-version"></a> <strong>Firmware Version</strong>: This number depends on the current <a href="https://github.com/MyTooliT/STU/releases">STU software version</a></li>
+<li><a name="value:stu-release-name"></a> <strong>Release Name</strong>: This text can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a></li>
+<li><a name="value:stu-serial-number"></a> <strong>Serial Number</strong>: This text can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a></li>
+<li><a name="value:stu-product-name"></a> <strong>Product Name</strong>: This text can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a></li>
+<li><a name="value:stu-oem-free-use"></a> <strong>OEM Free Use</strong>: This value can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a>.</li>
 </ul>
-<p><a name="page:statistics"></a></p>
+<p><a name="page:stu-statistics"></a></p>
 </div>
 </div>
 <div id="page-statistics-2" class="section level3">
@@ -1578,7 +1578,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td><a href="#value:production-date">Production Date: Year</a></td>
+<td><a href="#value:stu-production-date">Production Date: Year</a></td>
 <td align="right">20</td>
 <td align="right">4</td>
 <td>True</td>
@@ -1587,7 +1587,7 @@ y = f(x) = k·x + d
 <td>ASCII</td>
 </tr>
 <tr class="odd">
-<td><a href="#value:production-date">Production Date: Month</a></td>
+<td><a href="#value:stu-production-date">Production Date: Month</a></td>
 <td align="right">24</td>
 <td align="right">2</td>
 <td>True</td>
@@ -1596,7 +1596,7 @@ y = f(x) = k·x + d
 <td>ASCII</td>
 </tr>
 <tr class="even">
-<td><a href="#value:production-date">Production Date: Day</a></td>
+<td><a href="#value:stu-production-date">Production Date: Day</a></td>
 <td align="right">26</td>
 <td align="right">2</td>
 <td>True</td>
@@ -1605,7 +1605,7 @@ y = f(x) = k·x + d
 <td>ASCII</td>
 </tr>
 <tr class="odd">
-<td><a href="#value:batch-number">Batch Number</a></td>
+<td><a href="#value:stu-batch-number">Batch Number</a></td>
 <td align="right">28</td>
 <td align="right">4</td>
 <td>True</td>
@@ -1616,8 +1616,8 @@ y = f(x) = k·x + d
 </tbody>
 </table>
 <ul>
-<li><a name="value:production-date"><strong>Production Date</strong>:</a> This date depends on the production date of the STU. It can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a>.</li>
-<li><a name="value:batch-number"><strong>Batch Number</strong>:</a> This value can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a>.</li>
+<li><a name="value:stu-production-date"><strong>Production Date</strong>:</a> This date depends on the production date of the STU. It can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a>.</li>
+<li><a name="value:stu-batch-number"><strong>Batch Number</strong>:</a> This value can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a>.</li>
 </ul>
 
 </div>
