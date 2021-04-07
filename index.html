@@ -2982,7 +2982,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li><p><a name="value:bluetooth-device-number"><code>Device Number</code></a>: Sequential positive number assigned by STU to available STH nodes</p>
 <ul>
 <li>For a single STH this number will be <code>0</code></li>
-<li>The number <code>255</code> (<code>0xff</code>) is reserved for “self addressing” (used for example when we ask a connected STH for its own MAC address). <strong>Note</strong>: A connected STH also returns its own name, if you use a device number other than <code>0xff</code>.</li>
+<li>The number <code>255</code> (<code>0xff</code>) is reserved for “self addressing” (used for example when we ask a connected STH for its own MAC address). <strong>Note</strong>: A connected STH also returns its own name, if you use the read name subcommands (<a href="#command:bluetooth:5"><code>5</code></a> and <a href="#command:bluetooth:6"><code>6</code></a>) and a device number other than <code>0xff</code>.</li>
 </ul></li>
 <li><p><a name="value:bluetooth-value"><code>Bluetooth Value</code></a></p>
 <table>
