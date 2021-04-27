@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>ICOtronic Documentation</title>
   <meta name="description" content="Documentation for the ICOTronic system: https://www.mytoolit.com/ICOtronic" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="ICOtronic Documentation" />
   <meta property="og:type" content="book" />
@@ -50,6 +50,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -116,6 +118,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 </head>
 
@@ -214,7 +217,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="12.7" data-path=""><a href="#block-productdata-and-rfid"><i class="fa fa-check"></i><b>12.7</b> Block <code>ProductData and RFID</code></a><ul>
 <li class="chapter" data-level="12.7.1" data-path=""><a href="#command-global-trade-identification-number-gtin"><i class="fa fa-check"></i><b>12.7.1</b> Command <code>Global Trade Identification Number (GTIN)</code></a></li>
-<li class="chapter" data-level="12.7.2" data-path=""><a href="#command-hardware-revision"><i class="fa fa-check"></i><b>12.7.2</b> Command <code>Hardware Revision</code></a></li>
+<li class="chapter" data-level="12.7.2" data-path=""><a href="#command-hardware-version"><i class="fa fa-check"></i><b>12.7.2</b> Command <code>Hardware Version</code></a></li>
 <li class="chapter" data-level="12.7.3" data-path=""><a href="#command-firmware-version"><i class="fa fa-check"></i><b>12.7.3</b> Command <code>Firmware Version</code></a></li>
 <li class="chapter" data-level="12.7.4" data-path=""><a href="#command-release-name"><i class="fa fa-check"></i><b>12.7.4</b> Command <code>Release Name</code></a></li>
 <li class="chapter" data-level="12.7.5" data-path=""><a href="#command-serial-number"><i class="fa fa-check"></i><b>12.7.5</b> Command <code>Serial Number</code></a></li>
@@ -542,28 +545,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <tr class="even">
 <td align="right">8</td>
 <td align="right">5</td>
-<td>Hardware Revision: Reserved</td>
+<td>Hardware Version: Reserved</td>
 <td></td>
 <td>–</td>
 </tr>
 <tr class="odd">
 <td align="right">13</td>
 <td align="right">1</td>
-<td>Hardware Revision: Major</td>
+<td>Hardware Version: Major</td>
 <td></td>
 <td>Unsigned</td>
 </tr>
 <tr class="even">
 <td align="right">14</td>
 <td align="right">1</td>
-<td>Hardware Revision: Minor</td>
+<td>Hardware Version: Minor</td>
 <td></td>
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
 <td align="right">15</td>
 <td align="right">1</td>
-<td>Hardware Revision: Patch</td>
+<td>Hardware Version: Patch</td>
 <td></td>
 <td>Unsigned</td>
 </tr>
@@ -1076,7 +1079,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td><a href="#value:sth-hardware-revision">Hardware Revision: Major</a></td>
+<td><a href="#value:sth-hardware-version">Hardware Version: Major</a></td>
 <td align="right">13</td>
 <td align="right">1</td>
 <td>False</td>
@@ -1084,7 +1087,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
-<td><a href="#value:sth-hardware-revision">Hardware Revision: Minor</a></td>
+<td><a href="#value:sth-hardware-version">Hardware Version: Minor</a></td>
 <td align="right">14</td>
 <td align="right">1</td>
 <td>False</td>
@@ -1092,7 +1095,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td><a href="#value:sth-hardware-revision">Hardware Revision: Patch</a></td>
+<td><a href="#value:sth-hardware-version">Hardware Version: Patch</a></td>
 <td align="right">15</td>
 <td align="right">1</td>
 <td>False</td>
@@ -1160,7 +1163,7 @@ y = f(x) = k·x + d
 <div id="version-numbers-1" class="section level4">
 <h4><span class="header-section-number">9.1.2.1</span> Version Numbers</h4>
 <ul>
-<li><a name="value:sth-hardware-revision"></a> <strong>Hardware Revision</strong>: This number depends on the hardware revision (printed on the PCB). The value itself can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">main configuration file of ICOc</a></li>
+<li><a name="value:sth-hardware-version"></a> <strong>Hardware Version</strong>: This number depends on the hardware version (printed on the PCB). The value itself can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">main configuration file of ICOc</a></li>
 <li><a name="value:sth-firmware-version"></a> <strong>Firmware Version</strong>: This number depends on the current <a href="https://github.com/MyTooliT/STH/releases">STH software version</a></li>
 <li><a name="value:sth-release-name"></a> <strong>Release Name</strong>: This text can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a></li>
 <li><a name="value:sth-serial-number"></a> <strong>Serial Number</strong>: This text can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a></li>
@@ -1424,7 +1427,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td><a href="#value:stu-hardware-revision">Hardware Revision: Major</a></td>
+<td><a href="#value:stu-hardware-version">Hardware Version: Major</a></td>
 <td align="right">13</td>
 <td align="right">1</td>
 <td>True</td>
@@ -1432,7 +1435,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="odd">
-<td><a href="#value:stu-hardware-revision">Hardware Revision: Minor</a></td>
+<td><a href="#value:stu-hardware-version">Hardware Version: Minor</a></td>
 <td align="right">14</td>
 <td align="right">1</td>
 <td>True</td>
@@ -1440,7 +1443,7 @@ y = f(x) = k·x + d
 <td>Unsigned</td>
 </tr>
 <tr class="even">
-<td><a href="#value:stu-hardware-revision">Hardware Revision: Patch</a></td>
+<td><a href="#value:stu-hardware-version">Hardware Version: Patch</a></td>
 <td align="right">15</td>
 <td align="right">1</td>
 <td>True</td>
@@ -1508,7 +1511,7 @@ y = f(x) = k·x + d
 <div id="version-numbers-2" class="section level4">
 <h4><span class="header-section-number">10.1.2.1</span> Version Numbers</h4>
 <ul>
-<li><a name="value:stu-hardware-revision"></a> <strong>Hardware Revision</strong>: This number depends on the hardware revision (printed on the PCB). The value itself can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">main configuration file of ICOc</a></li>
+<li><a name="value:stu-hardware-version"></a> <strong>Hardware Version</strong>: This number depends on the hardware version (printed on the PCB). The value itself can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">main configuration file of ICOc</a></li>
 <li><a name="value:stu-firmware-version"></a> <strong>Firmware Version</strong>: This number depends on the current <a href="https://github.com/MyTooliT/STU/releases">STU software version</a></li>
 <li><a name="value:stu-release-name"></a> <strong>Release Name</strong>: This text can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a></li>
 <li><a name="value:stu-serial-number"></a> <strong>Serial Number</strong>: This text can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">configuration of ICOc</a></li>
@@ -4709,7 +4712,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tr>
 <tr class="even">
 <td><code>0x01</code></td>
-<td><a href="#command:Hardware-Revision">Hardware Revision</a></td>
+<td><a href="#command:Hardware-Version">Hardware Version</a></td>
 <td>Read</td>
 <td>x</td>
 </tr>
@@ -4762,20 +4765,20 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li>MSB: Byte 0</li>
 <li>LSB: Byte 7</li>
 </ul>
-<p><a name="command:Hardware-Revision"></a></p>
+<p><a name="command:Hardware-Version"></a></p>
 </div>
 </div>
-<div id="command-hardware-revision" class="section level3">
-<h3><span class="header-section-number">12.7.2</span> Command <code>Hardware Revision</code></h3>
+<div id="command-hardware-version" class="section level3">
+<h3><span class="header-section-number">12.7.2</span> Command <code>Hardware Version</code></h3>
 <div id="acknowledgment-payload-10" class="section level4">
 <h4><span class="header-section-number">12.7.2.1</span> Acknowledgment Payload</h4>
 <ul>
 <li>8 Bytes totally
 <ul>
 <li>5 Bytes Reserved</li>
-<li>1 Byte Major Revision</li>
-<li>1 Byte Minor Revision</li>
-<li>1 Byte Build Revision</li>
+<li>1 Byte Major Version</li>
+<li>1 Byte Minor Version</li>
+<li>1 Byte Patch Version</li>
 </ul></li>
 </ul>
 <p><a name="command:Firmware-Version"></a></p>
@@ -4789,9 +4792,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li>8 Bytes totally
 <ul>
 <li>5 Bytes Reserved</li>
-<li>1 Byte Major Revision</li>
-<li>1 Byte Minor Revision</li>
-<li>1 Byte Build Revision</li>
+<li>1 Byte Major Version</li>
+<li>1 Byte Minor Version</li>
+<li>1 Byte Patch Version</li>
 </ul></li>
 </ul>
 <p><a name="command:Release-Name"></a></p>
