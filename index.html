@@ -206,13 +206,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.6.1" data-path=""><a href="#command-eeprom-read"><i class="fa fa-check"></i><b>10.6.1</b> Command <code>EEPROM Read</code></a></li>
 <li class="chapter" data-level="10.6.2" data-path=""><a href="#command-eeprom-write"><i class="fa fa-check"></i><b>10.6.2</b> Command <code>EEPROM Write</code></a></li>
 </ul></li>
-<li class="chapter" data-level="10.7" data-path=""><a href="#block-productdata-and-rfid"><i class="fa fa-check"></i><b>10.7</b> Block <code>ProductData and RFID</code></a><ul>
+<li class="chapter" data-level="10.7" data-path=""><a href="#block-product-data-and-rfid"><i class="fa fa-check"></i><b>10.7</b> Block <code>Product Data and RFID</code></a><ul>
 <li class="chapter" data-level="10.7.1" data-path=""><a href="#command-global-trade-identification-number-gtin"><i class="fa fa-check"></i><b>10.7.1</b> Command <code>Global Trade Identification Number (GTIN)</code></a></li>
 <li class="chapter" data-level="10.7.2" data-path=""><a href="#command-hardware-version"><i class="fa fa-check"></i><b>10.7.2</b> Command <code>Hardware Version</code></a></li>
 <li class="chapter" data-level="10.7.3" data-path=""><a href="#command-firmware-version"><i class="fa fa-check"></i><b>10.7.3</b> Command <code>Firmware Version</code></a></li>
 <li class="chapter" data-level="10.7.4" data-path=""><a href="#command-release-name"><i class="fa fa-check"></i><b>10.7.4</b> Command <code>Release Name</code></a></li>
 <li class="chapter" data-level="10.7.5" data-path=""><a href="#command-serial-number"><i class="fa fa-check"></i><b>10.7.5</b> Command <code>Serial Number</code></a></li>
-<li class="chapter" data-level="10.7.6" data-path=""><a href="#command-name"><i class="fa fa-check"></i><b>10.7.6</b> Command <code>Name</code></a></li>
+<li class="chapter" data-level="10.7.6" data-path=""><a href="#command-product-name"><i class="fa fa-check"></i><b>10.7.6</b> Command <code>Product Name</code></a></li>
 <li class="chapter" data-level="10.7.7" data-path=""><a href="#command-oem-free-use"><i class="fa fa-check"></i><b>10.7.7</b> Command <code>OEM Free Use</code></a></li>
 <li class="chapter" data-level="10.7.8" data-path=""><a href="#command-tool-rfid-product-information"><i class="fa fa-check"></i><b>10.7.8</b> Command <code>Tool RFID product information</code></a></li>
 </ul></li>
@@ -4683,8 +4683,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 </div>
 </div>
-<div id="block-productdata-and-rfid" class="section level2">
-<h2><span class="header-section-number">10.7</span> Block <code>ProductData and RFID</code></h2>
+<div id="block-product-data-and-rfid" class="section level2">
+<h2><span class="header-section-number">10.7</span> Block <code>Product Data and RFID</code></h2>
 <table>
 <thead>
 <tr class="header">
@@ -4727,7 +4727,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tr>
 <tr class="even">
 <td><code>0x08</code> - <code>0x17</code></td>
-<td><a href="#command:Name">Name 1-16</a></td>
+<td><a href="#command:Product-Name">Product Name 1-16</a></td>
 <td>Read</td>
 <td>x</td>
 </tr>
@@ -4844,26 +4844,26 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <table>
 <thead>
 <tr class="header">
-<th>Command</th>
+<th>Number</th>
 <th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><code>0x04</code></td>
-<td>Serial Number 1</td>
+<td>Get first part of serial number</td>
 </tr>
 <tr class="even">
 <td><code>0x05</code></td>
-<td>Serial Number 2</td>
+<td>Get second part of serial number</td>
 </tr>
 <tr class="odd">
 <td><code>0x06</code></td>
-<td>Serial Number 3</td>
+<td>Get third part of serial number</td>
 </tr>
 <tr class="even">
 <td><code>0x07</code></td>
-<td>Serial Number 4</td>
+<td>Get last part of serial number</td>
 </tr>
 </tbody>
 </table>
@@ -4871,13 +4871,14 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <div id="acknowledgment-payload-13" class="section level4">
 <h4><span class="header-section-number">10.7.5.2</span> Acknowledgment Payload</h4>
 <ul>
-<li>UTF-8 String (8 Byte)</li>
+<li>UTF-8 string (8 bytes for each part)</li>
+<li>The whole serial number is a concatenation of its parts starting with the first part of the serial number</li>
 </ul>
-<p><a name="command:Name"></a></p>
+<p><a name="command:Product-Name"></a></p>
 </div>
 </div>
-<div id="command-name" class="section level3">
-<h3><span class="header-section-number">10.7.6</span> Command <code>Name</code></h3>
+<div id="command-product-name" class="section level3">
+<h3><span class="header-section-number">10.7.6</span> Command <code>Product Name</code></h3>
 <div id="notes-7" class="section level4">
 <h4><span class="header-section-number">10.7.6.1</span> Notes</h4>
 <ul>
@@ -4893,67 +4894,67 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <tbody>
 <tr class="odd">
 <td><code>0x08</code></td>
-<td>Name 1</td>
+<td>Get 1. part of product name</td>
 </tr>
 <tr class="even">
 <td><code>0x09</code></td>
-<td>Name 2</td>
+<td>Get 2. part of product name</td>
 </tr>
 <tr class="odd">
 <td><code>0x0A</code></td>
-<td>Name 3</td>
+<td>Get 3. part of product name</td>
 </tr>
 <tr class="even">
 <td><code>0x0B</code></td>
-<td>Name 4</td>
+<td>Get 4. part of product name</td>
 </tr>
 <tr class="odd">
 <td><code>0x0C</code></td>
-<td>Name 5</td>
+<td>Get 5. part of product name</td>
 </tr>
 <tr class="even">
 <td><code>0x0D</code></td>
-<td>Name 6</td>
+<td>Get 6. part of product name</td>
 </tr>
 <tr class="odd">
 <td><code>0x0E</code></td>
-<td>Name 7</td>
+<td>Get 7. part of product name</td>
 </tr>
 <tr class="even">
 <td><code>0x0F</code></td>
-<td>Name 8</td>
+<td>Get 8. part of product name</td>
 </tr>
 <tr class="odd">
 <td><code>0x10</code></td>
-<td>Name 9</td>
+<td>Get 9. part of product name</td>
 </tr>
 <tr class="even">
 <td><code>0x11</code></td>
-<td>Name 10</td>
+<td>Get 10. part of product name</td>
 </tr>
 <tr class="odd">
 <td><code>0x12</code></td>
-<td>Name 11</td>
+<td>Get 11. part of product name</td>
 </tr>
 <tr class="even">
 <td><code>0x13</code></td>
-<td>Name 12</td>
+<td>Get 12. part of product name</td>
 </tr>
 <tr class="odd">
 <td><code>0x14</code></td>
-<td>Name 13</td>
+<td>Get 13. part of product name</td>
 </tr>
 <tr class="even">
 <td><code>0x15</code></td>
-<td>Name 14</td>
+<td>Get 14. part of product name</td>
 </tr>
 <tr class="odd">
 <td><code>0x16</code></td>
-<td>Name 15</td>
+<td>Get 15. part of product name</td>
 </tr>
 <tr class="even">
 <td><code>0x17</code></td>
-<td>Name 16</td>
+<td>Get 16. part of product name</td>
 </tr>
 </tbody>
 </table>
@@ -4961,7 +4962,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <div id="acknowledgment-payload-14" class="section level4">
 <h4><span class="header-section-number">10.7.6.2</span> Acknowledgment Payload</h4>
 <ul>
-<li>UTF-8 String (8 Byte)</li>
+<li>UTF-8 string (8 bytes)</li>
 </ul>
 <p><a name="command:OEM-Free-Use"></a></p>
 </div>
@@ -5016,7 +5017,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <div id="acknowledgment-payload-15" class="section level4">
 <h4><span class="header-section-number">10.7.7.2</span> Acknowledgment Payload</h4>
 <ul>
-<li>8 Byte</li>
+<li>8 bytes for each block command</li>
 </ul>
 <p><a name="command:Tool-RFID-product-information"></a></p>
 </div>
