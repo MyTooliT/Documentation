@@ -4750,12 +4750,18 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <h3><span class="header-section-number">10.7.1</span> Command <code>Global Trade Identification Number (GTIN)</code></h3>
 <div id="acknowledgment-payload-9" class="section level4">
 <h4><span class="header-section-number">10.7.1.1</span> Acknowledgment Payload</h4>
-<ul>
-<li>8 Byte GTIN</li>
-<li>Format: <code>uint64_t</code> (<code>unsigned int</code>)</li>
-<li>MSB: Byte 0</li>
-<li>LSB: Byte 7</li>
-</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Byte 1 (MSB) – Byte 8 (LSB)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">GTIN (<code>unsigned int</code>)</td>
+</tr>
+</tbody>
+</table>
 <p><a name="command:Hardware-Version"></a></p>
 </div>
 </div>
@@ -4763,15 +4769,24 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <h3><span class="header-section-number">10.7.2</span> Command <code>Hardware Version</code></h3>
 <div id="acknowledgment-payload-10" class="section level4">
 <h4><span class="header-section-number">10.7.2.1</span> Acknowledgment Payload</h4>
-<ul>
-<li>8 Bytes totally
-<ul>
-<li>5 Bytes Reserved</li>
-<li>1 Byte Major Version</li>
-<li>1 Byte Minor Version</li>
-<li>1 Byte Patch Version</li>
-</ul></li>
-</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Byte 1 – Byte 5</th>
+<th align="center">Byte 6</th>
+<th align="center">Byte 7</th>
+<th align="center">Byte 8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Reserved</td>
+<td align="center">Major Version</td>
+<td align="center">Minor Version</td>
+<td align="center">Patch Version</td>
+</tr>
+</tbody>
+</table>
 <p><a name="command:Firmware-Version"></a></p>
 </div>
 </div>
@@ -4779,15 +4794,24 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <h3><span class="header-section-number">10.7.3</span> Command <code>Firmware Version</code></h3>
 <div id="acknowledgment-payload-11" class="section level4">
 <h4><span class="header-section-number">10.7.3.1</span> Acknowledgment Payload</h4>
-<ul>
-<li>8 Bytes totally
-<ul>
-<li>5 Bytes Reserved</li>
-<li>1 Byte Major Version</li>
-<li>1 Byte Minor Version</li>
-<li>1 Byte Patch Version</li>
-</ul></li>
-</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Byte 1 – Byte 5</th>
+<th align="center">Byte 6</th>
+<th align="center">Byte 7</th>
+<th align="center">Byte 8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Reserved</td>
+<td align="center">Major Version</td>
+<td align="center">Minor Version</td>
+<td align="center">Patch Version</td>
+</tr>
+</tbody>
+</table>
 <p><a name="command:Release-Name"></a></p>
 </div>
 </div>
@@ -4795,8 +4819,19 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <h3><span class="header-section-number">10.7.4</span> Command <code>Release Name</code></h3>
 <div id="acknowledgment-payload-12" class="section level4">
 <h4><span class="header-section-number">10.7.4.1</span> Acknowledgment Payload</h4>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Byte 1 – Byte 8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Firmware Release Name (ASCII)</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li>8 Byte ASCII Code</li>
 <li><code>NULL</code> terminated or 8 bytes long</li>
 </ul>
 <p><a name="command:Serial-Number"></a></p>
@@ -5153,8 +5188,6 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tr>
 </tbody>
 </table>
-<pre><code></code></pre>
-<pre><code></code></pre>
 
 </div>
 </div>
