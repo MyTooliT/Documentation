@@ -8,7 +8,7 @@ init:
 
 # Remove pictures from repository root
 cleanup:
-	rm -rf Pictures
+	Rscript -e "unlink('Pictures', recursive = TRUE)"
 
 epub: init bookdown-epub cleanup
 
