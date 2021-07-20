@@ -205,6 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.6" data-path=""><a href="#block-eeprom"><i class="fa fa-check"></i><b>10.6</b> Block <code>EEPROM</code></a><ul>
 <li class="chapter" data-level="10.6.1" data-path=""><a href="#command-eeprom-read"><i class="fa fa-check"></i><b>10.6.1</b> Command <code>EEPROM Read</code></a></li>
 <li class="chapter" data-level="10.6.2" data-path=""><a href="#command-eeprom-write"><i class="fa fa-check"></i><b>10.6.2</b> Command <code>EEPROM Write</code></a></li>
+<li class="chapter" data-level="10.6.3" data-path=""><a href="#command-read-write-request-counter"><i class="fa fa-check"></i><b>10.6.3</b> Command <code>Read Write Request Counter</code></a></li>
 </ul></li>
 <li class="chapter" data-level="10.7" data-path=""><a href="#block-product-data-and-rfid"><i class="fa fa-check"></i><b>10.7</b> Block <code>Product Data and RFID</code></a><ul>
 <li class="chapter" data-level="10.7.1" data-path=""><a href="#command-global-trade-identification-number-gtin"><i class="fa fa-check"></i><b>10.7.1</b> Command <code>Global Trade Identification Number (GTIN)</code></a></li>
@@ -3064,7 +3065,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tr>
 <tr class="odd">
 <td align="right"><a href="#command:bluetooth:14"><code>14</code></a></td>
-<td>Byte 3 – 6: Time form normal to reduced energy mode in ms <br/> Byte 7 – 8: Advertisement time for reduced energy mode in ms <br/> Big endian</td>
+<td>Byte 3 – 6: Time from normal to reduced energy mode in ms <br/> Byte 7 – 8: Advertisement time for reduced energy mode in ms <br/> Little endian</td>
 </tr>
 <tr class="even">
 <td align="right"><a href="#command:bluetooth:15"><code>15</code></a></td>
@@ -3072,7 +3073,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tr>
 <tr class="odd">
 <td align="right"><a href="#command:bluetooth:16"><code>16</code></a></td>
-<td>Byte 3 – 6: Time form reduced to lowest energy mode in ms <br/> Byte 7 – 8: Advertisement time for lowest energy mode in ms <br/> Little endian 0 = read</td>
+<td>Byte 3 – 6: Time from reduced to lowest energy mode in ms <br/> Byte 7 – 8: Advertisement time for lowest energy mode in ms <br/> Little endian 0 = read</td>
 </tr>
 <tr class="even">
 <td align="right"><a href="#command:bluetooth:17"><code>17</code></a></td>
@@ -4601,6 +4602,12 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <td>Write</td>
 <td>x</td>
 </tr>
+<tr class="odd">
+<td align="right"><code>0x20</code></td>
+<td><a href="#command:Read-Write-Request-Counter">Read Write Request Counter</a></td>
+<td>Read</td>
+<td>x</td>
+</tr>
 </tbody>
 </table>
 <p><a name="command:EEPROM-Read"></a></p>
@@ -4695,6 +4702,48 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <ul>
 <li>Same structure as payload</li>
 </ul>
+<p><a name="command:Read-Write-Request-Counter"></a></p>
+</div>
+</div>
+<div id="command-read-write-request-counter" class="section level3">
+<h3><span class="header-section-number">10.6.3</span> Command <code>Read Write Request Counter</code></h3>
+<div id="notes-6" class="section level4">
+<h4><span class="header-section-number">10.6.3.1</span> Notes</h4>
+<ul>
+<li>The current documentation of this command is based on the (old) code of ICOc</li>
+</ul>
+</div>
+<div id="payload-13" class="section level4">
+<h4><span class="header-section-number">10.6.3.2</span> Payload</h4>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Byte 1 - Byte 8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="acknowledgment-payload-9" class="section level4">
+<h4><span class="header-section-number">10.6.3.3</span> Acknowledgment Payload</h4>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Byte 1 - Byte 4</th>
+<th align="center">Byte 5 - Byte 8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Undefined</td>
+<td align="center">EEPROM Write Requests</td>
+</tr>
+</tbody>
+</table>
 <p><a name="block:ProductionData-and-RFID"></a></p>
 </div>
 </div>
@@ -4764,7 +4813,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:GTIN"></a></p>
 <div id="command-global-trade-identification-number-gtin" class="section level3">
 <h3><span class="header-section-number">10.7.1</span> Command <code>Global Trade Identification Number (GTIN)</code></h3>
-<div id="acknowledgment-payload-9" class="section level4">
+<div id="acknowledgment-payload-10" class="section level4">
 <h4><span class="header-section-number">10.7.1.1</span> Acknowledgment Payload</h4>
 <table>
 <thead>
@@ -4783,7 +4832,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-hardware-version" class="section level3">
 <h3><span class="header-section-number">10.7.2</span> Command <code>Hardware Version</code></h3>
-<div id="acknowledgment-payload-10" class="section level4">
+<div id="acknowledgment-payload-11" class="section level4">
 <h4><span class="header-section-number">10.7.2.1</span> Acknowledgment Payload</h4>
 <table>
 <thead>
@@ -4808,7 +4857,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-firmware-version" class="section level3">
 <h3><span class="header-section-number">10.7.3</span> Command <code>Firmware Version</code></h3>
-<div id="acknowledgment-payload-11" class="section level4">
+<div id="acknowledgment-payload-12" class="section level4">
 <h4><span class="header-section-number">10.7.3.1</span> Acknowledgment Payload</h4>
 <table>
 <thead>
@@ -4833,7 +4882,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-release-name" class="section level3">
 <h3><span class="header-section-number">10.7.4</span> Command <code>Release Name</code></h3>
-<div id="acknowledgment-payload-12" class="section level4">
+<div id="acknowledgment-payload-13" class="section level4">
 <h4><span class="header-section-number">10.7.4.1</span> Acknowledgment Payload</h4>
 <table>
 <thead>
@@ -4855,7 +4904,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-serial-number" class="section level3">
 <h3><span class="header-section-number">10.7.5</span> Command <code>Serial Number</code></h3>
-<div id="notes-6" class="section level4">
+<div id="notes-7" class="section level4">
 <h4><span class="header-section-number">10.7.5.1</span> Notes</h4>
 <table>
 <thead>
@@ -4884,7 +4933,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-13" class="section level4">
+<div id="acknowledgment-payload-14" class="section level4">
 <h4><span class="header-section-number">10.7.5.2</span> Acknowledgment Payload</h4>
 <ul>
 <li>UTF-8 string (8 bytes for each part)</li>
@@ -4895,7 +4944,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-product-name" class="section level3">
 <h3><span class="header-section-number">10.7.6</span> Command <code>Product Name</code></h3>
-<div id="notes-7" class="section level4">
+<div id="notes-8" class="section level4">
 <h4><span class="header-section-number">10.7.6.1</span> Notes</h4>
 <ul>
 <li>Multiple Strings in different languages possible</li>
@@ -4975,7 +5024,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-14" class="section level4">
+<div id="acknowledgment-payload-15" class="section level4">
 <h4><span class="header-section-number">10.7.6.2</span> Acknowledgment Payload</h4>
 <ul>
 <li>UTF-8 string (8 bytes)</li>
@@ -4985,7 +5034,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-oem-free-use" class="section level3">
 <h3><span class="header-section-number">10.7.7</span> Command <code>OEM Free Use</code></h3>
-<div id="notes-8" class="section level4">
+<div id="notes-9" class="section level4">
 <h4><span class="header-section-number">10.7.7.1</span> Notes</h4>
 <table>
 <thead>
@@ -5030,7 +5079,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-15" class="section level4">
+<div id="acknowledgment-payload-16" class="section level4">
 <h4><span class="header-section-number">10.7.7.2</span> Acknowledgment Payload</h4>
 <ul>
 <li>8 bytes for each block command</li>
@@ -5040,7 +5089,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-tool-rfid-product-information" class="section level3">
 <h3><span class="header-section-number">10.7.8</span> Command <code>Tool RFID product information</code></h3>
-<div id="acknowledgment-payload-16" class="section level4">
+<div id="acknowledgment-payload-17" class="section level4">
 <h4><span class="header-section-number">10.7.8.1</span> Acknowledgment Payload</h4>
 <ul>
 <li>to be determined</li>
@@ -5078,7 +5127,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:Test-signal"></a></p>
 <div id="command-test-signal" class="section level3">
 <h3><span class="header-section-number">10.8.1</span> Command <code>Test signal</code></h3>
-<div id="payload-13" class="section level4">
+<div id="payload-14" class="section level4">
 <h4><span class="header-section-number">10.8.1.1</span> Payload</h4>
 <div id="byte-1" class="section level5">
 <h5><span class="header-section-number">10.8.1.1.1</span> Byte 1:</h5>
@@ -5114,7 +5163,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p>Module specific</p>
 </div>
 </div>
-<div id="acknowledgment-payload-17" class="section level4">
+<div id="acknowledgment-payload-18" class="section level4">
 <h4><span class="header-section-number">10.8.1.2</span> Acknowledgment Payload</h4>
 <div id="byte-1-1" class="section level5">
 <h5><span class="header-section-number">10.8.1.2.1</span> Byte 1:</h5>
