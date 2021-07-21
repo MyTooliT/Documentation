@@ -3341,7 +3341,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li>value 1 / value 3</li>
 <li>value 2 / value 3</li>
 </ul>
-<p>The chronological order starts with the oldest set (BP) and continues with newer values (BP + t), where t is the time point.</p></li>
+<p>The chronological order starts with the oldest value (BP) and continues with newer values (BP + t), where t is the time point.</p></li>
 <li><p><a name="value:request"></a><code>Request</code>:</p>
 <table>
 <thead>
@@ -3475,8 +3475,26 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tr>
 </tbody>
 </table>
-<div id="byte-format" class="section level5">
-<h5><span class="header-section-number">10.3.2.2.1</span> 2 Byte Format</h5>
+<div id="streaming-data-bytes" class="section level5">
+<h5><span class="header-section-number">10.3.2.2.1</span> Streaming Data Bytes</h5>
+<ul>
+<li>Data is sent in little endian order (at least for 2 byte format)</li>
+<li>Older streaming data is stored in first bytes, newer data in later bytes</li>
+<li>Values are stored in first available bytes,
+<ul>
+<li>first value 1 (<code>x</code>) (if requested),</li>
+<li>then value 2 (<code>y</code>) (if requested),</li>
+<li>then value 3 (<code>z</code>) (if requested)</li>
+</ul></li>
+<li>Data length depends on requested values and number of sets</li>
+</ul>
+<div id="examples" class="section level6">
+<h6><span class="header-section-number">10.3.2.2.1.1</span> Examples</h6>
+<ul>
+<li>Request first value (<code>x</code>)</li>
+<li>Single data set</li>
+<li>2 Byte format</li>
+</ul>
 <table>
 <thead>
 <tr class="header">
@@ -3485,7 +3503,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">LSB (BP)</td>
+<td align="center">x (LSB)</td>
 </tr>
 </tbody>
 </table>
@@ -3497,13 +3515,15 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">MSB (BP + 1)</td>
+<td align="center">x (MSB)</td>
 </tr>
 </tbody>
 </table>
-</div>
-<div id="byte-format-1" class="section level5">
-<h5><span class="header-section-number">10.3.2.2.2</span> 3 Byte Format</h5>
+<ul>
+<li>Request second (<code>y</code>) and third value (<code>z</code>)</li>
+<li>Single data set</li>
+<li>2 Byte format</li>
+</ul>
 <table>
 <thead>
 <tr class="header">
@@ -3512,7 +3532,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">MSB (BP)</td>
+<td align="center">y (LSB)</td>
 </tr>
 </tbody>
 </table>
@@ -3524,7 +3544,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">(BP + 1)</td>
+<td align="center">y (MSB)</td>
 </tr>
 </tbody>
 </table>
@@ -3536,11 +3556,24 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">LSB (BP + 2)</td>
+<td align="center">z (LSB)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Byte 6</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">z (MSB)</td>
 </tr>
 </tbody>
 </table>
 <p><a name="command:voltage"></a></p>
+</div>
 </div>
 </div>
 </div>
