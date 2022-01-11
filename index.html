@@ -3585,6 +3585,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <ul>
 <li>Highest voltage sampling rate determines bit stream rate</li>
 <li>Requesting while streaming is possible</li>
+<li>To determine the supply/battery voltage (voltage 1) value you need to multiply the returned values with the number <code>5.7</code>. This is the result of the voltage divider circuit we use (which contains a 470 kΩ and 100 kΩ resistor).</li>
 </ul>
 </div>
 <div id="payload-6" class="section level4">
