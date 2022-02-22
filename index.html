@@ -197,10 +197,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10.5" data-path=""><a href="#block-configuration"><i class="fa fa-check"></i><b>10.5</b> Block <code>Configuration</code></a><ul>
 <li class="chapter" data-level="10.5.1" data-path=""><a href="#command-getset-acceleration-configuration"><i class="fa fa-check"></i><b>10.5.1</b> Command <code>Get/Set Acceleration Configuration</code></a></li>
-<li class="chapter" data-level="10.5.2" data-path=""><a href="#command-getset-calibration-factor-k"><i class="fa fa-check"></i><b>10.5.2</b> Command <code>Get/Set Calibration Factor k</code></a></li>
-<li class="chapter" data-level="10.5.3" data-path=""><a href="#command-getset-calibration-factor-d"><i class="fa fa-check"></i><b>10.5.3</b> Command <code>Get/Set Calibration Factor d</code></a></li>
-<li class="chapter" data-level="10.5.4" data-path=""><a href="#command-calibration-measurement"><i class="fa fa-check"></i><b>10.5.4</b> Command <code>Calibration Measurement</code></a></li>
-<li class="chapter" data-level="10.5.5" data-path=""><a href="#command-hmi-configuration"><i class="fa fa-check"></i><b>10.5.5</b> Command <code>HMI Configuration</code></a></li>
+<li class="chapter" data-level="10.5.2" data-path=""><a href="#command-getset-used-sensors"><i class="fa fa-check"></i><b>10.5.2</b> Command <code>Get/Set Used Sensors</code></a></li>
+<li class="chapter" data-level="10.5.3" data-path=""><a href="#command-getset-calibration-factor-k"><i class="fa fa-check"></i><b>10.5.3</b> Command <code>Get/Set Calibration Factor k</code></a></li>
+<li class="chapter" data-level="10.5.4" data-path=""><a href="#command-getset-calibration-factor-d"><i class="fa fa-check"></i><b>10.5.4</b> Command <code>Get/Set Calibration Factor d</code></a></li>
+<li class="chapter" data-level="10.5.5" data-path=""><a href="#command-calibration-measurement"><i class="fa fa-check"></i><b>10.5.5</b> Command <code>Calibration Measurement</code></a></li>
+<li class="chapter" data-level="10.5.6" data-path=""><a href="#command-hmi-configuration"><i class="fa fa-check"></i><b>10.5.6</b> Command <code>HMI Configuration</code></a></li>
 </ul></li>
 <li class="chapter" data-level="10.6" data-path=""><a href="#block-eeprom"><i class="fa fa-check"></i><b>10.6</b> Block <code>EEPROM</code></a><ul>
 <li class="chapter" data-level="10.6.1" data-path=""><a href="#command-eeprom-read"><i class="fa fa-check"></i><b>10.6.1</b> Command <code>EEPROM Read</code></a></li>
@@ -3829,24 +3830,30 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <td>x</td>
 </tr>
 <tr class="even">
+<td><code>0x01</code></td>
+<td><a href="#command:Get-Set-Used-Sensors">Get/Set Used Sensors</a></td>
+<td>Read/Write</td>
+<td>x</td>
+</tr>
+<tr class="odd">
 <td><code>0x60</code></td>
 <td><a href="#command:Get-Set-Calibration-Factor-k">Get/Set Calibration Factor k</a></td>
 <td>Read/Write</td>
 <td>x</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>0x61</code></td>
 <td><a href="#command:Get-Set-Calibration-Factor-d">Get/Set Calibration Factor d</a></td>
 <td>Read/Write</td>
 <td>x</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>0x62</code></td>
 <td><a href="#command:Calibration-Measurement">Calibration Measurement</a></td>
 <td>Read/Write</td>
 <td>x</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>0xC0</code></td>
 <td><a href="#command:HMI-Configuration">HMI Configuration</a></td>
 <td>Read/Write</td>
@@ -4020,13 +4027,123 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <ul>
 <li>Same structure as payload</li>
 </ul>
+<p><a name="command:Get-Set-Used-Sensors"></a></p>
+</div>
+</div>
+<div id="command-getset-used-sensors" class="section level3">
+<h3><span class="header-section-number">10.5.2</span> Command <code>Get/Set Used Sensors</code></h3>
+<div id="notes-4" class="section level4">
+<h4><span class="header-section-number">10.5.2.1</span> Notes</h4>
+<ul>
+<li>If a sensor number sent with a “Set” command is bigger than the number of sensors defined by the holder it will raise an error.</li>
+<li>If a <code>0x00</code> is sent as a sensor number with a “Set” command it will use the momentary set sensor instead of changing the sensor.</li>
+</ul>
+</div>
+<div id="values-3" class="section level4">
+<h4><span class="header-section-number">10.5.2.2</span> Values</h4>
+<ul>
+<li><p><a name="value:get-set-state-used-sensors"></a><code>Get/Set State</code>:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>0</code></td>
+<td>Get State</td>
+</tr>
+<tr class="even">
+<td><code>1</code></td>
+<td>Set State</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</div>
+<div id="payload-8" class="section level4">
+<h4><span class="header-section-number">10.5.2.3</span> Payload</h4>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Byte 1</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Bit 7</td>
+<td align="center">Bit 6 – 0</td>
+</tr>
+<tr class="even">
+<td align="center"><a href="#value:get-set-state-used-sensors"><code>Get/Set State</code></a></td>
+<td align="center">Reserved</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Byte 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Used Sensor Number for X-Sensor</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Byte 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Used Sensor Number for Y-Sensor</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Byte 4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Used Sensor Number for Z-Sensor</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Byte 5 - Byte 8</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Reserved</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="acknowledgment-payload-4" class="section level4">
+<h4><span class="header-section-number">10.5.2.4</span> Acknowledgment Payload</h4>
+<ul>
+<li>Same structure as payload</li>
+</ul>
 <p><a name="command:Get-Set-Calibration-Factor-k"></a></p>
 </div>
 </div>
 <div id="command-getset-calibration-factor-k" class="section level3">
-<h3><span class="header-section-number">10.5.2</span> Command <code>Get/Set Calibration Factor k</code></h3>
-<div id="values-3" class="section level4">
-<h4><span class="header-section-number">10.5.2.1</span> Values</h4>
+<h3><span class="header-section-number">10.5.3</span> Command <code>Get/Set Calibration Factor k</code></h3>
+<div id="values-4" class="section level4">
+<h4><span class="header-section-number">10.5.3.1</span> Values</h4>
 <ul>
 <li><p><a name="value:calibration-element"></a><code>Calibration Element</code>:</p>
 <table>
@@ -4099,8 +4216,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </table></li>
 </ul>
 </div>
-<div id="payload-8" class="section level4">
-<h4><span class="header-section-number">10.5.2.2</span> Payload</h4>
+<div id="payload-9" class="section level4">
+<h4><span class="header-section-number">10.5.3.2</span> Payload</h4>
 <table>
 <thead>
 <tr class="header">
@@ -4171,8 +4288,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-4" class="section level4">
-<h4><span class="header-section-number">10.5.2.3</span> Acknowledgment Payload</h4>
+<div id="acknowledgment-payload-5" class="section level4">
+<h4><span class="header-section-number">10.5.3.3</span> Acknowledgment Payload</h4>
 <table>
 <thead>
 <tr class="header">
@@ -4240,14 +4357,14 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 </div>
 <div id="command-getset-calibration-factor-d" class="section level3">
-<h3><span class="header-section-number">10.5.3</span> Command <code>Get/Set Calibration Factor d</code></h3>
+<h3><span class="header-section-number">10.5.4</span> Command <code>Get/Set Calibration Factor d</code></h3>
 <p>Payload and Acknowledgment Payload have the same Structure as <a href="#command:Get-Set-Calibration-Factor-k"><code>Get/Set Calibration Factor k</code></a> but with <code>d (Offset)</code> instead of <code>k (Slope)</code> from <code>kx+d</code>.</p>
 <p><a name="command:Calibration-Measurement"></a></p>
 </div>
 <div id="command-calibration-measurement" class="section level3">
-<h3><span class="header-section-number">10.5.4</span> Command <code>Calibration Measurement</code></h3>
-<div id="values-4" class="section level4">
-<h4><span class="header-section-number">10.5.4.1</span> Values</h4>
+<h3><span class="header-section-number">10.5.5</span> Command <code>Calibration Measurement</code></h3>
+<div id="values-5" class="section level4">
+<h4><span class="header-section-number">10.5.5.1</span> Values</h4>
 <ul>
 <li><p><a name="value:calibration-Get-Set"></a><code>Calibration Get/Set</code>:</p>
 <table>
@@ -4364,8 +4481,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li><p><a name="value:reference-voltage"></a><code>Reference Voltage</code>: This value specifies the reference voltage in fractures of <span class="math inline">\(\frac{1}{20}\)</span> of a volt. A common value would be 66 (<span class="math inline">\(\frac{66}{20} = \frac{33}{10} = 3.3\)</span>) for the supply voltage (<span class="math inline">\(V_{DD}\)</span> Voltage Drain Drain) of 3.3 V.</p></li>
 </ul>
 </div>
-<div id="payload-9" class="section level4">
-<h4><span class="header-section-number">10.5.4.2</span> Payload</h4>
+<div id="payload-10" class="section level4">
+<h4><span class="header-section-number">10.5.5.2</span> Payload</h4>
 <table>
 <thead>
 <tr class="header">
@@ -4439,8 +4556,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-5" class="section level4">
-<h4><span class="header-section-number">10.5.4.3</span> Acknowledgment Payload</h4>
+<div id="acknowledgment-payload-6" class="section level4">
+<h4><span class="header-section-number">10.5.5.3</span> Acknowledgment Payload</h4>
 <table>
 <thead>
 <tr class="header">
@@ -4469,9 +4586,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 </div>
 <div id="command-hmi-configuration" class="section level3">
-<h3><span class="header-section-number">10.5.5</span> Command <code>HMI Configuration</code></h3>
-<div id="values-5" class="section level4">
-<h4><span class="header-section-number">10.5.5.1</span> Values</h4>
+<h3><span class="header-section-number">10.5.6</span> Command <code>HMI Configuration</code></h3>
+<div id="values-6" class="section level4">
+<h4><span class="header-section-number">10.5.6.1</span> Values</h4>
 <ul>
 <li><p><a name="value:Get-Set-Sampling-Rate"></a><code>Get/Set Sampling Rate</code>:</p>
 <table>
@@ -4536,8 +4653,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </table></li>
 </ul>
 </div>
-<div id="payload-10" class="section level4">
-<h4><span class="header-section-number">10.5.5.2</span> Payload</h4>
+<div id="payload-11" class="section level4">
+<h4><span class="header-section-number">10.5.6.2</span> Payload</h4>
 <table>
 <thead>
 <tr class="header">
@@ -4605,8 +4722,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-6" class="section level4">
-<h4><span class="header-section-number">10.5.5.3</span> Acknowledgment Payload</h4>
+<div id="acknowledgment-payload-7" class="section level4">
+<h4><span class="header-section-number">10.5.6.3</span> Acknowledgment Payload</h4>
 <ul>
 <li>Same structure as payload</li>
 </ul>
@@ -4649,13 +4766,13 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:EEPROM-Read"></a></p>
 <div id="command-eeprom-read" class="section level3">
 <h3><span class="header-section-number">10.6.1</span> Command <code>EEPROM Read</code></h3>
-<div id="notes-4" class="section level4">
+<div id="notes-5" class="section level4">
 <h4><span class="header-section-number">10.6.1.1</span> Notes</h4>
 <ul>
 <li>Used to read data from EEPROM directly</li>
 </ul>
 </div>
-<div id="payload-11" class="section level4">
+<div id="payload-12" class="section level4">
 <h4><span class="header-section-number">10.6.1.2</span> Payload</h4>
 <table>
 <thead>
@@ -4676,7 +4793,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-7" class="section level4">
+<div id="acknowledgment-payload-8" class="section level4">
 <h4><span class="header-section-number">10.6.1.3</span> Acknowledgment Payload</h4>
 <table>
 <thead>
@@ -4703,14 +4820,14 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-eeprom-write" class="section level3">
 <h3><span class="header-section-number">10.6.2</span> Command <code>EEPROM Write</code></h3>
-<div id="notes-5" class="section level4">
+<div id="notes-6" class="section level4">
 <h4><span class="header-section-number">10.6.2.1</span> Notes</h4>
 <ul>
 <li>Used to write data to EEPROM directly</li>
 <li>You are not allowed to change all values, if the EEPROM is locked (<a href="https://github.com/MyTooliT/EEPROM/blob/master/EEPROM.md">byte <code>0</code> is set to value <code>0xca</code></a>)</li>
 </ul>
 </div>
-<div id="payload-12" class="section level4">
+<div id="payload-13" class="section level4">
 <h4><span class="header-section-number">10.6.2.2</span> Payload</h4>
 <table>
 <thead>
@@ -4733,7 +4850,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-8" class="section level4">
+<div id="acknowledgment-payload-9" class="section level4">
 <h4><span class="header-section-number">10.6.2.3</span> Acknowledgment Payload</h4>
 <ul>
 <li>Same structure as payload</li>
@@ -4743,13 +4860,13 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-read-write-request-counter" class="section level3">
 <h3><span class="header-section-number">10.6.3</span> Command <code>Read Write Request Counter</code></h3>
-<div id="notes-6" class="section level4">
+<div id="notes-7" class="section level4">
 <h4><span class="header-section-number">10.6.3.1</span> Notes</h4>
 <ul>
 <li>The current documentation of this command is based on the (old) code of ICOc</li>
 </ul>
 </div>
-<div id="payload-13" class="section level4">
+<div id="payload-14" class="section level4">
 <h4><span class="header-section-number">10.6.3.2</span> Payload</h4>
 <table>
 <thead>
@@ -4764,7 +4881,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-9" class="section level4">
+<div id="acknowledgment-payload-10" class="section level4">
 <h4><span class="header-section-number">10.6.3.3</span> Acknowledgment Payload</h4>
 <table>
 <thead>
@@ -4849,7 +4966,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:GTIN"></a></p>
 <div id="command-global-trade-identification-number-gtin" class="section level3">
 <h3><span class="header-section-number">10.7.1</span> Command <code>Global Trade Identification Number (GTIN)</code></h3>
-<div id="acknowledgment-payload-10" class="section level4">
+<div id="acknowledgment-payload-11" class="section level4">
 <h4><span class="header-section-number">10.7.1.1</span> Acknowledgment Payload</h4>
 <table>
 <thead>
@@ -4868,7 +4985,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-hardware-version" class="section level3">
 <h3><span class="header-section-number">10.7.2</span> Command <code>Hardware Version</code></h3>
-<div id="acknowledgment-payload-11" class="section level4">
+<div id="acknowledgment-payload-12" class="section level4">
 <h4><span class="header-section-number">10.7.2.1</span> Acknowledgment Payload</h4>
 <table>
 <thead>
@@ -4893,7 +5010,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-firmware-version" class="section level3">
 <h3><span class="header-section-number">10.7.3</span> Command <code>Firmware Version</code></h3>
-<div id="acknowledgment-payload-12" class="section level4">
+<div id="acknowledgment-payload-13" class="section level4">
 <h4><span class="header-section-number">10.7.3.1</span> Acknowledgment Payload</h4>
 <table>
 <thead>
@@ -4918,7 +5035,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-release-name" class="section level3">
 <h3><span class="header-section-number">10.7.4</span> Command <code>Release Name</code></h3>
-<div id="acknowledgment-payload-13" class="section level4">
+<div id="acknowledgment-payload-14" class="section level4">
 <h4><span class="header-section-number">10.7.4.1</span> Acknowledgment Payload</h4>
 <table>
 <thead>
@@ -4940,7 +5057,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-serial-number" class="section level3">
 <h3><span class="header-section-number">10.7.5</span> Command <code>Serial Number</code></h3>
-<div id="notes-7" class="section level4">
+<div id="notes-8" class="section level4">
 <h4><span class="header-section-number">10.7.5.1</span> Notes</h4>
 <table>
 <thead>
@@ -4969,7 +5086,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-14" class="section level4">
+<div id="acknowledgment-payload-15" class="section level4">
 <h4><span class="header-section-number">10.7.5.2</span> Acknowledgment Payload</h4>
 <ul>
 <li>UTF-8 string (8 bytes for each part)</li>
@@ -4980,7 +5097,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-product-name" class="section level3">
 <h3><span class="header-section-number">10.7.6</span> Command <code>Product Name</code></h3>
-<div id="notes-8" class="section level4">
+<div id="notes-9" class="section level4">
 <h4><span class="header-section-number">10.7.6.1</span> Notes</h4>
 <ul>
 <li>Multiple Strings in different languages possible</li>
@@ -5060,7 +5177,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-15" class="section level4">
+<div id="acknowledgment-payload-16" class="section level4">
 <h4><span class="header-section-number">10.7.6.2</span> Acknowledgment Payload</h4>
 <ul>
 <li>UTF-8 string (8 bytes)</li>
@@ -5070,7 +5187,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-oem-free-use" class="section level3">
 <h3><span class="header-section-number">10.7.7</span> Command <code>OEM Free Use</code></h3>
-<div id="notes-9" class="section level4">
+<div id="notes-10" class="section level4">
 <h4><span class="header-section-number">10.7.7.1</span> Notes</h4>
 <table>
 <thead>
@@ -5115,7 +5232,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-16" class="section level4">
+<div id="acknowledgment-payload-17" class="section level4">
 <h4><span class="header-section-number">10.7.7.2</span> Acknowledgment Payload</h4>
 <ul>
 <li>8 bytes for each block command</li>
@@ -5125,7 +5242,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-tool-rfid-product-information" class="section level3">
 <h3><span class="header-section-number">10.7.8</span> Command <code>Tool RFID product information</code></h3>
-<div id="acknowledgment-payload-17" class="section level4">
+<div id="acknowledgment-payload-18" class="section level4">
 <h4><span class="header-section-number">10.7.8.1</span> Acknowledgment Payload</h4>
 <ul>
 <li>to be determined</li>
@@ -5163,7 +5280,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:Test-signal"></a></p>
 <div id="command-test-signal" class="section level3">
 <h3><span class="header-section-number">10.8.1</span> Command <code>Test signal</code></h3>
-<div id="payload-14" class="section level4">
+<div id="payload-15" class="section level4">
 <h4><span class="header-section-number">10.8.1.1</span> Payload</h4>
 <div id="byte-1" class="section level5">
 <h5><span class="header-section-number">10.8.1.1.1</span> Byte 1:</h5>
@@ -5199,7 +5316,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p>Module specific</p>
 </div>
 </div>
-<div id="acknowledgment-payload-18" class="section level4">
+<div id="acknowledgment-payload-19" class="section level4">
 <h4><span class="header-section-number">10.8.1.2</span> Acknowledgment Payload</h4>
 <div id="byte-1-1" class="section level5">
 <h5><span class="header-section-number">10.8.1.2.1</span> Byte 1:</h5>
