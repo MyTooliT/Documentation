@@ -3893,17 +3893,19 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li><p><a name="value:aquisition-time"></a><code>Acquisition Time</code>:</p>
 <ul>
 <li>Sample and hold time i.e. time to charge capacitor that is cut off and measured at digital quantisation in cycles</li>
-<li><span class="math inline">\(value+1\)</span> iff <code>value &lt;= 3</code> (e.g. 4 cycles for a value of 3)</li>
-<li><span class="math inline">\(2^{value-1}\)</span> iff <code>value &gt; 3</code> (e.g. 8 cycles for a value of 4)</li>
+<li><span class="math inline">\(value+1\)</span> iff <span class="math inline">\(value ≤ 3\)</span> (e.g. 4 cycles for a value of 3)</li>
+<li><span class="math inline">\(2^{value-1}\)</span> iff <span class="math inline">\(value &gt; 3\)</span> (e.g. 8 cycles for a value of 4)</li>
+<li>Possible acquisition times: 1, 2, 3, 4, 8, 16, 32, … , 256</li>
 </ul></li>
 <li><p><a name="value:oversampling-rate"></a><code>Oversampling Rate</code>:</p>
 <ul>
 <li>Oversampling Rate: <span class="math inline">\(2^{value}\)</span></li>
-<li>No Over Sampling if value = 0</li>
+<li>No oversampling if <span class="math inline">\(value = 0\)</span></li>
+<li>Possible oversampling rates: 1, 2, 4, 8, 16, … , 4096</li>
 </ul></li>
 <li><p><a name="value:reference-voltage"></a><code>Reference Voltage</code>:</p>
 <ul>
-<li>value = Reference Voltage (in Volt) · 20 (e.g. 25 for 1.25 V)</li>
+<li><span class="math inline">\(value = V_{reference} · 20\)</span> (e.g. 25 for 1.25 V)</li>
 <li>Possible Voltages:
 <ul>
 <li>1V25</li>
@@ -3913,7 +3915,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li>2V2</li>
 <li>2V5</li>
 <li>2V7</li>
-<li>3V3(VDD)</li>
+<li>3V3 (VDD)</li>
 <li>5V</li>
 <li>6V6</li>
 </ul></li>
