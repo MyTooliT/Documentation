@@ -3892,9 +3892,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p>Possible Values: 1 – 127</p></li>
 <li><p><a name="value:aquisition-time"></a><code>Acquisition Time</code>:</p>
 <ul>
-<li>Sample and hold time i.e. time to charge capacitor that is cut off and measured at digital quantisation</li>
-<li><span class="math inline">\(2^{value-1}\)</span> iff <code>value &gt; AdcAcquisitionTime4</code></li>
-<li><span class="math inline">\(value+2\)</span> iff <code>value &lt;= AdcAcquisitionTime4</code></li>
+<li>Sample and hold time i.e. time to charge capacitor that is cut off and measured at digital quantisation in cycles</li>
+<li><span class="math inline">\(value+1\)</span> iff <code>value &lt;= 3</code> (e.g. 4 cycles for a value of 3)</li>
+<li><span class="math inline">\(2^{value-1}\)</span> iff <code>value &gt; 3</code> (e.g. 8 cycles for a value of 4)</li>
 </ul></li>
 <li><p><a name="value:oversampling-rate"></a><code>Oversampling Rate</code>:</p>
 <ul>
