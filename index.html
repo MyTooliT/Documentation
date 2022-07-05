@@ -4003,135 +4003,30 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
+<div id="acknowledgment-payload-3" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.5.1.3</span> Acknowledgment Payload<a href="#acknowledgment-payload-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Same structure as payload</li>
+</ul>
+</div>
 <div id="notes-3" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.5.1.3</span> Notes<a href="#notes-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<h4><span class="header-section-number">10.5.1.4</span> Notes<a href="#notes-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div id="sampling-rate" class="section level5 hasAnchor">
-<h5><span class="header-section-number">10.5.1.3.1</span> Sampling Rate<a href="#sampling-rate" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<h5><span class="header-section-number">10.5.1.4.1</span> Sampling Rate<a href="#sampling-rate" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <!-- prettier-ignore -->
 <p><span class="math display">\[ \frac{f_{CLOCK}}{(Prescaler+1)·(AcquisitionTime + 12+1) · OverSamplingRate} \]</span></p>
 <p><span class="math display">\[f_{clock}=38400000 Hz\]</span></p>
 </div>
 <div id="setting-at-reset" class="section level5 hasAnchor">
-<h5><span class="header-section-number">10.5.1.3.2</span> Setting at Reset<a href="#setting-at-reset" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<h5><span class="header-section-number">10.5.1.4.2</span> Setting at Reset<a href="#setting-at-reset" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <ul>
-<li>2/Aqu8(4)/OverSampling64(6)/VDD</li>
-</ul>
-</div>
-</div>
-<div id="values-3" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.5.1.4</span> Values<a href="#values-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ul>
-<li><p><a name="value:get-set-state2"></a><code>Get/Set State</code>:</p>
-<table>
-<thead>
-<tr class="header">
-<th>Value</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>0</code></td>
-<td>Get State</td>
-</tr>
-<tr class="even">
-<td><code>1</code></td>
-<td>Set State</td>
-</tr>
-</tbody>
-</table></li>
-</ul>
-</div>
-<div id="payload-8" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.5.1.5</span> Payload<a href="#payload-8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Byte 1</th>
-<th align="center"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">Bit 7</td>
-<td align="center">Bit 6 – 0</td>
-</tr>
-<tr class="even">
-<td align="center"><a href="#value:get-set-state2"><code>Get/Set State</code></a></td>
-<td align="center">Reserved</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Byte 2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">ADC Prescaler</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Byte 3</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">Acquisition time (See Note)</td>
-</tr>
-</tbody>
-</table>
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">Byte 4</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">Power of over sampling rate e.g. 10-&gt;1024 OverSampling Rate, 0=no Over Sampling</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Byte 5</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">Reference: Voltage*20 e.g. 3.3V-&gt;66</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Byte 6 - Byte 8</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">Reserved</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="acknowledgment-payload-3" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.5.1.6</span> Acknowledgment Payload<a href="#acknowledgment-payload-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<ul>
-<li>Same structure as payload</li>
+<li><a href="#value:prescaler"><code>Prescaler</code></a>: 2</li>
+<li><a href="#value:aquisition-time"><code>Acquisition Time</code></a>: 8 (byte value = 4)</li>
+<li><a href="#value:oversampling-rate"><code>Oversampling Rate</code></a>: 64 (byte value = 6)</li>
+<li><a href="#value:reference-voltage"><code>Reference Voltage</code></a>: 3.3 (<span class="math inline">\(V_{DD}\)</span>) (byte value = 66)</li>
 </ul>
 <p><a name="command:Get-Set-Used-Sensors"></a></p>
+</div>
 </div>
 </div>
 <div id="command-getset-used-sensors" class="section level3 hasAnchor">
@@ -4143,8 +4038,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li>If a <code>0x00</code> is sent as a sensor number with a “Set” command it will use the momentary set sensor instead of changing the sensor.</li>
 </ul>
 </div>
-<div id="values-4" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.5.2.2</span> Values<a href="#values-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="values-3" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.5.2.2</span> Values<a href="#values-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><p><a name="value:get-set-state-used-sensors"></a><code>Get/Set State</code>:</p>
 <table>
@@ -4167,8 +4062,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </table></li>
 </ul>
 </div>
-<div id="payload-9" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.5.2.3</span> Payload<a href="#payload-9" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="payload-8" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.5.2.3</span> Payload<a href="#payload-8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
 <tr class="header">
@@ -4246,8 +4141,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-getset-calibration-factor-k" class="section level3 hasAnchor">
 <h3><span class="header-section-number">10.5.3</span> Command <code>Get/Set Calibration Factor k</code><a href="#command-getset-calibration-factor-k" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="values-5" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.5.3.1</span> Values<a href="#values-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="values-4" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.5.3.1</span> Values<a href="#values-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><p><a name="value:calibration-element"></a><code>Calibration Element</code>:</p>
 <table>
@@ -4320,8 +4215,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </table></li>
 </ul>
 </div>
-<div id="payload-10" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.5.3.2</span> Payload<a href="#payload-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="payload-9" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.5.3.2</span> Payload<a href="#payload-9" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
 <tr class="header">
@@ -4467,8 +4362,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-calibration-measurement" class="section level3 hasAnchor">
 <h3><span class="header-section-number">10.5.5</span> Command <code>Calibration Measurement</code><a href="#command-calibration-measurement" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="values-6" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.5.5.1</span> Values<a href="#values-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="values-5" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.5.5.1</span> Values<a href="#values-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><p><a name="value:calibration-Get-Set"></a><code>Calibration Get/Set</code>:</p>
 <table>
@@ -4585,8 +4480,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li><p><a name="value:reference-voltage"></a><code>Reference Voltage</code>: This value specifies the reference voltage in fractures of <span class="math inline">\(\frac{1}{20}\)</span> of a volt. A common value would be 66 (<span class="math inline">\(\frac{66}{20} = \frac{33}{10} = 3.3\)</span>) for the supply voltage (<span class="math inline">\(V_{DD}\)</span> Voltage Drain Drain) of 3.3 V.</p></li>
 </ul>
 </div>
-<div id="payload-11" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.5.5.2</span> Payload<a href="#payload-11" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="payload-10" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.5.5.2</span> Payload<a href="#payload-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
 <tr class="header">
@@ -4691,8 +4586,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-hmi-configuration" class="section level3 hasAnchor">
 <h3><span class="header-section-number">10.5.6</span> Command <code>HMI Configuration</code><a href="#command-hmi-configuration" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="values-7" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.5.6.1</span> Values<a href="#values-7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="values-6" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.5.6.1</span> Values<a href="#values-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><p><a name="value:Get-Set-Sampling-Rate"></a><code>Get/Set Sampling Rate</code>:</p>
 <table>
@@ -4757,8 +4652,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </table></li>
 </ul>
 </div>
-<div id="payload-12" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.5.6.2</span> Payload<a href="#payload-12" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="payload-11" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.5.6.2</span> Payload<a href="#payload-11" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
 <tr class="header">
@@ -4876,8 +4771,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li>Used to read data from EEPROM directly</li>
 </ul>
 </div>
-<div id="payload-13" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.6.1.2</span> Payload<a href="#payload-13" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="payload-12" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.6.1.2</span> Payload<a href="#payload-12" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
 <tr class="header">
@@ -4931,8 +4826,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li>You are not allowed to change all values, if the EEPROM is locked (<a href="https://github.com/MyTooliT/EEPROM/blob/master/EEPROM.md">byte <code>0</code> is set to value <code>0xca</code></a>)</li>
 </ul>
 </div>
-<div id="payload-14" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.6.2.2</span> Payload<a href="#payload-14" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="payload-13" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.6.2.2</span> Payload<a href="#payload-13" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
 <tr class="header">
@@ -4970,8 +4865,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li>The current documentation of this command is based on the (old) code of ICOc</li>
 </ul>
 </div>
-<div id="payload-15" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.6.3.2</span> Payload<a href="#payload-15" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="payload-14" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.6.3.2</span> Payload<a href="#payload-14" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
 <tr class="header">
@@ -5390,8 +5285,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:Test-signal"></a></p>
 <div id="command-test-signal" class="section level3 hasAnchor">
 <h3><span class="header-section-number">10.8.1</span> Command <code>Test signal</code><a href="#command-test-signal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="payload-16" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.8.1.1</span> Payload<a href="#payload-16" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="payload-15" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.8.1.1</span> Payload<a href="#payload-15" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div id="byte-1" class="section level5 hasAnchor">
 <h5><span class="header-section-number">10.8.1.1.1</span> Byte 1:<a href="#byte-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <table>
@@ -5520,8 +5415,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:Test-pfeifferl"></a></p>
 <div id="command-test-pfeifferl" class="section level3 hasAnchor">
 <h3><span class="header-section-number">10.9.1</span> Command <code>Test Pfeifferl</code><a href="#command-test-pfeifferl" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="payload-17" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.9.1.1</span> Payload<a href="#payload-17" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="payload-16" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.9.1.1</span> Payload<a href="#payload-16" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div id="byte-1-2" class="section level5 hasAnchor">
 <h5><span class="header-section-number">10.9.1.1.1</span> Byte 1:<a href="#byte-1-2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Ch:</p>
