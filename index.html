@@ -4362,8 +4362,20 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-calibration-measurement" class="section level3 hasAnchor">
 <h3><span class="header-section-number">10.5.5</span> Command <code>Calibration Measurement</code><a href="#command-calibration-measurement" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="notes-5" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.5.5.1</span> Notes<a href="#notes-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p>Activating the self test of an accelerometer:</p>
+<ul>
+<li><a href="#value:calibration-Get-Set"><code>Calibration Get/Set</code></a>: Get</li>
+<li><a href="#value:calibration-Measurement-Element"><code>Calibration Measurement Element</code></a>: Acceleration</li>
+<li><a href="#value:calibration-Method"><code>Calibration Method</code></a>: Activate</li>
+</ul>
+<p>seems to only work for the next measurement. This means the STH will return the “normal” acceleration value after you read the acceleration a second time, even if you do not deactivate the self test before the second measurement.</p></li>
+</ul>
+</div>
 <div id="values-5" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.5.5.1</span> Values<a href="#values-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<h4><span class="header-section-number">10.5.5.2</span> Values<a href="#values-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><p><a name="value:calibration-Get-Set"></a><code>Calibration Get/Set</code>:</p>
 <table>
@@ -4481,7 +4493,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </ul>
 </div>
 <div id="payload-10" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.5.5.2</span> Payload<a href="#payload-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<h4><span class="header-section-number">10.5.5.3</span> Payload<a href="#payload-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
 <tr class="header">
@@ -4556,7 +4568,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </table>
 </div>
 <div id="acknowledgment-payload-6" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.5.5.3</span> Acknowledgment Payload<a href="#acknowledgment-payload-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<h4><span class="header-section-number">10.5.5.4</span> Acknowledgment Payload<a href="#acknowledgment-payload-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
 <tr class="header">
@@ -4765,8 +4777,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:EEPROM-Read"></a></p>
 <div id="command-eeprom-read" class="section level3 hasAnchor">
 <h3><span class="header-section-number">10.6.1</span> Command <code>EEPROM Read</code><a href="#command-eeprom-read" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="notes-5" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.6.1.1</span> Notes<a href="#notes-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="notes-6" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.6.1.1</span> Notes<a href="#notes-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Used to read data from EEPROM directly</li>
 </ul>
@@ -4819,8 +4831,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-eeprom-write" class="section level3 hasAnchor">
 <h3><span class="header-section-number">10.6.2</span> Command <code>EEPROM Write</code><a href="#command-eeprom-write" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="notes-6" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.6.2.1</span> Notes<a href="#notes-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="notes-7" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.6.2.1</span> Notes<a href="#notes-7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Used to write data to EEPROM directly</li>
 <li>You are not allowed to change all values, if the EEPROM is locked (<a href="https://github.com/MyTooliT/EEPROM/blob/master/EEPROM.md">byte <code>0</code> is set to value <code>0xca</code></a>)</li>
@@ -4859,8 +4871,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-read-write-request-counter" class="section level3 hasAnchor">
 <h3><span class="header-section-number">10.6.3</span> Command <code>Read Write Request Counter</code><a href="#command-read-write-request-counter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="notes-7" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.6.3.1</span> Notes<a href="#notes-7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="notes-8" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.6.3.1</span> Notes<a href="#notes-8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>The current documentation of this command is based on the (old) code of ICOc</li>
 </ul>
@@ -5056,8 +5068,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-serial-number" class="section level3 hasAnchor">
 <h3><span class="header-section-number">10.7.5</span> Command <code>Serial Number</code><a href="#command-serial-number" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="notes-8" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.7.5.1</span> Notes<a href="#notes-8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="notes-9" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.7.5.1</span> Notes<a href="#notes-9" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
 <tr class="header">
@@ -5096,8 +5108,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-product-name" class="section level3 hasAnchor">
 <h3><span class="header-section-number">10.7.6</span> Command <code>Product Name</code><a href="#command-product-name" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="notes-9" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.7.6.1</span> Notes<a href="#notes-9" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="notes-10" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.7.6.1</span> Notes<a href="#notes-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Multiple Strings in different languages possible</li>
 </ul>
@@ -5186,8 +5198,8 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 <div id="command-oem-free-use" class="section level3 hasAnchor">
 <h3><span class="header-section-number">10.7.7</span> Command <code>OEM Free Use</code><a href="#command-oem-free-use" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="notes-10" class="section level4 hasAnchor">
-<h4><span class="header-section-number">10.7.7.1</span> Notes<a href="#notes-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="notes-11" class="section level4 hasAnchor">
+<h4><span class="header-section-number">10.7.7.1</span> Notes<a href="#notes-11" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
 <tr class="header">
