@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>ICOtronic Documentation</title>
   <meta name="description" content="Documentation for the ICOTronic system: https://www.mytoolit.com/ICOtronic" />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="ICOtronic Documentation" />
   <meta property="og:type" content="book" />
@@ -1287,7 +1287,7 @@ y = f(x) = k·x + d
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="#value:acceleration-x-slope">Acceleration X: Slope</a></td>
+<td><a href="#value:acceleration-slope">Acceleration X: Slope</a></td>
 <td align="right">0</td>
 <td align="right">4</td>
 <td>False</td>
@@ -1295,8 +1295,40 @@ y = f(x) = k·x + d
 <td>Float</td>
 </tr>
 <tr class="even">
-<td><a href="#value:acceleration-x-offset">Acceleration X: Offset</a></td>
+<td><a href="#value:acceleration-offset">Acceleration X: Offset</a></td>
 <td align="right">4</td>
+<td align="right">4</td>
+<td>False</td>
+<td>-</td>
+<td>Float</td>
+</tr>
+<tr class="odd">
+<td><a href="#value:acceleration-slope">Acceleration Y: Slope</a></td>
+<td align="right">8</td>
+<td align="right">4</td>
+<td>False</td>
+<td>-</td>
+<td>Float</td>
+</tr>
+<tr class="even">
+<td><a href="#value:acceleration-offset">Acceleration Y: Offset</a></td>
+<td align="right">12</td>
+<td align="right">4</td>
+<td>False</td>
+<td>-</td>
+<td>Float</td>
+</tr>
+<tr class="odd">
+<td><a href="#value:acceleration-slope">Acceleration Z: Slope</a></td>
+<td align="right">16</td>
+<td align="right">4</td>
+<td>False</td>
+<td>-</td>
+<td>Float</td>
+</tr>
+<tr class="even">
+<td><a href="#value:acceleration-offset">Acceleration Z: Offset</a></td>
+<td align="right">20</td>
 <td align="right">4</td>
 <td>False</td>
 <td>-</td>
@@ -1307,7 +1339,7 @@ y = f(x) = k·x + d
 <div id="acceleration" class="section level5 hasAnchor">
 <h5><span class="header-section-number">8.3.1.4.1</span> Acceleration<a href="#acceleration" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <ul>
-<li><p><a name="value:acceleration-x-slope"></a> <strong>Acceleration X: Slope</strong>: A Acceleration increase for a single step according to the following formula:</p>
+<li><p><a name="value:acceleration-slope"></a> <strong>Acceleration: Slope</strong>: Acceleration increase for a single step in a certain direction (x, y, z) according to the following formula:</p>
 <p><span class="math display">\[
 \frac{a_{max}}{{ADC}_{max}}
 \]</span></p>
@@ -1316,12 +1348,13 @@ y = f(x) = k·x + d
 <li><span class="math inline">\(a_{max}\)</span> is the maximum acceleration difference (e.g. <code>200</code> for a ±100 g sensor)</li>
 <li><span class="math inline">\({{ADC}_{max}}\)</span> is the maximum value of the ADC (e.g. <code>65553</code> (= <code>2¹⁶</code>) for a 16-bit analog-digital converter)</li>
 </ul></li>
-<li><p><a name="value:acceleration-x-offset"></a> <strong>Acceleration X: Offset</strong>: The negative offset of the acceleration value according to the following formula</p>
+<li><p><a name="value:acceleration-offset"></a> <strong>Acceleration: Offset</strong>: The negative offset of the acceleration value in a certain direction (x, y, z) according to the following formula:</p>
 <p><span class="math display">\[
 -\frac{a_{max}}{2}
 \]</span></p>
 <p>Here <span class="math inline">\(a_{max}\)</span> is the maximum acceleration difference (e.g. <code>100</code> for a ±50 g sensor)</p></li>
 </ul>
+<p><strong>Note:</strong> Since the maximum acceleration difference (<span class="math inline">\(a_{max}\)</span>) should be the same for each axis (for all acceleration sensor we use), the slope and offset values should be the same for each axis as well.</p>
 
 </div>
 </div>
@@ -5535,7 +5568,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
