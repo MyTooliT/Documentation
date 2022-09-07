@@ -197,7 +197,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10.5" data-path=""><a href="#block-configuration"><i class="fa fa-check"></i><b>10.5</b> Block <code>Configuration</code></a><ul>
 <li class="chapter" data-level="10.5.1" data-path=""><a href="#command-getset-adc-configuration"><i class="fa fa-check"></i><b>10.5.1</b> Command <code>Get/Set ADC Configuration</code></a></li>
-<li class="chapter" data-level="10.5.2" data-path=""><a href="#command-getset-used-sensors"><i class="fa fa-check"></i><b>10.5.2</b> Command <code>Get/Set Used Sensors</code></a></li>
+<li class="chapter" data-level="10.5.2" data-path=""><a href="#command-getset-sensors"><i class="fa fa-check"></i><b>10.5.2</b> Command <code>Get/Set Sensors</code></a></li>
 <li class="chapter" data-level="10.5.3" data-path=""><a href="#command-getset-calibration-factor-k"><i class="fa fa-check"></i><b>10.5.3</b> Command <code>Get/Set Calibration Factor k</code></a></li>
 <li class="chapter" data-level="10.5.4" data-path=""><a href="#command-getset-calibration-factor-d"><i class="fa fa-check"></i><b>10.5.4</b> Command <code>Get/Set Calibration Factor d</code></a></li>
 <li class="chapter" data-level="10.5.5" data-path=""><a href="#command-calibration-measurement"><i class="fa fa-check"></i><b>10.5.5</b> Command <code>Calibration Measurement</code></a></li>
@@ -3866,7 +3866,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tr>
 <tr class="even">
 <td><code>0x01</code></td>
-<td><a href="#command:Get-Set-Used-Sensors">Get/Set Used Sensors</a></td>
+<td><a href="#command:get-set-sensors">Get/Set Sensors</a></td>
 <td>Read/Write</td>
 <td>x</td>
 </tr>
@@ -4058,17 +4058,17 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li><a href="#value:oversampling-rate"><code>Oversampling Rate</code></a>: 64 (byte value = 6)</li>
 <li><a href="#value:reference-voltage"><code>Reference Voltage</code></a>: 3.3 (<span class="math inline">\(V_{DD}\)</span>) (byte value = 66)</li>
 </ul>
-<p><a name="command:Get-Set-Used-Sensors"></a></p>
+<p><a name="command:get-set-sensors"></a></p>
 </div>
 </div>
 </div>
-<div id="command-getset-used-sensors" class="section level3 hasAnchor">
-<h3><span class="header-section-number">10.5.2</span> Command <code>Get/Set Used Sensors</code><a href="#command-getset-used-sensors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="command-getset-sensors" class="section level3 hasAnchor">
+<h3><span class="header-section-number">10.5.2</span> Command <code>Get/Set Sensors</code><a href="#command-getset-sensors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="notes-4" class="section level4 hasAnchor">
 <h4><span class="header-section-number">10.5.2.1</span> Notes<a href="#notes-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
-<li>If a sensor number sent with a “Set” command is bigger than the number of sensors defined by the holder it will raise an error.</li>
-<li>If a <code>0x00</code> is sent as a sensor number with a “Set” command it will use the momentary set sensor instead of changing the sensor.</li>
+<li>If a sensor number sent with a “Set” command is greater than the number of sensors defined by the sensor device then the sensor device will react with an error message.</li>
+<li>The sensor number <code>0</code> represents a special value that tells the sensor device to keep the current sensor configuration value for the specified measurement channel.</li>
 </ul>
 </div>
 <div id="values-3" class="section level4 hasAnchor">
@@ -4123,7 +4123,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">Used Sensor Number for X-Sensor</td>
+<td align="center">Sensor (number) for first measurement channel</td>
 </tr>
 </tbody>
 </table>
@@ -4135,7 +4135,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">Used Sensor Number for Y-Sensor</td>
+<td align="center">Sensor (number) for second measurement channel</td>
 </tr>
 </tbody>
 </table>
@@ -4147,7 +4147,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">Used Sensor Number for Z-Sensor</td>
+<td align="center">Sensor (number) for third measurement channel</td>
 </tr>
 </tbody>
 </table>
