@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>ICOtronic Documentation</title>
   <meta name="description" content="Documentation for the ICOTronic system: https://www.mytoolit.com/ICOtronic" />
-  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="ICOtronic Documentation" />
   <meta property="og:type" content="book" />
@@ -185,7 +185,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10.3" data-path=""><a href="#block-streaming"><i class="fa fa-check"></i><b>10.3</b> Block <code>Streaming</code></a><ul>
 <li class="chapter" data-level="10.3.1" data-path=""><a href="#values-1"><i class="fa fa-check"></i><b>10.3.1</b> Values</a></li>
-<li class="chapter" data-level="10.3.2" data-path=""><a href="#command-acceleration"><i class="fa fa-check"></i><b>10.3.2</b> Command <code>Acceleration</code></a></li>
+<li class="chapter" data-level="10.3.2" data-path=""><a href="#command-data"><i class="fa fa-check"></i><b>10.3.2</b> Command <code>Data</code></a></li>
 <li class="chapter" data-level="10.3.3" data-path=""><a href="#command-voltage"><i class="fa fa-check"></i><b>10.3.3</b> Command <code>Voltage</code></a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path=""><a href="#block-statistical-data-and-quantity"><i class="fa fa-check"></i><b>10.4</b> Block <code>Statistical Data and Quantity</code></a><ul>
@@ -3310,7 +3310,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <tbody>
 <tr class="odd">
 <td><code>0x00</code></td>
-<td><a href="#command:acceleration">Acceleration</a></td>
+<td><a href="#command:data">Data</a></td>
 <td>Event</td>
 <td>–</td>
 </tr>
@@ -3437,20 +3437,23 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table></li>
 </ul>
-<p><a name="command:acceleration"></a></p>
+<p><a name="command:data"></a></p>
 </div>
-<div id="command-acceleration" class="section level3 hasAnchor">
-<h3><span class="header-section-number">10.3.2</span> Command <code>Acceleration</code><a href="#command-acceleration" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="command-data" class="section level3 hasAnchor">
+<h3><span class="header-section-number">10.3.2</span> Command <code>Data</code><a href="#command-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
+<li>This command is usually used to access <strong>acceleration streaming data</strong> (for certain axes)</li>
+<li>On <strong>newer firmware</strong>/hardware the streaming command might return <strong>other data as well</strong> (temperature, force, …)</li>
+<li>We refer to measurement channel 1 (2 and 3) in the text below, while we previously used the term x-axis (y-axis and z-axis)</li>
 <li>Requesting while streaming is possible</li>
 <li>Only single stream allowed</li>
 <li>Requesting stream in different format stops last stream</li>
-<li>Tuple format (depending on active axis, see payload):
+<li>Tuple format (depending on active channel, see payload):
 <ul>
-<li>x/y/z</li>
-<li>x/y</li>
-<li>x/z</li>
-<li>y/z</li>
+<li>1/2/3</li>
+<li>1/2</li>
+<li>1/3</li>
+<li>2/3</li>
 </ul></li>
 </ul>
 <div id="payload-5" class="section level4 hasAnchor">
@@ -3478,9 +3481,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <tr class="even">
 <td align="center"><a href="#value:request"><code>Request</code></a></td>
 <td align="center"><a href="#value:bytes"><code>Bytes</code></a></td>
-<td align="center">X-Axis <a href="#value:active"><code>Active</code></a></td>
-<td align="center">Y-Axis <a href="#value:active"><code>Active</code></a></td>
-<td align="center">Z-Axis <a href="#value:active"><code>Active</code></a></td>
+<td align="center">Channel 1 <a href="#value:active"><code>Active</code></a></td>
+<td align="center">Channel 2 <a href="#value:active"><code>Active</code></a></td>
+<td align="center">Channel 3 <a href="#value:active"><code>Active</code></a></td>
 <td align="center"><a href="#value:data-sets"><code>Data Sets</code></a></td>
 </tr>
 </tbody>
@@ -3519,16 +3522,16 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li>Older streaming data is stored in first bytes, newer data in later bytes</li>
 <li>Values are stored in first available bytes,
 <ul>
-<li>first value 1 (<code>x</code>) (if requested),</li>
-<li>then value 2 (<code>y</code>) (if requested),</li>
-<li>then value 3 (<code>z</code>) (if requested)</li>
+<li>first measurement channel 1 (<code>x</code>) (if requested),</li>
+<li>then measurement channel 2 (<code>y</code>) (if requested),</li>
+<li>then measurement channel 3 (<code>z</code>) (if requested)</li>
 </ul></li>
 <li>Data length depends on requested values and number of sets</li>
 </ul>
 <div id="examples" class="section level6 hasAnchor">
 <h6><span class="header-section-number">10.3.2.2.1.1</span> Examples<a href="#examples" class="anchor-section" aria-label="Anchor link to header"></a></h6>
 <ul>
-<li>Request first value (<code>x</code>)</li>
+<li>Request first measurement channel</li>
 <li>Single data set</li>
 <li>2 Byte format</li>
 </ul>
@@ -3540,7 +3543,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">x (LSB)</td>
+<td align="center">Value Channel 1 (LSB)</td>
 </tr>
 </tbody>
 </table>
@@ -3552,12 +3555,12 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">x (MSB)</td>
+<td align="center">Value Channel 1 (MSB)</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>Request second (<code>y</code>) and third value (<code>z</code>)</li>
+<li>Request second and third measurement channel</li>
 <li>Single data set</li>
 <li>2 Byte format</li>
 </ul>
@@ -3569,7 +3572,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">y (LSB)</td>
+<td align="center">Value Channel 2 (LSB)</td>
 </tr>
 </tbody>
 </table>
@@ -3581,7 +3584,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">y (MSB)</td>
+<td align="center">Value Channel 2 (MSB)</td>
 </tr>
 </tbody>
 </table>
@@ -3593,7 +3596,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">z (LSB)</td>
+<td align="center">Value Channel 3 (LSB)</td>
 </tr>
 </tbody>
 </table>
@@ -3605,7 +3608,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">z (MSB)</td>
+<td align="center">Value Channel 3 (MSB)</td>
 </tr>
 </tbody>
 </table>
