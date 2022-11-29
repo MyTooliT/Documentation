@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>ICOtronic Documentation</title>
   <meta name="description" content="Documentation for the ICOTronic system: https://www.mytoolit.com/ICOtronic" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
   <meta property="og:title" content="ICOtronic Documentation" />
   <meta property="og:type" content="book" />
@@ -3026,6 +3026,12 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tr>
 </tbody>
 </table></li>
+<li><p>The <a href="#command:bluetooth:1">Bluetooth <code>Activate</code></a> command (on the STU) is required</p>
+<ul>
+<li>to <strong>enable the advertisement</strong> (and hence the OTA update functionality) of the STU and</li>
+<li>before you search for sensor devices.</li>
+</ul>
+<p>This dual functionality is (probably) also the reason why a second STU might show up in the list of available (sensor) devices.</p></li>
 <li><p><a name="value:bluetooth-device-number"></a><code>Device Number</code>: Sequential positive number assigned by STU to available STH nodes</p>
 <ul>
 <li>For a single STH this number will be <code>0</code></li>
