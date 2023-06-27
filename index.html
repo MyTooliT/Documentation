@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>ICOtronic Documentation</title>
   <meta name="description" content="Documentation for the ICOTronic system: https://www.mytoolit.com/ICOtronic" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="ICOtronic Documentation" />
   <meta property="og:type" content="book" />
@@ -48,25 +48,24 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -86,13 +85,13 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +104,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -119,6 +118,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 </head>
 
@@ -138,29 +141,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path=""><a href="#akronyms"><i class="fa fa-check"></i><b>4</b> Akronyms</a></li>
 <li class="chapter" data-level="5" data-path=""><a href="#terms"><i class="fa fa-check"></i><b>5</b> Terms</a></li>
 <li class="chapter" data-level="6" data-path=""><a href="#overview-icotronic-system"><i class="fa fa-check"></i><b>6</b> Overview ICOtronic System</a></li>
-<li class="chapter" data-level="7" data-path=""><a href="#adc"><i class="fa fa-check"></i><b>7</b> ADC</a><ul>
+<li class="chapter" data-level="7" data-path=""><a href="#adc"><i class="fa fa-check"></i><b>7</b> ADC</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path=""><a href="#guesstimates"><i class="fa fa-check"></i><b>7.1</b> Guesstimates</a></li>
 <li class="chapter" data-level="7.2" data-path=""><a href="#sources"><i class="fa fa-check"></i><b>7.2</b> Sources</a></li>
 <li class="chapter" data-level="7.3" data-path=""><a href="#further-reading"><i class="fa fa-check"></i><b>7.3</b> Further Reading</a></li>
 <li class="chapter" data-level="7.4" data-path=""><a href="#shared-adc-spi-pin"><i class="fa fa-check"></i><b>7.4</b> Shared ADC SPI Pin</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path=""><a href="#eeprom"><i class="fa fa-check"></i><b>8</b> EEPROM</a><ul>
+<li class="chapter" data-level="8" data-path=""><a href="#eeprom"><i class="fa fa-check"></i><b>8</b> EEPROM</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path=""><a href="#terms-1"><i class="fa fa-check"></i><b>8.1</b> Terms</a></li>
-<li class="chapter" data-level="8.2" data-path=""><a href="#layout"><i class="fa fa-check"></i><b>8.2</b> Layout</a><ul>
+<li class="chapter" data-level="8.2" data-path=""><a href="#layout"><i class="fa fa-check"></i><b>8.2</b> Layout</a>
+<ul>
 <li class="chapter" data-level="8.2.1" data-path=""><a href="#pages"><i class="fa fa-check"></i><b>8.2.1</b> Pages:</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path=""><a href="#sth-eeprom"><i class="fa fa-check"></i><b>8.3</b> STH EEPROM</a><ul>
+<li class="chapter" data-level="8.3" data-path=""><a href="#sth-eeprom"><i class="fa fa-check"></i><b>8.3</b> STH EEPROM</a>
+<ul>
 <li class="chapter" data-level="8.3.1" data-path=""><a href="#used-pages"><i class="fa fa-check"></i><b>8.3.1</b> Used Pages</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path=""><a href="#stu-eeprom"><i class="fa fa-check"></i><b>8.4</b> STU EEPROM</a><ul>
+<li class="chapter" data-level="8.4" data-path=""><a href="#stu-eeprom"><i class="fa fa-check"></i><b>8.4</b> STU EEPROM</a>
+<ul>
 <li class="chapter" data-level="8.4.1" data-path=""><a href="#used-pages-1"><i class="fa fa-check"></i><b>8.4.1</b> Used Pages</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path=""><a href="#mytoolit-communication-protocol"><i class="fa fa-check"></i><b>9</b> MyTooliT Communication Protocol</a><ul>
-<li class="chapter" data-level="9.1" data-path=""><a href="#introduction"><i class="fa fa-check"></i><b>9.1</b> Introduction</a><ul>
+<li class="chapter" data-level="9" data-path=""><a href="#mytoolit-communication-protocol"><i class="fa fa-check"></i><b>9</b> MyTooliT Communication Protocol</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path=""><a href="#introduction"><i class="fa fa-check"></i><b>9.1</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="9.1.1" data-path=""><a href="#reserved-bits"><i class="fa fa-check"></i><b>9.1.1</b> Reserved Bits</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path=""><a href="#protocol-specification"><i class="fa fa-check"></i><b>9.2</b> Protocol Specification</a><ul>
+<li class="chapter" data-level="9.2" data-path=""><a href="#protocol-specification"><i class="fa fa-check"></i><b>9.2</b> Protocol Specification</a>
+<ul>
 <li class="chapter" data-level="9.2.1" data-path=""><a href="#identifier"><i class="fa fa-check"></i><b>9.2.1</b> Identifier</a></li>
 <li class="chapter" data-level="9.2.2" data-path=""><a href="#command"><i class="fa fa-check"></i><b>9.2.2</b> Command</a></li>
 <li class="chapter" data-level="9.2.3" data-path=""><a href="#abstracted-can-messages"><i class="fa fa-check"></i><b>9.2.3</b> Abstracted CAN Messages</a></li>
@@ -173,9 +184,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2.10" data-path=""><a href="#can-2.0"><i class="fa fa-check"></i><b>9.2.10</b> CAN 2.0</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path=""><a href="#commands"><i class="fa fa-check"></i><b>10</b> Commands</a><ul>
+<li class="chapter" data-level="10" data-path=""><a href="#commands"><i class="fa fa-check"></i><b>10</b> Commands</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path=""><a href="#blocks"><i class="fa fa-check"></i><b>10.1</b> Blocks</a></li>
-<li class="chapter" data-level="10.2" data-path=""><a href="#block-system"><i class="fa fa-check"></i><b>10.2</b> Block <code>System</code></a><ul>
+<li class="chapter" data-level="10.2" data-path=""><a href="#block-system"><i class="fa fa-check"></i><b>10.2</b> Block <code>System</code></a>
+<ul>
 <li class="chapter" data-level="10.2.1" data-path=""><a href="#command-verboten"><i class="fa fa-check"></i><b>10.2.1</b> Command <code>Verboten</code></a></li>
 <li class="chapter" data-level="10.2.2" data-path=""><a href="#command-reset"><i class="fa fa-check"></i><b>10.2.2</b> Command <code>Reset</code></a></li>
 <li class="chapter" data-level="10.2.3" data-path=""><a href="#command-getset-state"><i class="fa fa-check"></i><b>10.2.3</b> Command <code>Get/Set State</code></a></li>
@@ -183,19 +196,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.2.5" data-path=""><a href="#command-get-error-status"><i class="fa fa-check"></i><b>10.2.5</b> Command <code>Get Error Status</code></a></li>
 <li class="chapter" data-level="10.2.6" data-path=""><a href="#command-bluetooth"><i class="fa fa-check"></i><b>10.2.6</b> Command <code>Bluetooth</code></a></li>
 </ul></li>
-<li class="chapter" data-level="10.3" data-path=""><a href="#block-streaming"><i class="fa fa-check"></i><b>10.3</b> Block <code>Streaming</code></a><ul>
+<li class="chapter" data-level="10.3" data-path=""><a href="#block-streaming"><i class="fa fa-check"></i><b>10.3</b> Block <code>Streaming</code></a>
+<ul>
 <li class="chapter" data-level="10.3.1" data-path=""><a href="#values-1"><i class="fa fa-check"></i><b>10.3.1</b> Values</a></li>
 <li class="chapter" data-level="10.3.2" data-path=""><a href="#command-data"><i class="fa fa-check"></i><b>10.3.2</b> Command <code>Data</code></a></li>
 <li class="chapter" data-level="10.3.3" data-path=""><a href="#command-voltage"><i class="fa fa-check"></i><b>10.3.3</b> Command <code>Voltage</code></a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path=""><a href="#block-statistical-data-and-quantity"><i class="fa fa-check"></i><b>10.4</b> Block <code>Statistical Data and Quantity</code></a><ul>
+<li class="chapter" data-level="10.4" data-path=""><a href="#block-statistical-data-and-quantity"><i class="fa fa-check"></i><b>10.4</b> Block <code>Statistical Data and Quantity</code></a>
+<ul>
 <li class="chapter" data-level="10.4.1" data-path=""><a href="#command-power-on-cycles-power-off-cycles"><i class="fa fa-check"></i><b>10.4.1</b> Command <code>Power On Cycles, Power Off Cycles</code></a></li>
 <li class="chapter" data-level="10.4.2" data-path=""><a href="#command-operating-time"><i class="fa fa-check"></i><b>10.4.2</b> Command <code>Operating time</code></a></li>
 <li class="chapter" data-level="10.4.3" data-path=""><a href="#command-under-voltage-counter"><i class="fa fa-check"></i><b>10.4.3</b> Command <code>Under Voltage Counter</code></a></li>
 <li class="chapter" data-level="10.4.4" data-path=""><a href="#command-watchdog-reset-counter"><i class="fa fa-check"></i><b>10.4.4</b> Command <code>Watchdog Reset Counter</code></a></li>
 <li class="chapter" data-level="10.4.5" data-path=""><a href="#command-production-date"><i class="fa fa-check"></i><b>10.4.5</b> Command <code>Production Date</code></a></li>
 </ul></li>
-<li class="chapter" data-level="10.5" data-path=""><a href="#block-configuration"><i class="fa fa-check"></i><b>10.5</b> Block <code>Configuration</code></a><ul>
+<li class="chapter" data-level="10.5" data-path=""><a href="#block-configuration"><i class="fa fa-check"></i><b>10.5</b> Block <code>Configuration</code></a>
+<ul>
 <li class="chapter" data-level="10.5.1" data-path=""><a href="#command-getset-adc-configuration"><i class="fa fa-check"></i><b>10.5.1</b> Command <code>Get/Set ADC Configuration</code></a></li>
 <li class="chapter" data-level="10.5.2" data-path=""><a href="#command-getset-sensors"><i class="fa fa-check"></i><b>10.5.2</b> Command <code>Get/Set Sensors</code></a></li>
 <li class="chapter" data-level="10.5.3" data-path=""><a href="#command-getset-calibration-factor-k"><i class="fa fa-check"></i><b>10.5.3</b> Command <code>Get/Set Calibration Factor k</code></a></li>
@@ -203,12 +219,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.5.5" data-path=""><a href="#command-calibration-measurement"><i class="fa fa-check"></i><b>10.5.5</b> Command <code>Calibration Measurement</code></a></li>
 <li class="chapter" data-level="10.5.6" data-path=""><a href="#command-hmi-configuration"><i class="fa fa-check"></i><b>10.5.6</b> Command <code>HMI Configuration</code></a></li>
 </ul></li>
-<li class="chapter" data-level="10.6" data-path=""><a href="#block-eeprom"><i class="fa fa-check"></i><b>10.6</b> Block <code>EEPROM</code></a><ul>
+<li class="chapter" data-level="10.6" data-path=""><a href="#block-eeprom"><i class="fa fa-check"></i><b>10.6</b> Block <code>EEPROM</code></a>
+<ul>
 <li class="chapter" data-level="10.6.1" data-path=""><a href="#command-eeprom-read"><i class="fa fa-check"></i><b>10.6.1</b> Command <code>EEPROM Read</code></a></li>
 <li class="chapter" data-level="10.6.2" data-path=""><a href="#command-eeprom-write"><i class="fa fa-check"></i><b>10.6.2</b> Command <code>EEPROM Write</code></a></li>
 <li class="chapter" data-level="10.6.3" data-path=""><a href="#command-read-write-request-counter"><i class="fa fa-check"></i><b>10.6.3</b> Command <code>Read Write Request Counter</code></a></li>
 </ul></li>
-<li class="chapter" data-level="10.7" data-path=""><a href="#block-product-data-and-rfid"><i class="fa fa-check"></i><b>10.7</b> Block <code>Product Data and RFID</code></a><ul>
+<li class="chapter" data-level="10.7" data-path=""><a href="#block-product-data-and-rfid"><i class="fa fa-check"></i><b>10.7</b> Block <code>Product Data and RFID</code></a>
+<ul>
 <li class="chapter" data-level="10.7.1" data-path=""><a href="#command-global-trade-identification-number-gtin"><i class="fa fa-check"></i><b>10.7.1</b> Command <code>Global Trade Identification Number (GTIN)</code></a></li>
 <li class="chapter" data-level="10.7.2" data-path=""><a href="#command-hardware-version"><i class="fa fa-check"></i><b>10.7.2</b> Command <code>Hardware Version</code></a></li>
 <li class="chapter" data-level="10.7.3" data-path=""><a href="#command-firmware-version"><i class="fa fa-check"></i><b>10.7.3</b> Command <code>Firmware Version</code></a></li>
@@ -218,10 +236,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.7.7" data-path=""><a href="#command-oem-free-use"><i class="fa fa-check"></i><b>10.7.7</b> Command <code>OEM Free Use</code></a></li>
 <li class="chapter" data-level="10.7.8" data-path=""><a href="#command-tool-rfid-product-information"><i class="fa fa-check"></i><b>10.7.8</b> Command <code>Tool RFID product information</code></a></li>
 </ul></li>
-<li class="chapter" data-level="10.8" data-path=""><a href="#block-test"><i class="fa fa-check"></i><b>10.8</b> Block <code>Test</code></a><ul>
+<li class="chapter" data-level="10.8" data-path=""><a href="#block-test"><i class="fa fa-check"></i><b>10.8</b> Block <code>Test</code></a>
+<ul>
 <li class="chapter" data-level="10.8.1" data-path=""><a href="#command-test-signal"><i class="fa fa-check"></i><b>10.8.1</b> Command <code>Test signal</code></a></li>
 </ul></li>
-<li class="chapter" data-level="10.9" data-path=""><a href="#errors"><i class="fa fa-check"></i><b>10.9</b> Errors</a><ul>
+<li class="chapter" data-level="10.9" data-path=""><a href="#errors"><i class="fa fa-check"></i><b>10.9</b> Errors</a>
+<ul>
 <li class="chapter" data-level="10.9.1" data-path=""><a href="#command-test-pfeifferl"><i class="fa fa-check"></i><b>10.9.1</b> Command <code>Test Pfeifferl</code></a></li>
 </ul></li>
 </ul></li>
@@ -246,16 +266,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="title">ICOtronic Documentation</h1>
 <p class="author"><em>MyTooliT</em></p>
 </div>
-<div id="documentation" class="section level1 hasAnchor">
+<div id="documentation" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">1</span> Documentation<a href="#documentation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>This repository collects various documentation for the <a href="https://www.mytoolit.com/ICOtronic">ICOtronic system</a>.</p>
 </div>
-<div id="download" class="section level1 hasAnchor">
+<div id="download" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">2</span> Download<a href="#download" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>You can access this repository and its submodules using the following command:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">git</span> clone --recursive git@github.com:MyTooliT/Documentation.git</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--recursive</span> git@github.com:MyTooliT/Documentation.git</span></code></pre></div>
 </div>
-<div id="build" class="section level1 hasAnchor">
+<div id="build" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">3</span> Build<a href="#build" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>You can use <a href="http://bookdown.org">bookdown</a> to generate</p>
 <ul>
@@ -264,17 +284,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>PDF</li>
 </ul>
 <p>versions of this documentation. To do that please use the following <a href="https://en.m.wikipedia.org/wiki/Makefile">make</a> commands:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Generate HTML documentation</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">make</span> html</span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># Generate PDF</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="fu">make</span> pdf</span>
-<span id="cb2-6"><a href="#cb2-6"></a></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="co"># Generate EPUB document</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="fu">make</span> epub</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate HTML documentation</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> html</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate PDF</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> pdf</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate EPUB document</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> epub</span></code></pre></div>
 
 </div>
-<div id="akronyms" class="section level1 hasAnchor">
+<div id="akronyms" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">4</span> Akronyms<a href="#akronyms" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <ul>
 <li><strong>AEM</strong>: Advanced Energy Monitoring</li>
@@ -295,7 +315,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 
 </div>
-<div id="terms" class="section level1 hasAnchor">
+<div id="terms" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">5</span> Terms<a href="#terms" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <ul>
 <li><strong>Event (Message)</strong>: Even messages transport information about signals and events/states</li>
@@ -307,7 +327,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 
 </div>
-<div id="overview-icotronic-system" class="section level1 hasAnchor">
+<div id="overview-icotronic-system" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">6</span> Overview ICOtronic System<a href="#overview-icotronic-system" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>The text below describes how the (lower levels) of the ICOtronic system <em>should work</em>. Currently the system works similarly, but</p>
 <ul>
@@ -345,16 +365,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="Pictures/ICOtronic.svg" width="45%" style="display: block; margin: auto;" /></p>
 
 </div>
-<div id="adc" class="section level1 hasAnchor">
+<div id="adc" class="section level1 hasAnchor" number="7">
 <h1><span class="header-section-number">7</span> ADC<a href="#adc" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="guesstimates" class="section level2 hasAnchor">
+<div id="guesstimates" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Guesstimates<a href="#guesstimates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><span class="math inline">\(\frac{3.9 kS}{s} · 256 ~ \text{oversamples} = \frac{1 MS}{s}\)</span> → 500kHz max. unambiguous signal detection (Nyquist)</li>
 <li><span class="math inline">\(\frac{15.6 kS}{s} · 64 ~ \text{oversamples} = \frac{15.6 kS}{s}\)</span> → 8kHz max. unambiguous signal detection (Nyquist)</li>
 </ul>
 </div>
-<div id="sources" class="section level2 hasAnchor">
+<div id="sources" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Sources<a href="#sources" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>ADC stuff in BGM data sheets: search for SFDR - Spurious-free dynamic range (same as max. frequency, but good search query keyword)</li>
@@ -362,14 +382,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>oversample rates taken from Walther’s documentation, since result gets to 8kHz (what we use) this seems plausible</li>
 </ul>
 </div>
-<div id="further-reading" class="section level2 hasAnchor">
+<div id="further-reading" class="section level2 hasAnchor" number="7.3">
 <h2><span class="header-section-number">7.3</span> Further Reading<a href="#further-reading" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>somewhere some old ADC tests by NL (which combinations work, which don’t)</li>
 <li>shared ADC pin with SPI and other stuff</li>
 </ul>
 </div>
-<div id="shared-adc-spi-pin" class="section level2 hasAnchor">
+<div id="shared-adc-spi-pin" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">7.4</span> Shared ADC SPI Pin<a href="#shared-adc-spi-pin" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>known since 2019 Spring, documented here 2021 Spring</p>
 <ul>
@@ -380,21 +400,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
-<div id="eeprom" class="section level1 hasAnchor">
+<div id="eeprom" class="section level1 hasAnchor" number="8">
 <h1><span class="header-section-number">8</span> EEPROM<a href="#eeprom" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="terms-1" class="section level2 hasAnchor">
+<div id="terms-1" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Terms<a href="#terms-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><a name="term:little-endian">Little Endian</a>: Store the least significant byte (LSB) at the first (smallest) memory address and the most significant byte (MSB) at the last (highest) memory address</li>
 </ul>
 </div>
-<div id="layout" class="section level2 hasAnchor">
+<div id="layout" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> Layout<a href="#layout" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Every page consists of 256 bytes</li>
 <li>The address of a page is the page number multiplied by 256</li>
 </ul>
-<div id="pages" class="section level3 hasAnchor">
+<div id="pages" class="section level3 hasAnchor" number="8.2.1">
 <h3><span class="header-section-number">8.2.1</span> Pages:<a href="#pages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table>
 <colgroup>
@@ -433,7 +453,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p><a name="page:system-configuration"></a></p>
-<div id="page-system-configuration" class="section level4 hasAnchor">
+<div id="page-system-configuration" class="section level4 hasAnchor" number="8.2.1.1">
 <h4><span class="header-section-number">8.2.1.1</span> Page <code>System Configuration</code><a href="#page-system-configuration" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <colgroup>
@@ -505,7 +525,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<div id="sleep-advertisement-times" class="section level5 hasAnchor">
+<div id="sleep-advertisement-times" class="section level5 hasAnchor" number="8.2.1.1.1">
 <h5><span class="header-section-number">8.2.1.1.1</span> Sleep &amp; Advertisement Times<a href="#sleep-advertisement-times" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p><img src="Pictures/STH%20States.svg" width="80%" style="display: block; margin: auto;" /></p>
 <p>Source for power consumption values (Firmware <code>2.1.10</code>): <a href="https://mytoolit.bitrix24.de/workgroups/group/17/tasks/task/view/5175/?any=group%2F17%2Ftasks%2Ftask%2Fview%2F5175%2F&amp;MID=19137#com19137">Bitrix24</a></p>
@@ -518,9 +538,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><a name="page:product-data"></a></p>
 </div>
 </div>
-<div id="page-product-data" class="section level4 hasAnchor">
+<div id="page-product-data" class="section level4 hasAnchor" number="8.2.1.2">
 <h4><span class="header-section-number">8.2.1.2</span> Page <code>Product Data</code><a href="#page-product-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
+<colgroup>
+<col width="4%" />
+<col width="6%" />
+<col width="43%" />
+<col width="37%" />
+<col width="8%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="right">Byte</th>
@@ -624,7 +651,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<div id="version-numbers" class="section level5 hasAnchor">
+<div id="version-numbers" class="section level5 hasAnchor" number="8.2.1.2.1">
 <h5><span class="header-section-number">8.2.1.2.1</span> Version Numbers<a href="#version-numbers" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <ul>
 <li>Version numbers will look like this <code>Major.Minor.Patch</code> (e.g. <code>1.2.3</code>)</li>
@@ -634,12 +661,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><a name="value:release-name"></a></p>
 </div>
-<div id="release-name" class="section level5 hasAnchor">
+<div id="release-name" class="section level5 hasAnchor" number="8.2.1.2.2">
 <h5><span class="header-section-number">8.2.1.2.2</span> Release Name<a href="#release-name" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>This text specifies the code name of the STH/STU software release</p>
 <p><a name="value:serial-number"></a></p>
 </div>
-<div id="serial-number" class="section level5 hasAnchor">
+<div id="serial-number" class="section level5 hasAnchor" number="8.2.1.2.3">
 <h5><span class="header-section-number">8.2.1.2.3</span> Serial Number<a href="#serial-number" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <ul>
 <li>Place for manufacture serial number (derived from ISBN)</li>
@@ -655,7 +682,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><a name="value:product-name"></a></p>
 </div>
-<div id="product-name" class="section level5 hasAnchor">
+<div id="product-name" class="section level5 hasAnchor" number="8.2.1.2.4">
 <h5><span class="header-section-number">8.2.1.2.4</span> Product Name<a href="#product-name" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <ul>
 <li>This text might be used to extend the serial Number</li>
@@ -664,7 +691,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><a name="value:oem-free-use"></a></p>
 </div>
-<div id="oem-free-use" class="section level5 hasAnchor">
+<div id="oem-free-use" class="section level5 hasAnchor" number="8.2.1.2.5">
 <h5><span class="header-section-number">8.2.1.2.5</span> OEM Free Use<a href="#oem-free-use" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <ul>
 <li>Manufacture specific information</li>
@@ -673,9 +700,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><a name="page:statistics"></a></p>
 </div>
 </div>
-<div id="page-statistics" class="section level4 hasAnchor">
+<div id="page-statistics" class="section level4 hasAnchor" number="8.2.1.3">
 <h4><span class="header-section-number">8.2.1.3</span> Page <code>Statistics</code><a href="#page-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
+<colgroup>
+<col width="3%" />
+<col width="5%" />
+<col width="44%" />
+<col width="36%" />
+<col width="6%" />
+<col width="3%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="right">Byte</th>
@@ -762,20 +797,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p><a name="value:power-on-cycles"></a></p>
-<div id="power-on-cycles" class="section level5 hasAnchor">
+<div id="power-on-cycles" class="section level5 hasAnchor" number="8.2.1.3.1">
 <h5><span class="header-section-number">8.2.1.3.1</span> Power On Cycles<a href="#power-on-cycles" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Please note, that a reset also counts as power on cycle</p>
 <p><a name="value:under-voltage-counter"></a></p>
 </div>
-<div id="under-voltage-counter" class="section level5 hasAnchor">
+<div id="under-voltage-counter" class="section level5 hasAnchor" number="8.2.1.3.2">
 <h5><span class="header-section-number">8.2.1.3.2</span> Under Voltage Counter<a href="#under-voltage-counter" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Counts of under voltages that cause turn off state (brownout)</p>
 <p><a name="page:calibration"></a></p>
 </div>
 </div>
-<div id="page-calibration" class="section level4 hasAnchor">
+<div id="page-calibration" class="section level4 hasAnchor" number="8.2.1.4">
 <h4><span class="header-section-number">8.2.1.4</span> Page <code>Calibration</code><a href="#page-calibration" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
+<colgroup>
+<col width="5%" />
+<col width="7%" />
+<col width="35%" />
+<col width="45%" />
+<col width="7%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="right">Byte</th>
@@ -914,7 +956,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<div id="slope-offset" class="section level5 hasAnchor">
+<div id="slope-offset" class="section level5 hasAnchor" number="8.2.1.4.1">
 <h5><span class="header-section-number">8.2.1.4.1</span> Slope &amp; Offset<a href="#slope-offset" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>The values slope (<code>k</code>) and offset (<code>d</code>) specify the values in the equation for the <a href="https://en.m.wikipedia.org/wiki/Linear_function">linear function</a>:</p>
 <p><span class="math display">\[
@@ -925,10 +967,10 @@ y = f(x) = k·x + d
 </div>
 </div>
 </div>
-<div id="sth-eeprom" class="section level2 hasAnchor">
+<div id="sth-eeprom" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> STH EEPROM<a href="#sth-eeprom" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This file contains the default values of the STH EEPROM. For a more detailed description of the values, please take a look at the <a href="EEPROM.md">description of the EEPROM layout</a>.</p>
-<div id="used-pages" class="section level3 hasAnchor">
+<div id="used-pages" class="section level3 hasAnchor" number="8.3.1">
 <h3><span class="header-section-number">8.3.1</span> Used Pages<a href="#used-pages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table>
 <thead>
@@ -957,7 +999,7 @@ y = f(x) = k·x + d
 </tbody>
 </table>
 <p><a name="page:sth-system-configuration"></a></p>
-<div id="page-system-configuration-1" class="section level4 hasAnchor">
+<div id="page-system-configuration-1" class="section level4 hasAnchor" number="8.3.1.1">
 <h4><span class="header-section-number">8.3.1.1</span> Page <code>System Configuration</code><a href="#page-system-configuration-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <colgroup>
@@ -1045,15 +1087,23 @@ y = f(x) = k·x + d
 </tr>
 </tbody>
 </table>
-<div id="initialization" class="section level5 hasAnchor">
+<div id="initialization" class="section level5 hasAnchor" number="8.3.1.1.1">
 <h5><span class="header-section-number">8.3.1.1.1</span> Initialization<a href="#initialization" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>All of the values of the system configuration are set to default values on reset of the STH, if the EEPROM status (byte) is <strong>not</strong> set to <code>Initialized</code> (<code>0xac</code>) or <code>Locked</code> (<code>0xca</code>). The default values are described above. The name is set to the firmware version name (<code>Tanja</code>) and does not use the Base64 encoded Bluetooth MAC address.</p>
 <p><a name="page:sth-product-data"></a></p>
 </div>
 </div>
-<div id="page-product-data-1" class="section level4 hasAnchor">
+<div id="page-product-data-1" class="section level4 hasAnchor" number="8.3.1.2">
 <h4><span class="header-section-number">8.3.1.2</span> Page <code>Product Data</code><a href="#page-product-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
+<colgroup>
+<col width="60%" />
+<col width="7%" />
+<col width="6%" />
+<col width="10%" />
+<col width="5%" />
+<col width="8%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Name</th>
@@ -1155,7 +1205,7 @@ y = f(x) = k·x + d
 </tr>
 </tbody>
 </table>
-<div id="version-numbers-1" class="section level5 hasAnchor">
+<div id="version-numbers-1" class="section level5 hasAnchor" number="8.3.1.2.1">
 <h5><span class="header-section-number">8.3.1.2.1</span> Version Numbers<a href="#version-numbers-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <ul>
 <li><a name="value:sth-hardware-version"></a> <strong>Hardware Version</strong>: This number depends on the hardware version (printed on the PCB). The value itself can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">main configuration file of ICOc</a></li>
@@ -1168,9 +1218,18 @@ y = f(x) = k·x + d
 <p><a name="page:sth-statistics"></a></p>
 </div>
 </div>
-<div id="page-statistics-1" class="section level4 hasAnchor">
+<div id="page-statistics-1" class="section level4 hasAnchor" number="8.3.1.3">
 <h4><span class="header-section-number">8.3.1.3</span> Page <code>Statistics</code><a href="#page-statistics-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<table>
+<table style="width:100%;">
+<colgroup>
+<col width="57%" />
+<col width="7%" />
+<col width="6%" />
+<col width="9%" />
+<col width="5%" />
+<col width="4%" />
+<col width="8%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Name</th>
@@ -1272,9 +1331,17 @@ y = f(x) = k·x + d
 </ul>
 <p><a name="page:sth-calibration"></a></p>
 </div>
-<div id="page-calibration-1" class="section level4 hasAnchor">
+<div id="page-calibration-1" class="section level4 hasAnchor" number="8.3.1.4">
 <h4><span class="header-section-number">8.3.1.4</span> Page <code>Calibration</code><a href="#page-calibration-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
+<colgroup>
+<col width="61%" />
+<col width="8%" />
+<col width="7%" />
+<col width="10%" />
+<col width="5%" />
+<col width="7%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Name</th>
@@ -1336,7 +1403,7 @@ y = f(x) = k·x + d
 </tr>
 </tbody>
 </table>
-<div id="acceleration" class="section level5 hasAnchor">
+<div id="acceleration" class="section level5 hasAnchor" number="8.3.1.4.1">
 <h5><span class="header-section-number">8.3.1.4.1</span> Acceleration<a href="#acceleration" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <ul>
 <li><p><a name="value:acceleration-slope"></a> <strong>Acceleration: Slope</strong>: Acceleration increase for a single step in a certain direction (x, y, z) according to the following formula:</p>
@@ -1360,10 +1427,10 @@ y = f(x) = k·x + d
 </div>
 </div>
 </div>
-<div id="stu-eeprom" class="section level2 hasAnchor">
+<div id="stu-eeprom" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> STU EEPROM<a href="#stu-eeprom" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This file contains the default values for the STU EEPROM. For a more detailed description of the values, please take a look at the <a href="EEPROM.md">description of the EEPROM layout</a>.</p>
-<div id="used-pages-1" class="section level3 hasAnchor">
+<div id="used-pages-1" class="section level3 hasAnchor" number="8.4.1">
 <h3><span class="header-section-number">8.4.1</span> Used Pages<a href="#used-pages-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table>
 <thead>
@@ -1388,9 +1455,19 @@ y = f(x) = k·x + d
 </tbody>
 </table>
 <p><a name="page:stu-system-configuration"></a></p>
-<div id="page-system-configuration-2" class="section level4 hasAnchor">
+<div id="page-system-configuration-2" class="section level4 hasAnchor" number="8.4.1.1">
 <h4><span class="header-section-number">8.4.1.1</span> Page <code>System Configuration</code><a href="#page-system-configuration-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<table>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="6%" />
+<col width="9%" />
+<col width="22%" />
+<col width="29%" />
+<col width="4%" />
+<col width="6%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Name</th>
@@ -1426,15 +1503,23 @@ y = f(x) = k·x + d
 </tr>
 </tbody>
 </table>
-<div id="initialization-1" class="section level5 hasAnchor">
+<div id="initialization-1" class="section level5 hasAnchor" number="8.4.1.1.1">
 <h5><span class="header-section-number">8.4.1.1.1</span> Initialization<a href="#initialization-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>All of the values of the system configuration are set to the default values above on reset of the STU, if the EEPROM status (byte) is <strong>not</strong> set to <code>Initialized</code> (<code>0xac</code>) or <code>Locked</code> (<code>0xca</code>). The values for the sleep times and advertisement times are set (to the same values the STH uses) on initialization too. However, since the STU is not battery-powered these timing values are probably not relevant.</p>
 <p><a name="page:stu-product-data"></a></p>
 </div>
 </div>
-<div id="page-product-data-2" class="section level4 hasAnchor">
+<div id="page-product-data-2" class="section level4 hasAnchor" number="8.4.1.2">
 <h4><span class="header-section-number">8.4.1.2</span> Page <code>Product Data</code><a href="#page-product-data-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
+<colgroup>
+<col width="59%" />
+<col width="7%" />
+<col width="6%" />
+<col width="9%" />
+<col width="7%" />
+<col width="8%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Name</th>
@@ -1536,7 +1621,7 @@ y = f(x) = k·x + d
 </tr>
 </tbody>
 </table>
-<div id="version-numbers-2" class="section level5 hasAnchor">
+<div id="version-numbers-2" class="section level5 hasAnchor" number="8.4.1.2.1">
 <h5><span class="header-section-number">8.4.1.2.1</span> Version Numbers<a href="#version-numbers-2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <ul>
 <li><a name="value:stu-hardware-version"></a> <strong>Hardware Version</strong>: This number depends on the hardware version (printed on the PCB). The value itself can be changed in the <a href="https://github.com/MyTooliT/ICOc/blob/master/Configuration/config.yaml">main configuration file of ICOc</a></li>
@@ -1549,9 +1634,18 @@ y = f(x) = k·x + d
 <p><a name="page:stu-statistics"></a></p>
 </div>
 </div>
-<div id="page-statistics-2" class="section level4 hasAnchor">
+<div id="page-statistics-2" class="section level4 hasAnchor" number="8.4.1.3">
 <h4><span class="header-section-number">8.4.1.3</span> Page <code>Statistics</code><a href="#page-statistics-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<table>
+<table style="width:100%;">
+<colgroup>
+<col width="57%" />
+<col width="7%" />
+<col width="6%" />
+<col width="9%" />
+<col width="5%" />
+<col width="4%" />
+<col width="8%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Name</th>
@@ -1656,7 +1750,7 @@ y = f(x) = k·x + d
 </div>
 </div>
 </div>
-<div id="mytoolit-communication-protocol" class="section level1 hasAnchor">
+<div id="mytoolit-communication-protocol" class="section level1 hasAnchor" number="9">
 <h1><span class="header-section-number">9</span> MyTooliT Communication Protocol<a href="#mytoolit-communication-protocol" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>This document defines the MyTooliT network protocol. The MyTooliT network protocol exchanges information over data link layers like Bluetooth or Controller Area Network (CAN).</p>
 <p>CAN (2.0) logically splits a message into</p>
@@ -1683,7 +1777,7 @@ y = f(x) = k·x + d
 <p>Please note that errors must not requested.</p>
 <p>The MyTooliT communication protocol may also exchange information via Bluetooth. For that purpose CAN messages will be stored into the payload of a data link layer like Bluetooth. The identifier field is handled via a 4 byte header and the payload by an additional payload that follows each message header. Note that a message may have a larger payload than 8 bytes (up to 64 Bytes per message as defined by the CAN-FD specification) but the length is limited to 8 bytes, if CAN 2.0 is used in the transport chain.</p>
 <p>The MyTooliT protocol can also use other data link layer formats like CAN-FD. For example, you can use the protocol for IP application because it is an end-to-end based network protocol.</p>
-<div id="introduction" class="section level2 hasAnchor">
+<div id="introduction" class="section level2 hasAnchor" number="9.1">
 <h2><span class="header-section-number">9.1</span> Introduction<a href="#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>CAN was introduced by BOSCH in the 1980s in the automotive industry to exchange short real time messages between Electronic Control Units (ECU). Each ECU may act as a master i.e. send frames and thus each ECU may control the system</p>
 <ul>
@@ -1701,12 +1795,12 @@ y = f(x) = k·x + d
 <p>A main feature of CAN are prioritized messages i.e. if two or more senders try to send messages simultaneously, the message with the highest priority (lowest identifier) will be sent instantly and the remaining ones afterwards (CSMA/CR).</p>
 <p>This design requires that each message identifier must be unique (each sender has a set of messages) and subscribers must queue messages according to their priority.</p>
 <p>The priority-based concept of messages is a key feature of the MyTooliT network protocol. The protocol uses CAN 2.0, Bluetooth and other data link layer protocols to transport messages between end nodes. Thus, MyTooliT transport messages between end nodes over diverse data link protocols. The flow control is managed by the prioritization of messages, the end-to-end-communication and by limiting the overall traffic to 40%/60% of the total bandwidth.</p>
-<div id="reserved-bits" class="section level3 hasAnchor">
+<div id="reserved-bits" class="section level3 hasAnchor" number="9.1.1">
 <h3><span class="header-section-number">9.1.1</span> Reserved Bits<a href="#reserved-bits" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Reserved Bits must be transmitted as <code>0</code>. This is required for compatibility.</p>
 </div>
 </div>
-<div id="protocol-specification" class="section level2 hasAnchor">
+<div id="protocol-specification" class="section level2 hasAnchor" number="9.2">
 <h2><span class="header-section-number">9.2</span> Protocol Specification<a href="#protocol-specification" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Each CAN 2.0 frame consists of</p>
 <ul>
@@ -1738,7 +1832,7 @@ y = f(x) = k·x + d
 <li>the data length code stores the length of the payload (CAN 2.0: 0 – 8 Byte, CAN-FD 0 – 64 bytes), and</li>
 <li>the payload stores message data.</li>
 </ul>
-<div id="identifier" class="section level3 hasAnchor">
+<div id="identifier" class="section level3 hasAnchor" number="9.2.1">
 <h3><span class="header-section-number">9.2.1</span> Identifier<a href="#identifier" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table>
 <thead>
@@ -1800,7 +1894,7 @@ y = f(x) = k·x + d
 </tbody>
 </table>
 </div>
-<div id="command" class="section level3 hasAnchor">
+<div id="command" class="section level3 hasAnchor" number="9.2.2">
 <h3><span class="header-section-number">9.2.2</span> Command<a href="#command" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table>
 <thead>
@@ -1863,7 +1957,7 @@ y = f(x) = k·x + d
 </tbody>
 </table>
 </div>
-<div id="abstracted-can-messages" class="section level3 hasAnchor">
+<div id="abstracted-can-messages" class="section level3 hasAnchor" number="9.2.3">
 <h3><span class="header-section-number">9.2.3</span> Abstracted CAN Messages<a href="#abstracted-can-messages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As mentioned in the introduction the MyTooliT protocol derives the priorities message concept from CAN 2.0. Therefore, the CAN header (identifier and DLC) are abstracted by a 4 byte header as described in the table below.</p>
 <p>Note: The <code>DLC0</code> bit is at position 0 and the command resides in the 2 bytes at the highest addresses.</p>
@@ -1915,7 +2009,7 @@ y = f(x) = k·x + d
 </table>
 <p>The transport of messages over a data link layer (except CAN 2.0) are fulfilled by putting messages consisting of header and payload in a row up to the length of the data link layer payload. Each node manage the prioritization of messages in each send queue by a prioritized message queue.</p>
 </div>
-<div id="addressing" class="section level3 hasAnchor">
+<div id="addressing" class="section level3 hasAnchor" number="9.2.4">
 <h3><span class="header-section-number">9.2.4</span> Addressing<a href="#addressing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A network consists of two or more subscribers and each subscriber use a unique number (1 – 30; 0 = Broadcast with ACK; 31 = Broadcast without ACK) called address. The address targets a specific subscriber (or all subscribers). Note that the send number is important for the acknowledgement.</p>
 <p>This addressing scheme yields an end-to-end management of the communication state i.e. the internal states of elements inside the end-to-end subscribers do not influence the logical communication state. Thus, only a single channel must be supported for a MyTooliT information exchange i.e. an incoming message that does not address the subscriber is discarded or forwarded. This means the MyTooliT commands can be used over other communication protocols like Bluetooth. Note that the simultaneous transport via CAN 2.0 may not possible due to the replication of the sender and receiver (and the command) at the data link layer.</p>
@@ -1926,28 +2020,28 @@ y = f(x) = k·x + d
 <p class="caption">End To End Communication</p>
 </div>
 </div>
-<div id="dlc" class="section level3 hasAnchor">
+<div id="dlc" class="section level3 hasAnchor" number="9.2.5">
 <h3><span class="header-section-number">9.2.5</span> DLC<a href="#dlc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The MyTooliT protocol uses the DLC as described the CAN-FD standard. The DLC must transfer over other protocols in the same format. Thus the DLC is limited by the data link layer i.e. requesting a command via CAN 2.0 and Bluetooth yields a limit of 8 bytes.</p>
 </div>
-<div id="payload" class="section level3 hasAnchor">
+<div id="payload" class="section level3 hasAnchor" number="9.2.6">
 <h3><span class="header-section-number">9.2.6</span> Payload<a href="#payload" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The payload transports user data and/or sub-payloads.</p>
 </div>
-<div id="startup-an-backup-strategy" class="section level3 hasAnchor">
+<div id="startup-an-backup-strategy" class="section level3 hasAnchor" number="9.2.7">
 <h3><span class="header-section-number">9.2.7</span> Startup an Backup Strategy<a href="#startup-an-backup-strategy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This is currently not implemented. CAN transmits at 1 MBit gross (gross bitrate: bitrate including physical protocol overhead) and Bluetooth transmits the payload at 1Mbit net (net bitrate: bitrate excluding physical protocol overhead). Note, that Bluetooth is a CSMA/CD protocol that will cause jitter without taking any other actions. Collisions also reduce the total bandwidth.</p>
 </div>
-<div id="transmission-speed" class="section level3 hasAnchor">
+<div id="transmission-speed" class="section level3 hasAnchor" number="9.2.8">
 <h3><span class="header-section-number">9.2.8</span> Transmission Speed<a href="#transmission-speed" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The transmission speed depends of the supported data link layer formats.</p>
 </div>
-<div id="bluetooth" class="section level3 hasAnchor">
+<div id="bluetooth" class="section level3 hasAnchor" number="9.2.9">
 <h3><span class="header-section-number">9.2.9</span> Bluetooth<a href="#bluetooth" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The actual Bluetooth transmissions speed is 1 MBit gross. However, a message transmission might be delayed due to CSMA/CD. CSMA/CD prevents transmission, if an ongoing transport is in process in the corresponding transport frequency interval. Each collision delays the transport time exponentially. Note that simultaneously sending or any radio interference may destroy any radio frame and the actual Bluetooth configuration avoids re-requests at the protocol stack level (application must do this).</p>
 <p>Bluetooth supports a net bandwidth of about 700 kBit if each frame is 255 bytes long. However, Bluetooth applications supports a maximum net bandwidth of about 420 kbit/s.</p>
 </div>
-<div id="can-2.0" class="section level3 hasAnchor">
+<div id="can-2.0" class="section level3 hasAnchor" number="9.2.10">
 <h3><span class="header-section-number">9.2.10</span> CAN 2.0<a href="#can-2.0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The transmission speed should be aligned to a maximum of 40% of the total bandwidth. However, in any case there must not be any higher utilization than 60% of the overall bandwidth. In the case of fair message distribution with many nodes and many sporadic messages, the limit should be a utilization of 40%. In cases with many permanent messages the limit may be set to 60%.</p>
 <p>The 40% utilization for CAN2.0 with bit stuffing is calculated as follows:</p>
@@ -1993,9 +2087,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 </div>
 </div>
-<div id="commands" class="section level1 hasAnchor">
+<div id="commands" class="section level1 hasAnchor" number="10">
 <h1><span class="header-section-number">10</span> Commands<a href="#commands" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="blocks" class="section level2 hasAnchor">
+<div id="blocks" class="section level2 hasAnchor" number="10.1">
 <h2><span class="header-section-number">10.1</span> Blocks<a href="#blocks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
 <colgroup>
@@ -2050,9 +2144,15 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </table>
 <p><a name="block:system"></a></p>
 </div>
-<div id="block-system" class="section level2 hasAnchor">
+<div id="block-system" class="section level2 hasAnchor" number="10.2">
 <h2><span class="header-section-number">10.2</span> Block <code>System</code><a href="#block-system" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
+<colgroup>
+<col width="7%" />
+<col width="56%" />
+<col width="12%" />
+<col width="22%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="right">Number</th>
@@ -2101,24 +2201,24 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 <p><a name="command:verboten"></a></p>
-<div id="command-verboten" class="section level3 hasAnchor">
+<div id="command-verboten" class="section level3 hasAnchor" number="10.2.1">
 <h3><span class="header-section-number">10.2.1</span> Command <code>Verboten</code><a href="#command-verboten" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This command is mainly used for initialization purposes</p>
 <p><a name="command:reset"></a></p>
 </div>
-<div id="command-reset" class="section level3 hasAnchor">
+<div id="command-reset" class="section level3 hasAnchor" number="10.2.2">
 <h3><span class="header-section-number">10.2.2</span> Command <code>Reset</code><a href="#command-reset" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Reset the specified receiver. This command has no payload.</p>
 <p><a name="command:get-set-state"></a></p>
 </div>
-<div id="command-getset-state" class="section level3 hasAnchor">
+<div id="command-getset-state" class="section level3 hasAnchor" number="10.2.3">
 <h3><span class="header-section-number">10.2.3</span> Command <code>Get/Set State</code><a href="#command-getset-state" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>Not fully implemented</li>
 <li>Startup state determines operating state</li>
 <li>Standby state works</li>
 </ul>
-<div id="values" class="section level4 hasAnchor">
+<div id="values" class="section level4 hasAnchor" number="10.2.3.1">
 <h4><span class="header-section-number">10.2.3.1</span> Values<a href="#values" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><p><a name="value:get-set-state"></a><code>Get/Set State</code>:</p>
@@ -2235,9 +2335,16 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </table></li>
 </ul>
 </div>
-<div id="payload-1" class="section level4 hasAnchor">
+<div id="payload-1" class="section level4 hasAnchor" number="10.2.3.2">
 <h4><span class="header-section-number">10.2.3.2</span> Payload<a href="#payload-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
+<colgroup>
+<col width="36%" />
+<col width="7%" />
+<col width="27%" />
+<col width="7%" />
+<col width="21%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center">Byte 1</th>
@@ -2265,9 +2372,16 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload" class="section level4 hasAnchor">
+<div id="acknowledgment-payload" class="section level4 hasAnchor" number="10.2.3.3">
 <h4><span class="header-section-number">10.2.3.3</span> Acknowledgment Payload<a href="#acknowledgment-payload" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
+<colgroup>
+<col width="36%" />
+<col width="7%" />
+<col width="27%" />
+<col width="7%" />
+<col width="21%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center">Byte 1</th>
@@ -2295,7 +2409,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="error-payload" class="section level4 hasAnchor">
+<div id="error-payload" class="section level4 hasAnchor" number="10.2.3.4">
 <h4><span class="header-section-number">10.2.3.4</span> Error Payload<a href="#error-payload" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -2312,36 +2426,36 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:get-node-status"></a></p>
 </div>
 </div>
-<div id="command-get-node-status" class="section level3 hasAnchor">
+<div id="command-get-node-status" class="section level3 hasAnchor" number="10.2.4">
 <h3><span class="header-section-number">10.2.4</span> Command <code>Get Node Status</code><a href="#command-get-node-status" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>Note that the state may not be set instantly.</p></li>
 <li><p>The node status word is defined differently for STH and STU</p></li>
 <li><p>STH node status word:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">typedef</span> <span class="kw">union</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>{</span>
-<span id="cb3-3"><a href="#cb3-3"></a> <span class="kw">struct</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a> {</span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="dt">uint32_t</span> bError :<span class="dv">1</span>; <span class="co">/**&lt; Error or healthy */</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a>  <span class="dt">uint32_t</span> u3NetworkState :<span class="dv">3</span>; <span class="co">/**&lt; Which state has node in the network */</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a>  <span class="dt">uint32_t</span> Reserved :<span class="dv">28</span>; <span class="co">/**&lt; Reserved */</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a> };</span>
-<span id="cb3-9"><a href="#cb3-9"></a> <span class="dt">uint32_t</span> u32Word;</span>
-<span id="cb3-10"><a href="#cb3-10"></a> <span class="dt">uint8_t</span> au8Bytes[<span class="dv">4</span><span class="bu">U</span>];</span>
-<span id="cb3-11"><a href="#cb3-11"></a>} NodeStatusWord_t;</span></code></pre></div></li>
+<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">typedef</span> <span class="kw">union</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">struct</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a> <span class="op">{</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint32_t</span> bError <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; Error or healthy */</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint32_t</span> u3NetworkState <span class="op">:</span><span class="dv">3</span><span class="op">;</span> <span class="co">/**&lt; Which state has node in the network */</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint32_t</span> Reserved <span class="op">:</span><span class="dv">28</span><span class="op">;</span> <span class="co">/**&lt; Reserved */</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a> <span class="op">};</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a> <span class="dt">uint32_t</span> u32Word<span class="op">;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a> <span class="dt">uint8_t</span> au8Bytes<span class="op">[</span><span class="dv">4</span><span class="bu">U</span><span class="op">];</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> NodeStatusWord_t<span class="op">;</span></span></code></pre></div></li>
 <li><p>STU node status word:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1"></a>  <span class="kw">struct</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>  {</span>
-<span id="cb4-3"><a href="#cb4-3"></a>    <span class="dt">uint32_t</span> bError :<span class="dv">1</span>; <span class="co">/**&lt; Indicates an overall Error */</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a>    <span class="dt">uint32_t</span> u3NetworkState :<span class="dv">3</span>; <span class="co">/**&lt; Which state has node in the network */</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>    <span class="dt">uint32_t</span> bEnabledRadio :<span class="dv">1</span>; <span class="co">/**&lt; Radio port enabled(1) or disabled(0) */</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a>    <span class="dt">uint32_t</span> bEnabledCan :<span class="dv">1</span>; <span class="co">/**&lt; CAN port enabled(1) or disabled(0) */</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a>    <span class="dt">uint32_t</span> bRadioActive :<span class="dv">1</span>; <span class="co">/**&lt; Radio Active(Connected to Bluetooth) or not */</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a>    <span class="dt">uint32_t</span> Reserved :<span class="dv">25</span>; <span class="co">/**&lt; Reserved */</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a>  };</span>
-<span id="cb4-10"><a href="#cb4-10"></a>  <span class="dt">uint32_t</span> u32Word;</span>
-<span id="cb4-11"><a href="#cb4-11"></a>  <span class="dt">uint8_t</span> au8Bytes[<span class="dv">4</span><span class="bu">U</span>];</span>
-<span id="cb4-12"><a href="#cb4-12"></a>} NodeStatusWord_t;</span></code></pre></div></li>
+<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>  <span class="kw">struct</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">uint32_t</span> bError <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; Indicates an overall Error */</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">uint32_t</span> u3NetworkState <span class="op">:</span><span class="dv">3</span><span class="op">;</span> <span class="co">/**&lt; Which state has node in the network */</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">uint32_t</span> bEnabledRadio <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; Radio port enabled(1) or disabled(0) */</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">uint32_t</span> bEnabledCan <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; CAN port enabled(1) or disabled(0) */</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">uint32_t</span> bRadioActive <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; Radio Active(Connected to Bluetooth) or not */</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">uint32_t</span> Reserved <span class="op">:</span><span class="dv">25</span><span class="op">;</span> <span class="co">/**&lt; Reserved */</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="op">};</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint32_t</span> u32Word<span class="op">;</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint8_t</span> au8Bytes<span class="op">[</span><span class="dv">4</span><span class="bu">U</span><span class="op">];</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> NodeStatusWord_t<span class="op">;</span></span></code></pre></div></li>
 <li><p><a name="value:error-bit"></a><code>Error Bit</code>:</p>
 <table>
 <thead>
@@ -2462,15 +2576,20 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table></li>
 </ul>
-<div id="payload-2" class="section level4 hasAnchor">
+<div id="payload-2" class="section level4 hasAnchor" number="10.2.4.1">
 <h4><span class="header-section-number">10.2.4.1</span> Payload<a href="#payload-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Setting the value <code>0</code> for the node status word mask means that we request the status word</li>
 <li>Currently the only supported payload should be 8 null (<code>0x00</code>) bytes</li>
 </ul>
-<div id="sth" class="section level5 hasAnchor">
+<div id="sth" class="section level5 hasAnchor" number="10.2.4.1.1">
 <h5><span class="header-section-number">10.2.4.1.1</span> STH<a href="#sth" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <table>
+<colgroup>
+<col width="11%" />
+<col width="49%" />
+<col width="39%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center">Byte 1</th>
@@ -2492,7 +2611,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="stu" class="section level5 hasAnchor">
+<div id="stu" class="section level5 hasAnchor" number="10.2.4.1.2">
 <h5><span class="header-section-number">10.2.4.1.2</span> STU<a href="#stu" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <table>
 <colgroup>
@@ -2533,7 +2652,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="sth-stu" class="section level5 hasAnchor">
+<div id="sth-stu" class="section level5 hasAnchor" number="10.2.4.1.3">
 <h5><span class="header-section-number">10.2.4.1.3</span> STH &amp; STU<a href="#sth-stu" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <table>
 <thead>
@@ -2621,13 +2740,13 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </table>
 </div>
 </div>
-<div id="acknowledgement-payload" class="section level4 hasAnchor">
+<div id="acknowledgement-payload" class="section level4 hasAnchor" number="10.2.4.2">
 <h4><span class="header-section-number">10.2.4.2</span> Acknowledgement Payload<a href="#acknowledgement-payload" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Same structure as payload</li>
 </ul>
 </div>
-<div id="error-payload-1" class="section level4 hasAnchor">
+<div id="error-payload-1" class="section level4 hasAnchor" number="10.2.4.3">
 <h4><span class="header-section-number">10.2.4.3</span> Error Payload<a href="#error-payload-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>The (possibly incorrect) length of the status word (5 instead of 4 bytes) was taken from the original documentation.</li>
@@ -2707,32 +2826,32 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:get-error-status"></a></p>
 </div>
 </div>
-<div id="command-get-error-status" class="section level3 hasAnchor">
+<div id="command-get-error-status" class="section level3 hasAnchor" number="10.2.5">
 <h3><span class="header-section-number">10.2.5</span> Command <code>Get Error Status</code><a href="#command-get-error-status" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>STH definition:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">typedef</span> <span class="kw">union</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>{</span>
-<span id="cb5-3"><a href="#cb5-3"></a> <span class="kw">struct</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a> {</span>
-<span id="cb5-5"><a href="#cb5-5"></a>  <span class="dt">uint32_t</span> bTxBluetoothFail :<span class="dv">1</span>; <span class="co">/**&lt; Tx Fail Counter for Bluetooth (non single set) */</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a>  <span class="dt">uint32_t</span> bAdcOverRun :<span class="dv">1</span>;  <span class="co">/**&lt; Determines ADC over run (not able to shuffle data in time) */</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a>  <span class="dt">uint32_t</span> Reserved :<span class="dv">30</span>;</span>
-<span id="cb5-8"><a href="#cb5-8"></a> };</span>
-<span id="cb5-9"><a href="#cb5-9"></a> <span class="dt">uint32_t</span> u32Word;</span>
-<span id="cb5-10"><a href="#cb5-10"></a> <span class="dt">uint8_t</span> au8Bytes[<span class="dv">4</span><span class="bu">U</span>];</span>
-<span id="cb5-11"><a href="#cb5-11"></a>} ErrorStatusWord_t;</span></code></pre></div></li>
+<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">typedef</span> <span class="kw">union</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">struct</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a> <span class="op">{</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint32_t</span> bTxBluetoothFail <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; Tx Fail Counter for Bluetooth (non single set) */</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint32_t</span> bAdcOverRun <span class="op">:</span><span class="dv">1</span><span class="op">;</span>  <span class="co">/**&lt; Determines ADC over run (not able to shuffle data in time) */</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint32_t</span> Reserved <span class="op">:</span><span class="dv">30</span><span class="op">;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a> <span class="op">};</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a> <span class="dt">uint32_t</span> u32Word<span class="op">;</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a> <span class="dt">uint8_t</span> au8Bytes<span class="op">[</span><span class="dv">4</span><span class="bu">U</span><span class="op">];</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> ErrorStatusWord_t<span class="op">;</span></span></code></pre></div></li>
 <li><p>STU definition:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">typedef</span> <span class="kw">union</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>{</span>
-<span id="cb6-3"><a href="#cb6-3"></a>  <span class="kw">struct</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>  {</span>
-<span id="cb6-5"><a href="#cb6-5"></a>      <span class="dt">uint32_t</span> bTxCanFail :<span class="dv">1</span>; <span class="co">/**&lt; Tx Fail Counter for CAN (non single set) */</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a>      <span class="dt">uint32_t</span> Reserved :<span class="dv">31</span>; <span class="co">/**&lt; DAC was not fed */</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>  };</span>
-<span id="cb6-8"><a href="#cb6-8"></a>  <span class="dt">uint32_t</span> u32Word;</span>
-<span id="cb6-9"><a href="#cb6-9"></a>  <span class="dt">uint8_t</span> au8Bytes[<span class="dv">4</span><span class="bu">U</span>];</span>
-<span id="cb6-10"><a href="#cb6-10"></a>} ErrorStatusWord_t;</span></code></pre></div></li>
+<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">typedef</span> <span class="kw">union</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">struct</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">uint32_t</span> bTxCanFail <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; Tx Fail Counter for CAN (non single set) */</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">uint32_t</span> Reserved <span class="op">:</span><span class="dv">31</span><span class="op">;</span> <span class="co">/**&lt; DAC was not fed */</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">};</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint32_t</span> u32Word<span class="op">;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint8_t</span> au8Bytes<span class="op">[</span><span class="dv">4</span><span class="bu">U</span><span class="op">];</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> ErrorStatusWord_t<span class="op">;</span></span></code></pre></div></li>
 <li><p><a name="value:transmission-failure"></a><code>Transmission Failure</code> (Bluetooth for STH, CAN for STU):</p>
 <table>
 <thead>
@@ -2772,15 +2891,20 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table></li>
 </ul>
-<div id="payload-3" class="section level4 hasAnchor">
+<div id="payload-3" class="section level4 hasAnchor" number="10.2.5.1">
 <h4><span class="header-section-number">10.2.5.1</span> Payload<a href="#payload-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Setting the value <code>0</code> for the status word mask means that we request the error status word</li>
 <li>Currently the only supported payload should be 8 null (<code>0x00</code>) bytes</li>
 </ul>
-<div id="sth-1" class="section level5 hasAnchor">
+<div id="sth-1" class="section level5 hasAnchor" number="10.2.5.1.1">
 <h5><span class="header-section-number">10.2.5.1.1</span> STH<a href="#sth-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <table>
+<colgroup>
+<col width="8%" />
+<col width="32%" />
+<col width="58%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center">Byte 1</th>
@@ -2802,9 +2926,13 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="stu-1" class="section level5 hasAnchor">
+<div id="stu-1" class="section level5 hasAnchor" number="10.2.5.1.2">
 <h5><span class="header-section-number">10.2.5.1.2</span> STU<a href="#stu-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <table>
+<colgroup>
+<col width="13%" />
+<col width="86%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center">Byte 1</th>
@@ -2823,7 +2951,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="sth-stu-1" class="section level5 hasAnchor">
+<div id="sth-stu-1" class="section level5 hasAnchor" number="10.2.5.1.3">
 <h5><span class="header-section-number">10.2.5.1.3</span> STH &amp; STU<a href="#sth-stu-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <table>
 <thead>
@@ -2911,13 +3039,13 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </table>
 </div>
 </div>
-<div id="acknowledgement-payload-1" class="section level4 hasAnchor">
+<div id="acknowledgement-payload-1" class="section level4 hasAnchor" number="10.2.5.2">
 <h4><span class="header-section-number">10.2.5.2</span> Acknowledgement Payload<a href="#acknowledgement-payload-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Same structure as payload</li>
 </ul>
 </div>
-<div id="error-payload-2" class="section level4 hasAnchor">
+<div id="error-payload-2" class="section level4 hasAnchor" number="10.2.5.3">
 <h4><span class="header-section-number">10.2.5.3</span> Error Payload<a href="#error-payload-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Same structure as error payload for node status command</li>
@@ -2925,7 +3053,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:bluetooth"></a></p>
 </div>
 </div>
-<div id="command-bluetooth" class="section level3 hasAnchor">
+<div id="command-bluetooth" class="section level3 hasAnchor" number="10.2.6">
 <h3><span class="header-section-number">10.2.6</span> Command <code>Bluetooth</code><a href="#command-bluetooth" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>In general you need at least the following commands to connect to an STH</p>
@@ -3220,7 +3348,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table></li>
 </ul>
-<div id="payload-4" class="section level4 hasAnchor">
+<div id="payload-4" class="section level4 hasAnchor" number="10.2.6.1">
 <h4><span class="header-section-number">10.2.6.1</span> Payload<a href="#payload-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -3260,7 +3388,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </table>
 <p><strong>Note:</strong> Use <code>0</code> bytes if Device Number or <a href="#value:bluetooth-value"><code>Bluetooth Value</code></a> are not applicable (e.g. when you use the <code>Activate</code> command)</p>
 </div>
-<div id="acknowledgement-payload-2" class="section level4 hasAnchor">
+<div id="acknowledgement-payload-2" class="section level4 hasAnchor" number="10.2.6.2">
 <h4><span class="header-section-number">10.2.6.2</span> Acknowledgement Payload<a href="#acknowledgement-payload-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -3302,7 +3430,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 </div>
 </div>
-<div id="block-streaming" class="section level2 hasAnchor">
+<div id="block-streaming" class="section level2 hasAnchor" number="10.3">
 <h2><span class="header-section-number">10.3</span> Block <code>Streaming</code><a href="#block-streaming" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
 <thead>
@@ -3328,7 +3456,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tr>
 </tbody>
 </table>
-<div id="values-1" class="section level3 hasAnchor">
+<div id="values-1" class="section level3 hasAnchor" number="10.3.1">
 <h3><span class="header-section-number">10.3.1</span> Values<a href="#values-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>The <a name="value:data-sets"></a><code>Data Sets</code> bits used in the sections below can have the following values:</p>
@@ -3445,7 +3573,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </ul>
 <p><a name="command:data"></a></p>
 </div>
-<div id="command-data" class="section level3 hasAnchor">
+<div id="command-data" class="section level3 hasAnchor" number="10.3.2">
 <h3><span class="header-section-number">10.3.2</span> Command <code>Data</code><a href="#command-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>This command is usually used to access <strong>acceleration streaming data</strong> (for certain axes)</li>
@@ -3462,9 +3590,17 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li>2/3</li>
 </ul></li>
 </ul>
-<div id="payload-5" class="section level4 hasAnchor">
+<div id="payload-5" class="section level4 hasAnchor" number="10.3.2.1">
 <h4><span class="header-section-number">10.3.2.1</span> Payload<a href="#payload-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<table>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="12%" />
+<col width="18%" />
+<col width="18%" />
+<col width="18%" />
+<col width="16%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center">Byte 1</th>
@@ -3495,7 +3631,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-1" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-1" class="section level4 hasAnchor" number="10.3.2.2">
 <h4><span class="header-section-number">10.3.2.2</span> Acknowledgment Payload<a href="#acknowledgment-payload-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -3521,7 +3657,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tr>
 </tbody>
 </table>
-<div id="streaming-data-bytes" class="section level5 hasAnchor">
+<div id="streaming-data-bytes" class="section level5 hasAnchor" number="10.3.2.2.1">
 <h5><span class="header-section-number">10.3.2.2.1</span> Streaming Data Bytes<a href="#streaming-data-bytes" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <ul>
 <li>Data is sent in little endian order (at least for 2 byte format)</li>
@@ -3534,7 +3670,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </ul></li>
 <li>Data length depends on requested values and number of sets</li>
 </ul>
-<div id="examples" class="section level6 hasAnchor">
+<div id="examples" class="section level6 hasAnchor" number="10.3.2.2.1.1">
 <h6><span class="header-section-number">10.3.2.2.1.1</span> Examples<a href="#examples" class="anchor-section" aria-label="Anchor link to header"></a></h6>
 <ul>
 <li>Request first measurement channel</li>
@@ -3623,9 +3759,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 </div>
 </div>
-<div id="command-voltage" class="section level3 hasAnchor">
+<div id="command-voltage" class="section level3 hasAnchor" number="10.3.3">
 <h3><span class="header-section-number">10.3.3</span> Command <code>Voltage</code><a href="#command-voltage" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="notes" class="section level4 hasAnchor">
+<div id="notes" class="section level4 hasAnchor" number="10.3.3.1">
 <h4><span class="header-section-number">10.3.3.1</span> Notes<a href="#notes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Highest voltage sampling rate determines bit stream rate</li>
@@ -3633,9 +3769,17 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li>To determine the supply/battery voltage (voltage 1) value you need to multiply the returned values with the number <code>5.7</code>. This is the result of the voltage divider circuit we use (which contains a 470 kΩ and 100 kΩ resistor).</li>
 </ul>
 </div>
-<div id="payload-6" class="section level4 hasAnchor">
+<div id="payload-6" class="section level4 hasAnchor" number="10.3.3.2">
 <h4><span class="header-section-number">10.3.3.2</span> Payload<a href="#payload-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<table>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="12%" />
+<col width="18%" />
+<col width="18%" />
+<col width="18%" />
+<col width="16%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center">Byte 1</th>
@@ -3666,16 +3810,22 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-2" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-2" class="section level4 hasAnchor" number="10.3.3.3">
 <h4><span class="header-section-number">10.3.3.3</span> Acknowledgment Payload<a href="#acknowledgment-payload-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The command uses the same format as the “Acknowledgment Payload” of the <code>Acceleration</code> command.</p>
 <p><a name="block:Statistical-Data-and-Quantity"></a></p>
 </div>
 </div>
 </div>
-<div id="block-statistical-data-and-quantity" class="section level2 hasAnchor">
+<div id="block-statistical-data-and-quantity" class="section level2 hasAnchor" number="10.4">
 <h2><span class="header-section-number">10.4</span> Block <code>Statistical Data and Quantity</code><a href="#block-statistical-data-and-quantity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
+<colgroup>
+<col width="5%" />
+<col width="72%" />
+<col width="5%" />
+<col width="16%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="right">Number</th>
@@ -3718,16 +3868,16 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 <p><a name="command:Power-On-Cycles-Power-Off-Cycles"></a></p>
-<div id="command-power-on-cycles-power-off-cycles" class="section level3 hasAnchor">
+<div id="command-power-on-cycles-power-off-cycles" class="section level3 hasAnchor" number="10.4.1">
 <h3><span class="header-section-number">10.4.1</span> Command <code>Power On Cycles, Power Off Cycles</code><a href="#command-power-on-cycles-power-off-cycles" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="notes-1" class="section level4 hasAnchor">
+<div id="notes-1" class="section level4 hasAnchor" number="10.4.1.1">
 <h4><span class="header-section-number">10.4.1.1</span> Notes<a href="#notes-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Power off means power away e.g. Accumulator out of energy</li>
 <li>Power On includes resets</li>
 </ul>
 </div>
-<div id="ack-payload" class="section level4 hasAnchor">
+<div id="ack-payload" class="section level4 hasAnchor" number="10.4.1.2">
 <h4><span class="header-section-number">10.4.1.2</span> ACK Payload<a href="#ack-payload" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -3756,16 +3906,16 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:Operating-time"></a></p>
 </div>
 </div>
-<div id="command-operating-time" class="section level3 hasAnchor">
+<div id="command-operating-time" class="section level3 hasAnchor" number="10.4.2">
 <h3><span class="header-section-number">10.4.2</span> Command <code>Operating time</code><a href="#command-operating-time" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="notes-2" class="section level4 hasAnchor">
+<div id="notes-2" class="section level4 hasAnchor" number="10.4.2.1">
 <h4><span class="header-section-number">10.4.2.1</span> Notes<a href="#notes-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Seconds since first power are stored each half an hour</li>
 <li>The STH also stored seconds since reset in disconnect case.</li>
 </ul>
 </div>
-<div id="ack-payload-1" class="section level4 hasAnchor">
+<div id="ack-payload-1" class="section level4 hasAnchor" number="10.4.2.2">
 <h4><span class="header-section-number">10.4.2.2</span> ACK Payload<a href="#ack-payload-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -3794,9 +3944,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:Under-Voltage-Counter"></a></p>
 </div>
 </div>
-<div id="command-under-voltage-counter" class="section level3 hasAnchor">
+<div id="command-under-voltage-counter" class="section level3 hasAnchor" number="10.4.3">
 <h3><span class="header-section-number">10.4.3</span> Command <code>Under Voltage Counter</code><a href="#command-under-voltage-counter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="ack-payload-2" class="section level4 hasAnchor">
+<div id="ack-payload-2" class="section level4 hasAnchor" number="10.4.3.1">
 <h4><span class="header-section-number">10.4.3.1</span> ACK Payload<a href="#ack-payload-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -3813,9 +3963,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:Watchdog-Reset-Counter"></a></p>
 </div>
 </div>
-<div id="command-watchdog-reset-counter" class="section level3 hasAnchor">
+<div id="command-watchdog-reset-counter" class="section level3 hasAnchor" number="10.4.4">
 <h3><span class="header-section-number">10.4.4</span> Command <code>Watchdog Reset Counter</code><a href="#command-watchdog-reset-counter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="ack-payload-3" class="section level4 hasAnchor">
+<div id="ack-payload-3" class="section level4 hasAnchor" number="10.4.4.1">
 <h4><span class="header-section-number">10.4.4.1</span> ACK Payload<a href="#ack-payload-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -3832,9 +3982,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:Production-Date"></a></p>
 </div>
 </div>
-<div id="command-production-date" class="section level3 hasAnchor">
+<div id="command-production-date" class="section level3 hasAnchor" number="10.4.5">
 <h3><span class="header-section-number">10.4.5</span> Command <code>Production Date</code><a href="#command-production-date" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="ack-payload-4" class="section level4 hasAnchor">
+<div id="ack-payload-4" class="section level4 hasAnchor" number="10.4.5.1">
 <h4><span class="header-section-number">10.4.5.1</span> ACK Payload<a href="#ack-payload-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <colgroup>
@@ -3855,9 +4005,15 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 </div>
 </div>
-<div id="block-configuration" class="section level2 hasAnchor">
+<div id="block-configuration" class="section level2 hasAnchor" number="10.5">
 <h2><span class="header-section-number">10.5</span> Block <code>Configuration</code><a href="#block-configuration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
+<colgroup>
+<col width="5%" />
+<col width="66%" />
+<col width="9%" />
+<col width="17%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Number</th>
@@ -3906,9 +4062,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 <p><a name="command:Get-Set-ADC-Configuration"></a></p>
-<div id="command-getset-adc-configuration" class="section level3 hasAnchor">
+<div id="command-getset-adc-configuration" class="section level3 hasAnchor" number="10.5.1">
 <h3><span class="header-section-number">10.5.1</span> Command <code>Get/Set ADC Configuration</code><a href="#command-getset-adc-configuration" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="values-2" class="section level4 hasAnchor">
+<div id="values-2" class="section level4 hasAnchor" number="10.5.1.1">
 <h4><span class="header-section-number">10.5.1.1</span> Values<a href="#values-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><p><a name="value:get-set-adc-config"></a><code>Get/Set Config</code>:</p>
@@ -3964,7 +4120,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </ul></li>
 </ul>
 </div>
-<div id="payload-7" class="section level4 hasAnchor">
+<div id="payload-7" class="section level4 hasAnchor" number="10.5.1.2">
 <h4><span class="header-section-number">10.5.1.2</span> Payload<a href="#payload-7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -4045,21 +4201,21 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-3" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-3" class="section level4 hasAnchor" number="10.5.1.3">
 <h4><span class="header-section-number">10.5.1.3</span> Acknowledgment Payload<a href="#acknowledgment-payload-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Same structure as payload</li>
 </ul>
 </div>
-<div id="notes-3" class="section level4 hasAnchor">
+<div id="notes-3" class="section level4 hasAnchor" number="10.5.1.4">
 <h4><span class="header-section-number">10.5.1.4</span> Notes<a href="#notes-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div id="sampling-rate" class="section level5 hasAnchor">
+<div id="sampling-rate" class="section level5 hasAnchor" number="10.5.1.4.1">
 <h5><span class="header-section-number">10.5.1.4.1</span> Sampling Rate<a href="#sampling-rate" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <!-- prettier-ignore -->
 <p><span class="math display">\[ \frac{f_{CLOCK}}{(Prescaler+1)·(AcquisitionTime + 12+1) · OverSamplingRate} \]</span></p>
 <p><span class="math display">\[f_{clock}=38400000 Hz\]</span></p>
 </div>
-<div id="setting-at-reset" class="section level5 hasAnchor">
+<div id="setting-at-reset" class="section level5 hasAnchor" number="10.5.1.4.2">
 <h5><span class="header-section-number">10.5.1.4.2</span> Setting at Reset<a href="#setting-at-reset" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <ul>
 <li><a href="#value:prescaler"><code>Prescaler</code></a>: 2</li>
@@ -4071,16 +4227,16 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 </div>
 </div>
-<div id="command-getset-sensors" class="section level3 hasAnchor">
+<div id="command-getset-sensors" class="section level3 hasAnchor" number="10.5.2">
 <h3><span class="header-section-number">10.5.2</span> Command <code>Get/Set Sensors</code><a href="#command-getset-sensors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="notes-4" class="section level4 hasAnchor">
+<div id="notes-4" class="section level4 hasAnchor" number="10.5.2.1">
 <h4><span class="header-section-number">10.5.2.1</span> Notes<a href="#notes-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>If a sensor number sent with a “Set” command is greater than the number of sensors defined by the sensor device then the sensor device will react with an error message.</li>
 <li>The sensor number <code>0</code> represents a special value that tells the sensor device to keep the current sensor configuration value for the specified measurement channel.</li>
 </ul>
 </div>
-<div id="values-3" class="section level4 hasAnchor">
+<div id="values-3" class="section level4 hasAnchor" number="10.5.2.2">
 <h4><span class="header-section-number">10.5.2.2</span> Values<a href="#values-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><p><a name="value:get-set-state-used-sensors"></a><code>Get/Set State</code>:</p>
@@ -4104,7 +4260,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </table></li>
 </ul>
 </div>
-<div id="payload-8" class="section level4 hasAnchor">
+<div id="payload-8" class="section level4 hasAnchor" number="10.5.2.3">
 <h4><span class="header-section-number">10.5.2.3</span> Payload<a href="#payload-8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -4173,7 +4329,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-4" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-4" class="section level4 hasAnchor" number="10.5.2.4">
 <h4><span class="header-section-number">10.5.2.4</span> Acknowledgment Payload<a href="#acknowledgment-payload-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Same structure as payload</li>
@@ -4181,9 +4337,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:Get-Set-Calibration-Factor-k"></a></p>
 </div>
 </div>
-<div id="command-getset-calibration-factor-k" class="section level3 hasAnchor">
+<div id="command-getset-calibration-factor-k" class="section level3 hasAnchor" number="10.5.3">
 <h3><span class="header-section-number">10.5.3</span> Command <code>Get/Set Calibration Factor k</code><a href="#command-getset-calibration-factor-k" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="values-4" class="section level4 hasAnchor">
+<div id="values-4" class="section level4 hasAnchor" number="10.5.3.1">
 <h4><span class="header-section-number">10.5.3.1</span> Values<a href="#values-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><p><a name="value:calibration-element"></a><code>Calibration Element</code>:</p>
@@ -4257,7 +4413,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </table></li>
 </ul>
 </div>
-<div id="payload-9" class="section level4 hasAnchor">
+<div id="payload-9" class="section level4 hasAnchor" number="10.5.3.2">
 <h4><span class="header-section-number">10.5.3.2</span> Payload<a href="#payload-9" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -4329,7 +4485,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-5" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-5" class="section level4 hasAnchor" number="10.5.3.3">
 <h4><span class="header-section-number">10.5.3.3</span> Acknowledgment Payload<a href="#acknowledgment-payload-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -4397,14 +4553,14 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:Get-Set-Callibration-Factor-d"></a></p>
 </div>
 </div>
-<div id="command-getset-calibration-factor-d" class="section level3 hasAnchor">
+<div id="command-getset-calibration-factor-d" class="section level3 hasAnchor" number="10.5.4">
 <h3><span class="header-section-number">10.5.4</span> Command <code>Get/Set Calibration Factor d</code><a href="#command-getset-calibration-factor-d" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Payload and Acknowledgment Payload have the same Structure as <a href="#command:Get-Set-Calibration-Factor-k"><code>Get/Set Calibration Factor k</code></a> but with <code>d (Offset)</code> instead of <code>k (Slope)</code> from <code>kx+d</code>.</p>
 <p><a name="command:Calibration-Measurement"></a></p>
 </div>
-<div id="command-calibration-measurement" class="section level3 hasAnchor">
+<div id="command-calibration-measurement" class="section level3 hasAnchor" number="10.5.5">
 <h3><span class="header-section-number">10.5.5</span> Command <code>Calibration Measurement</code><a href="#command-calibration-measurement" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="notes-5" class="section level4 hasAnchor">
+<div id="notes-5" class="section level4 hasAnchor" number="10.5.5.1">
 <h4><span class="header-section-number">10.5.5.1</span> Notes<a href="#notes-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><p>Activating the self test of an accelerometer:</p>
@@ -4416,7 +4572,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p>seems to only work for the next measurement. This means the STH will return the “normal” acceleration value after you read the acceleration a second time, even if you do not deactivate the self test before the second measurement.</p></li>
 </ul>
 </div>
-<div id="values-5" class="section level4 hasAnchor">
+<div id="values-5" class="section level4 hasAnchor" number="10.5.5.2">
 <h4><span class="header-section-number">10.5.5.2</span> Values<a href="#values-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><p><a name="value:calibration-Get-Set"></a><code>Calibration Get/Set</code>:</p>
@@ -4467,6 +4623,10 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </table></li>
 <li><p><a name="value:calibration-Measurement-Element"></a><code>Calibration Measurement Element</code>:</p>
 <table>
+<colgroup>
+<col width="6%" />
+<col width="93%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="right">Value</th>
@@ -4534,9 +4694,15 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li><p><a name="value:reference-voltage"></a><code>Reference Voltage</code>: This value specifies the reference voltage in fractures of <span class="math inline">\(\frac{1}{20}\)</span> of a volt. A common value would be 66 (<span class="math inline">\(\frac{66}{20} = \frac{33}{10} = 3.3\)</span>) for the supply voltage (<span class="math inline">\(V_{DD}\)</span> Voltage Drain Drain) of 3.3 V.</p></li>
 </ul>
 </div>
-<div id="payload-10" class="section level4 hasAnchor">
+<div id="payload-10" class="section level4 hasAnchor" number="10.5.5.3">
 <h4><span class="header-section-number">10.5.5.3</span> Payload<a href="#payload-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
+<colgroup>
+<col width="43%" />
+<col width="41%" />
+<col width="4%" />
+<col width="11%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center">Byte 1</th>
@@ -4561,6 +4727,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 <table>
+<colgroup>
+<col width="100%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center">Byte 2</th>
@@ -4609,7 +4778,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-6" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-6" class="section level4 hasAnchor" number="10.5.5.4">
 <h4><span class="header-section-number">10.5.5.4</span> Acknowledgment Payload<a href="#acknowledgment-payload-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -4638,9 +4807,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:HMI-Configuration"></a></p>
 </div>
 </div>
-<div id="command-hmi-configuration" class="section level3 hasAnchor">
+<div id="command-hmi-configuration" class="section level3 hasAnchor" number="10.5.6">
 <h3><span class="header-section-number">10.5.6</span> Command <code>HMI Configuration</code><a href="#command-hmi-configuration" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="values-6" class="section level4 hasAnchor">
+<div id="values-6" class="section level4 hasAnchor" number="10.5.6.1">
 <h4><span class="header-section-number">10.5.6.1</span> Values<a href="#values-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><p><a name="value:Get-Set-Sampling-Rate"></a><code>Get/Set Sampling Rate</code>:</p>
@@ -4706,9 +4875,13 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </table></li>
 </ul>
 </div>
-<div id="payload-11" class="section level4 hasAnchor">
+<div id="payload-11" class="section level4 hasAnchor" number="10.5.6.2">
 <h4><span class="header-section-number">10.5.6.2</span> Payload<a href="#payload-11" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
+<colgroup>
+<col width="74%" />
+<col width="25%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center">Byte 1</th>
@@ -4775,7 +4948,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-7" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-7" class="section level4 hasAnchor" number="10.5.6.3">
 <h4><span class="header-section-number">10.5.6.3</span> Acknowledgment Payload<a href="#acknowledgment-payload-7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Same structure as payload</li>
@@ -4784,9 +4957,15 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 </div>
 </div>
-<div id="block-eeprom" class="section level2 hasAnchor">
+<div id="block-eeprom" class="section level2 hasAnchor" number="10.6">
 <h2><span class="header-section-number">10.6</span> Block <code>EEPROM</code><a href="#block-eeprom" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
+<colgroup>
+<col width="6%" />
+<col width="68%" />
+<col width="6%" />
+<col width="18%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="right">Number</th>
@@ -4817,15 +4996,15 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 <p><a name="command:EEPROM-Read"></a></p>
-<div id="command-eeprom-read" class="section level3 hasAnchor">
+<div id="command-eeprom-read" class="section level3 hasAnchor" number="10.6.1">
 <h3><span class="header-section-number">10.6.1</span> Command <code>EEPROM Read</code><a href="#command-eeprom-read" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="notes-6" class="section level4 hasAnchor">
+<div id="notes-6" class="section level4 hasAnchor" number="10.6.1.1">
 <h4><span class="header-section-number">10.6.1.1</span> Notes<a href="#notes-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Used to read data from EEPROM directly</li>
 </ul>
 </div>
-<div id="payload-12" class="section level4 hasAnchor">
+<div id="payload-12" class="section level4 hasAnchor" number="10.6.1.2">
 <h4><span class="header-section-number">10.6.1.2</span> Payload<a href="#payload-12" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -4846,7 +5025,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-8" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-8" class="section level4 hasAnchor" number="10.6.1.3">
 <h4><span class="header-section-number">10.6.1.3</span> Acknowledgment Payload<a href="#acknowledgment-payload-8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -4871,16 +5050,16 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:EEPROM-Write"></a></p>
 </div>
 </div>
-<div id="command-eeprom-write" class="section level3 hasAnchor">
+<div id="command-eeprom-write" class="section level3 hasAnchor" number="10.6.2">
 <h3><span class="header-section-number">10.6.2</span> Command <code>EEPROM Write</code><a href="#command-eeprom-write" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="notes-7" class="section level4 hasAnchor">
+<div id="notes-7" class="section level4 hasAnchor" number="10.6.2.1">
 <h4><span class="header-section-number">10.6.2.1</span> Notes<a href="#notes-7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Used to write data to EEPROM directly</li>
 <li>You are not allowed to change all values, if the EEPROM is locked (<a href="https://github.com/MyTooliT/EEPROM/blob/master/EEPROM.md">byte <code>0</code> is set to value <code>0xca</code></a>)</li>
 </ul>
 </div>
-<div id="payload-13" class="section level4 hasAnchor">
+<div id="payload-13" class="section level4 hasAnchor" number="10.6.2.2">
 <h4><span class="header-section-number">10.6.2.2</span> Payload<a href="#payload-13" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -4903,7 +5082,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-9" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-9" class="section level4 hasAnchor" number="10.6.2.3">
 <h4><span class="header-section-number">10.6.2.3</span> Acknowledgment Payload<a href="#acknowledgment-payload-9" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Same structure as payload</li>
@@ -4911,15 +5090,15 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:Read-Write-Request-Counter"></a></p>
 </div>
 </div>
-<div id="command-read-write-request-counter" class="section level3 hasAnchor">
+<div id="command-read-write-request-counter" class="section level3 hasAnchor" number="10.6.3">
 <h3><span class="header-section-number">10.6.3</span> Command <code>Read Write Request Counter</code><a href="#command-read-write-request-counter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="notes-8" class="section level4 hasAnchor">
+<div id="notes-8" class="section level4 hasAnchor" number="10.6.3.1">
 <h4><span class="header-section-number">10.6.3.1</span> Notes<a href="#notes-8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>The current documentation of this command is based on the (old) code of ICOc</li>
 </ul>
 </div>
-<div id="payload-14" class="section level4 hasAnchor">
+<div id="payload-14" class="section level4 hasAnchor" number="10.6.3.2">
 <h4><span class="header-section-number">10.6.3.2</span> Payload<a href="#payload-14" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -4934,7 +5113,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-10" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-10" class="section level4 hasAnchor" number="10.6.3.3">
 <h4><span class="header-section-number">10.6.3.3</span> Acknowledgment Payload<a href="#acknowledgment-payload-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -4954,9 +5133,15 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 </div>
 </div>
-<div id="block-product-data-and-rfid" class="section level2 hasAnchor">
+<div id="block-product-data-and-rfid" class="section level2 hasAnchor" number="10.7">
 <h2><span class="header-section-number">10.7</span> Block <code>Product Data and RFID</code><a href="#block-product-data-and-rfid" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
+<colgroup>
+<col width="13%" />
+<col width="64%" />
+<col width="5%" />
+<col width="16%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Number</th>
@@ -5017,9 +5202,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 <p><a name="command:GTIN"></a></p>
-<div id="command-global-trade-identification-number-gtin" class="section level3 hasAnchor">
+<div id="command-global-trade-identification-number-gtin" class="section level3 hasAnchor" number="10.7.1">
 <h3><span class="header-section-number">10.7.1</span> Command <code>Global Trade Identification Number (GTIN)</code><a href="#command-global-trade-identification-number-gtin" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="acknowledgment-payload-11" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-11" class="section level4 hasAnchor" number="10.7.1.1">
 <h4><span class="header-section-number">10.7.1.1</span> Acknowledgment Payload<a href="#acknowledgment-payload-11" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -5036,9 +5221,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:Hardware-Version"></a></p>
 </div>
 </div>
-<div id="command-hardware-version" class="section level3 hasAnchor">
+<div id="command-hardware-version" class="section level3 hasAnchor" number="10.7.2">
 <h3><span class="header-section-number">10.7.2</span> Command <code>Hardware Version</code><a href="#command-hardware-version" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="acknowledgment-payload-12" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-12" class="section level4 hasAnchor" number="10.7.2.1">
 <h4><span class="header-section-number">10.7.2.1</span> Acknowledgment Payload<a href="#acknowledgment-payload-12" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -5061,9 +5246,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:Firmware-Version"></a></p>
 </div>
 </div>
-<div id="command-firmware-version" class="section level3 hasAnchor">
+<div id="command-firmware-version" class="section level3 hasAnchor" number="10.7.3">
 <h3><span class="header-section-number">10.7.3</span> Command <code>Firmware Version</code><a href="#command-firmware-version" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="acknowledgment-payload-13" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-13" class="section level4 hasAnchor" number="10.7.3.1">
 <h4><span class="header-section-number">10.7.3.1</span> Acknowledgment Payload<a href="#acknowledgment-payload-13" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -5086,9 +5271,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:Release-Name"></a></p>
 </div>
 </div>
-<div id="command-release-name" class="section level3 hasAnchor">
+<div id="command-release-name" class="section level3 hasAnchor" number="10.7.4">
 <h3><span class="header-section-number">10.7.4</span> Command <code>Release Name</code><a href="#command-release-name" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="acknowledgment-payload-14" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-14" class="section level4 hasAnchor" number="10.7.4.1">
 <h4><span class="header-section-number">10.7.4.1</span> Acknowledgment Payload<a href="#acknowledgment-payload-14" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -5108,9 +5293,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:Serial-Number"></a></p>
 </div>
 </div>
-<div id="command-serial-number" class="section level3 hasAnchor">
+<div id="command-serial-number" class="section level3 hasAnchor" number="10.7.5">
 <h3><span class="header-section-number">10.7.5</span> Command <code>Serial Number</code><a href="#command-serial-number" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="notes-9" class="section level4 hasAnchor">
+<div id="notes-9" class="section level4 hasAnchor" number="10.7.5.1">
 <h4><span class="header-section-number">10.7.5.1</span> Notes<a href="#notes-9" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -5139,7 +5324,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-15" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-15" class="section level4 hasAnchor" number="10.7.5.2">
 <h4><span class="header-section-number">10.7.5.2</span> Acknowledgment Payload<a href="#acknowledgment-payload-15" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>UTF-8 string (8 bytes for each part)</li>
@@ -5148,9 +5333,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:Product-Name"></a></p>
 </div>
 </div>
-<div id="command-product-name" class="section level3 hasAnchor">
+<div id="command-product-name" class="section level3 hasAnchor" number="10.7.6">
 <h3><span class="header-section-number">10.7.6</span> Command <code>Product Name</code><a href="#command-product-name" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="notes-10" class="section level4 hasAnchor">
+<div id="notes-10" class="section level4 hasAnchor" number="10.7.6.1">
 <h4><span class="header-section-number">10.7.6.1</span> Notes<a href="#notes-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Multiple Strings in different languages possible</li>
@@ -5230,7 +5415,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-16" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-16" class="section level4 hasAnchor" number="10.7.6.2">
 <h4><span class="header-section-number">10.7.6.2</span> Acknowledgment Payload<a href="#acknowledgment-payload-16" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>UTF-8 string (8 bytes)</li>
@@ -5238,9 +5423,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:OEM-Free-Use"></a></p>
 </div>
 </div>
-<div id="command-oem-free-use" class="section level3 hasAnchor">
+<div id="command-oem-free-use" class="section level3 hasAnchor" number="10.7.7">
 <h3><span class="header-section-number">10.7.7</span> Command <code>OEM Free Use</code><a href="#command-oem-free-use" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="notes-11" class="section level4 hasAnchor">
+<div id="notes-11" class="section level4 hasAnchor" number="10.7.7.1">
 <h4><span class="header-section-number">10.7.7.1</span> Notes<a href="#notes-11" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <table>
 <thead>
@@ -5285,7 +5470,7 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="acknowledgment-payload-17" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-17" class="section level4 hasAnchor" number="10.7.7.2">
 <h4><span class="header-section-number">10.7.7.2</span> Acknowledgment Payload<a href="#acknowledgment-payload-17" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>8 bytes for each block command</li>
@@ -5293,9 +5478,9 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <p><a name="command:Tool-RFID-product-information"></a></p>
 </div>
 </div>
-<div id="command-tool-rfid-product-information" class="section level3 hasAnchor">
+<div id="command-tool-rfid-product-information" class="section level3 hasAnchor" number="10.7.8">
 <h3><span class="header-section-number">10.7.8</span> Command <code>Tool RFID product information</code><a href="#command-tool-rfid-product-information" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="acknowledgment-payload-18" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-18" class="section level4 hasAnchor" number="10.7.8.1">
 <h4><span class="header-section-number">10.7.8.1</span> Acknowledgment Payload<a href="#acknowledgment-payload-18" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>to be determined</li>
@@ -5304,9 +5489,15 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </div>
 </div>
 </div>
-<div id="block-test" class="section level2 hasAnchor">
+<div id="block-test" class="section level2 hasAnchor" number="10.8">
 <h2><span class="header-section-number">10.8</span> Block <code>Test</code><a href="#block-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
+<colgroup>
+<col width="8%" />
+<col width="57%" />
+<col width="8%" />
+<col width="25%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Number</th>
@@ -5337,11 +5528,11 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 <p><a name="command:Test-signal"></a></p>
-<div id="command-test-signal" class="section level3 hasAnchor">
+<div id="command-test-signal" class="section level3 hasAnchor" number="10.8.1">
 <h3><span class="header-section-number">10.8.1</span> Command <code>Test signal</code><a href="#command-test-signal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="payload-15" class="section level4 hasAnchor">
+<div id="payload-15" class="section level4 hasAnchor" number="10.8.1.1">
 <h4><span class="header-section-number">10.8.1.1</span> Payload<a href="#payload-15" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div id="byte-1" class="section level5 hasAnchor">
+<div id="byte-1" class="section level5 hasAnchor" number="10.8.1.1.1">
 <h5><span class="header-section-number">10.8.1.1.1</span> Byte 1:<a href="#byte-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <table>
 <thead>
@@ -5366,18 +5557,18 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="byte-2" class="section level5 hasAnchor">
+<div id="byte-2" class="section level5 hasAnchor" number="10.8.1.1.2">
 <h5><span class="header-section-number">10.8.1.1.2</span> Byte 2:<a href="#byte-2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Module (Module specific)</p>
 </div>
-<div id="byte-3-8" class="section level5 hasAnchor">
+<div id="byte-3-8" class="section level5 hasAnchor" number="10.8.1.1.3">
 <h5><span class="header-section-number">10.8.1.1.3</span> Byte 3-8:<a href="#byte-3-8" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Module specific</p>
 </div>
 </div>
-<div id="acknowledgment-payload-19" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-19" class="section level4 hasAnchor" number="10.8.1.2">
 <h4><span class="header-section-number">10.8.1.2</span> Acknowledgment Payload<a href="#acknowledgment-payload-19" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div id="byte-1-1" class="section level5 hasAnchor">
+<div id="byte-1-1" class="section level5 hasAnchor" number="10.8.1.2.1">
 <h5><span class="header-section-number">10.8.1.2.1</span> Byte 1:<a href="#byte-1-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <table>
 <thead>
@@ -5402,20 +5593,25 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 </div>
-<div id="byte-2-3" class="section level5 hasAnchor">
+<div id="byte-2-3" class="section level5 hasAnchor" number="10.8.1.2.2">
 <h5><span class="header-section-number">10.8.1.2.2</span> Byte 2-3:<a href="#byte-2-3" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Module (Module specific)</p>
 </div>
-<div id="byte-4-8" class="section level5 hasAnchor">
+<div id="byte-4-8" class="section level5 hasAnchor" number="10.8.1.2.3">
 <h5><span class="header-section-number">10.8.1.2.3</span> Byte 4-8:<a href="#byte-4-8" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Module specific</p>
 </div>
 </div>
 </div>
 </div>
-<div id="errors" class="section level2 hasAnchor">
+<div id="errors" class="section level2 hasAnchor" number="10.9">
 <h2><span class="header-section-number">10.9</span> Errors<a href="#errors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
+<colgroup>
+<col width="6%" />
+<col width="39%" />
+<col width="53%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="right">Value</th>
@@ -5467,16 +5663,16 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 </tbody>
 </table>
 <p><a name="command:Test-pfeifferl"></a></p>
-<div id="command-test-pfeifferl" class="section level3 hasAnchor">
+<div id="command-test-pfeifferl" class="section level3 hasAnchor" number="10.9.1">
 <h3><span class="header-section-number">10.9.1</span> Command <code>Test Pfeifferl</code><a href="#command-test-pfeifferl" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="payload-16" class="section level4 hasAnchor">
+<div id="payload-16" class="section level4 hasAnchor" number="10.9.1.1">
 <h4><span class="header-section-number">10.9.1.1</span> Payload<a href="#payload-16" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div id="byte-1-2" class="section level5 hasAnchor">
+<div id="byte-1-2" class="section level5 hasAnchor" number="10.9.1.1.1">
 <h5><span class="header-section-number">10.9.1.1.1</span> Byte 1:<a href="#byte-1-2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Ch:</p>
 <p>Silabs Channel number, 0-39</p>
 </div>
-<div id="byte-2-1" class="section level5 hasAnchor">
+<div id="byte-2-1" class="section level5 hasAnchor" number="10.9.1.1.2">
 <h5><span class="header-section-number">10.9.1.1.2</span> Byte 2:<a href="#byte-2-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Type:</p>
 <ul>
@@ -5484,33 +5680,33 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li>253: pn9</li>
 </ul>
 </div>
-<div id="byte-3" class="section level5 hasAnchor">
+<div id="byte-3" class="section level5 hasAnchor" number="10.9.1.1.3">
 <h5><span class="header-section-number">10.9.1.1.3</span> Byte 3:<a href="#byte-3" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Wait_Before:</p>
 <p>Time till the RF is turned on in seconds</p>
 </div>
-<div id="byte-4-5" class="section level5 hasAnchor">
+<div id="byte-4-5" class="section level5 hasAnchor" number="10.9.1.1.4">
 <h5><span class="header-section-number">10.9.1.1.4</span> Byte 4-5:<a href="#byte-4-5" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>On_Duration:</p>
 <p>Duration the RF is turned on in seconds</p>
 </div>
-<div id="byte-6" class="section level5 hasAnchor">
+<div id="byte-6" class="section level5 hasAnchor" number="10.9.1.1.5">
 <h5><span class="header-section-number">10.9.1.1.5</span> Byte 6:<a href="#byte-6" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Pwr:</p>
 <p>RF Power (32 = max)</p>
 </div>
-<div id="byte-7" class="section level5 hasAnchor">
+<div id="byte-7" class="section level5 hasAnchor" number="10.9.1.1.6">
 <h5><span class="header-section-number">10.9.1.1.6</span> Byte 7:<a href="#byte-7" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Phy:</p>
 <p>Physical antenna chosen (1 = default)</p>
 </div>
-<div id="byte-8" class="section level5 hasAnchor">
+<div id="byte-8" class="section level5 hasAnchor" number="10.9.1.1.7">
 <h5><span class="header-section-number">10.9.1.1.7</span> Byte 8:<a href="#byte-8" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <p>Len:</p>
 <p>Length of an RF packet (37 = default)</p>
 </div>
 </div>
-<div id="acknowledgment-payload-20" class="section level4 hasAnchor">
+<div id="acknowledgment-payload-20" class="section level4 hasAnchor" number="10.9.1.2">
 <h4><span class="header-section-number">10.9.1.2</span> Acknowledgment Payload<a href="#acknowledgment-payload-20" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Same structure as payload</li>
