@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>ICOtronic Documentation</title>
   <meta name="description" content="Documentation for the ICOTronic system: https://www.mytoolit.com/ICOtronic" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="ICOtronic Documentation" />
   <meta property="og:type" content="book" />
@@ -4224,6 +4224,118 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li><a href="#value:reference-voltage"><code>Reference Voltage</code></a>: 3.3 (<span class="math inline">\(V_{DD}\)</span>) (byte value = 66)</li>
 </ul>
 <p><a name="command:get-set-sensors"></a></p>
+</div>
+<div id="recommended-values" class="section level5 hasAnchor" number="10.5.1.4.3">
+<h5><span class="header-section-number">10.5.1.4.3</span> Recommended Values<a href="#recommended-values" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>The table below list some ADC configuration values we recommend, if you want to change the sample rate from the <strong>default of 9524 Hz</strong>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Sample Rate [Hz]</th>
+<th align="right">Prescaler</th>
+<th align="right">Acquisition Time</th>
+<th align="right">Oversampling Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right"><strong>9524</strong></td>
+<td align="right"><strong>2</strong></td>
+<td align="right"><strong>8</strong></td>
+<td align="right"><strong>64</strong></td>
+</tr>
+<tr class="even">
+<td align="right">9375</td>
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="right">64</td>
+</tr>
+<tr class="odd">
+<td align="right">8889</td>
+<td align="right">2</td>
+<td align="right">32</td>
+<td align="right">32</td>
+</tr>
+<tr class="even">
+<td align="right">6897</td>
+<td align="right">2</td>
+<td align="right">16</td>
+<td align="right">64</td>
+</tr>
+<tr class="odd">
+<td align="right">4762</td>
+<td align="right">2</td>
+<td align="right">8</td>
+<td align="right">128</td>
+</tr>
+<tr class="even">
+<td align="right">3448</td>
+<td align="right">2</td>
+<td align="right">16</td>
+<td align="right">128</td>
+</tr>
+<tr class="odd">
+<td align="right">2381</td>
+<td align="right">2</td>
+<td align="right">8</td>
+<td align="right">256</td>
+</tr>
+<tr class="even">
+<td align="right">1724</td>
+<td align="right">2</td>
+<td align="right">16</td>
+<td align="right">256</td>
+</tr>
+<tr class="odd">
+<td align="right">1190</td>
+<td align="right">2</td>
+<td align="right">8</td>
+<td align="right">512</td>
+</tr>
+<tr class="even">
+<td align="right">862</td>
+<td align="right">2</td>
+<td align="right">16</td>
+<td align="right">512</td>
+</tr>
+<tr class="odd">
+<td align="right">595</td>
+<td align="right">2</td>
+<td align="right">8</td>
+<td align="right">1024</td>
+</tr>
+<tr class="even">
+<td align="right">431</td>
+<td align="right">2</td>
+<td align="right">16</td>
+<td align="right">1024</td>
+</tr>
+<tr class="odd">
+<td align="right">298</td>
+<td align="right">2</td>
+<td align="right">8</td>
+<td align="right">2048</td>
+</tr>
+<tr class="even">
+<td align="right">216</td>
+<td align="right">2</td>
+<td align="right">16</td>
+<td align="right">2048</td>
+</tr>
+<tr class="odd">
+<td align="right">149</td>
+<td align="right">2</td>
+<td align="right">8</td>
+<td align="right">4096</td>
+</tr>
+<tr class="even">
+<td align="right">108</td>
+<td align="right">2</td>
+<td align="right">16</td>
+<td align="right">4096</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
