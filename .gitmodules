@@ -10,3 +10,6 @@
 [submodule "EEPROM"]
 	path = EEPROM
 	url = https://github.com/MyTooliT/EEPROM.git
+[submodule "Analysis"]
+	path = Analysis
+	url = https://github.com/MyTooliT/Data-Analysis.git

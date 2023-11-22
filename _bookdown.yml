@@ -7,6 +7,7 @@ rmd_files:
   - General/Akronyms.md
   - General/Terms.md
   - Overview/Overview.md
+  - Analysis/Analysis.md
   - ADC/ADC.md
   - EEPROM/EEPROM.md
   - EEPROM/EEPROM-STH.md
