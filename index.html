@@ -148,6 +148,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1.1" data-path=""><a href="#general"><i class="fa fa-check"></i><b>7.1.1</b> General</a></li>
 <li class="chapter" data-level="7.1.2" data-path=""><a href="#specific"><i class="fa fa-check"></i><b>7.1.2</b> Specific</a></li>
 </ul></li>
+<li class="chapter" data-level="7.2" data-path=""><a href="#timestamps"><i class="fa fa-check"></i><b>7.2</b> Timestamps</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path=""><a href="#adc"><i class="fa fa-check"></i><b>8</b> ADC</a>
 <ul>
@@ -390,8 +391,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="https://github.com/MyTooliT/ICOlyzer">ICOlyzer</a>: Tools to analyze measurement data from the ICOtronic system</li>
 </ul>
-
 </div>
+</div>
+<div id="timestamps" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Timestamps<a href="#timestamps" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <strong>embedded devices</strong> of the ICOtronic system (STH, STU, SMH) only have knowledge of <strong>relative time</strong>, i.e. they can tell you about the time difference between two timepoints, but they do not know “which time it is”. They simply do not have access to a time source for absolute time, such as a time server or an atomic clock.</p>
+<p>In the case of <a href="https://github.com/mytoolit/ICOc/">ICOc</a> the <strong>measurement computer</strong> adds the information about the <strong>absolute time</strong> a measurement takes place. This means that the timestamps in the measurement files are dependent on the time settings of the computer. Since the timing information is taken from the <strong>timestamp of a CAN message</strong> multiple data points have the same timestamp. The 8 data bytes of a <a href="https://mytoolit.github.io/Documentation/#command:data">CAN streaming data message</a> will contain <strong>three 16 bit measurement values</strong>, which all <strong>share the same timestamp</strong>.</p>
+
 </div>
 </div>
 <div id="adc" class="section level1 hasAnchor" number="8">
