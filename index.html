@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>ICOtronic Documentation</title>
   <meta name="description" content="Documentation for the ICOTronic system: https://www.mytoolit.com/ICOtronic" />
-  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="ICOtronic Documentation" />
   <meta property="og:type" content="book" />
@@ -182,15 +182,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.2" data-path=""><a href="#protocol-specification"><i class="fa fa-check"></i><b>10.2</b> Protocol Specification</a>
 <ul>
 <li class="chapter" data-level="10.2.1" data-path=""><a href="#identifier"><i class="fa fa-check"></i><b>10.2.1</b> Identifier</a></li>
-<li class="chapter" data-level="10.2.2" data-path=""><a href="#command"><i class="fa fa-check"></i><b>10.2.2</b> Command</a></li>
-<li class="chapter" data-level="10.2.3" data-path=""><a href="#abstracted-can-messages"><i class="fa fa-check"></i><b>10.2.3</b> Abstracted CAN Messages</a></li>
-<li class="chapter" data-level="10.2.4" data-path=""><a href="#addressing"><i class="fa fa-check"></i><b>10.2.4</b> Addressing</a></li>
-<li class="chapter" data-level="10.2.5" data-path=""><a href="#dlc"><i class="fa fa-check"></i><b>10.2.5</b> DLC</a></li>
-<li class="chapter" data-level="10.2.6" data-path=""><a href="#payload"><i class="fa fa-check"></i><b>10.2.6</b> Payload</a></li>
-<li class="chapter" data-level="10.2.7" data-path=""><a href="#startup-an-backup-strategy"><i class="fa fa-check"></i><b>10.2.7</b> Startup an Backup Strategy</a></li>
-<li class="chapter" data-level="10.2.8" data-path=""><a href="#transmission-speed"><i class="fa fa-check"></i><b>10.2.8</b> Transmission Speed</a></li>
-<li class="chapter" data-level="10.2.9" data-path=""><a href="#bluetooth"><i class="fa fa-check"></i><b>10.2.9</b> Bluetooth</a></li>
-<li class="chapter" data-level="10.2.10" data-path=""><a href="#can-2.0"><i class="fa fa-check"></i><b>10.2.10</b> CAN 2.0</a></li>
+<li class="chapter" data-level="10.2.2" data-path=""><a href="#network-numbers-senderreceiver"><i class="fa fa-check"></i><b>10.2.2</b> Network Numbers (Sender/Receiver)</a></li>
+<li class="chapter" data-level="10.2.3" data-path=""><a href="#command"><i class="fa fa-check"></i><b>10.2.3</b> Command</a></li>
+<li class="chapter" data-level="10.2.4" data-path=""><a href="#abstracted-can-messages"><i class="fa fa-check"></i><b>10.2.4</b> Abstracted CAN Messages</a></li>
+<li class="chapter" data-level="10.2.5" data-path=""><a href="#addressing"><i class="fa fa-check"></i><b>10.2.5</b> Addressing</a></li>
+<li class="chapter" data-level="10.2.6" data-path=""><a href="#dlc"><i class="fa fa-check"></i><b>10.2.6</b> DLC</a></li>
+<li class="chapter" data-level="10.2.7" data-path=""><a href="#payload"><i class="fa fa-check"></i><b>10.2.7</b> Payload</a></li>
+<li class="chapter" data-level="10.2.8" data-path=""><a href="#startup-an-backup-strategy"><i class="fa fa-check"></i><b>10.2.8</b> Startup an Backup Strategy</a></li>
+<li class="chapter" data-level="10.2.9" data-path=""><a href="#transmission-speed"><i class="fa fa-check"></i><b>10.2.9</b> Transmission Speed</a></li>
+<li class="chapter" data-level="10.2.10" data-path=""><a href="#bluetooth"><i class="fa fa-check"></i><b>10.2.10</b> Bluetooth</a></li>
+<li class="chapter" data-level="10.2.11" data-path=""><a href="#can-2.0"><i class="fa fa-check"></i><b>10.2.11</b> CAN 2.0</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path=""><a href="#commands"><i class="fa fa-check"></i><b>11</b> Commands</a>
@@ -1896,8 +1897,8 @@ y = f(x) = k·x + d
 <p>The following table describes the identifier field.</p>
 <table>
 <colgroup>
-<col width="4%" />
-<col width="95%" />
+<col width="17%" />
+<col width="82%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1911,7 +1912,7 @@ y = f(x) = k·x + d
 <td>Version number <br/> • Must be <code>0</code> or the frame will be discarded</td>
 </tr>
 <tr class="even">
-<td align="center">Command</td>
+<td align="center"><a href="#protocol:command">Command</a></td>
 <td>Command to be executed or acknowledged</td>
 </tr>
 <tr class="odd">
@@ -1919,18 +1920,161 @@ y = f(x) = k·x + d
 <td>Reserved</td>
 </tr>
 <tr class="even">
-<td align="center">Sender</td>
+<td align="center"><a href="#protocol:network-numbers">Sender</a></td>
 <td>Number of the original sender (frames may hop) <br/> • <code>0</code> Not allowed</td>
 </tr>
 <tr class="odd">
-<td align="center">Receiver</td>
+<td align="center"><a href="#protocol:network-numbers">Receiver</a></td>
 <td>Number of the target receiver (frames may hop) <br/> • <code>0</code> broadcasts at field bus (local network) with ACK <br/> • <code>0x1F</code> broadcasts at field bus (local network) without ACK</td>
 </tr>
 </tbody>
 </table>
+<p><a name="protocol:network-numbers"></a></p>
 </div>
-<div id="command" class="section level3 hasAnchor" number="10.2.2">
-<h3><span class="header-section-number">10.2.2</span> Command<a href="#command" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="network-numbers-senderreceiver" class="section level3 hasAnchor" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> Network Numbers (Sender/Receiver)<a href="#network-numbers-senderreceiver" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Number</th>
+<th>Node/Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0</td>
+<td>Broadcast With ACK</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td>STH 1</td>
+</tr>
+<tr class="odd">
+<td align="center">2</td>
+<td>STH 2</td>
+</tr>
+<tr class="even">
+<td align="center">3</td>
+<td>STH 3</td>
+</tr>
+<tr class="odd">
+<td align="center">4</td>
+<td>STH 4</td>
+</tr>
+<tr class="even">
+<td align="center">5</td>
+<td>STH 5</td>
+</tr>
+<tr class="odd">
+<td align="center">6</td>
+<td>STH 6</td>
+</tr>
+<tr class="even">
+<td align="center">7</td>
+<td>STH 7</td>
+</tr>
+<tr class="odd">
+<td align="center">8</td>
+<td>STH 8</td>
+</tr>
+<tr class="even">
+<td align="center">9</td>
+<td>STH 9</td>
+</tr>
+<tr class="odd">
+<td align="center">10</td>
+<td>STH 10</td>
+</tr>
+<tr class="even">
+<td align="center">11</td>
+<td>STH 11</td>
+</tr>
+<tr class="odd">
+<td align="center">12</td>
+<td>STH 12</td>
+</tr>
+<tr class="even">
+<td align="center">13</td>
+<td>STH 13</td>
+</tr>
+<tr class="odd">
+<td align="center">14</td>
+<td>STH 14</td>
+</tr>
+<tr class="even">
+<td align="center">15</td>
+<td>SPU 1</td>
+</tr>
+<tr class="odd">
+<td align="center">16</td>
+<td>SPU 2</td>
+</tr>
+<tr class="even">
+<td align="center">17</td>
+<td>STU 1</td>
+</tr>
+<tr class="odd">
+<td align="center">18</td>
+<td>STU 2</td>
+</tr>
+<tr class="even">
+<td align="center">19</td>
+<td>STU 3</td>
+</tr>
+<tr class="odd">
+<td align="center">20</td>
+<td>STU 4</td>
+</tr>
+<tr class="even">
+<td align="center">21</td>
+<td>STU 5</td>
+</tr>
+<tr class="odd">
+<td align="center">22</td>
+<td>STU 6</td>
+</tr>
+<tr class="even">
+<td align="center">23</td>
+<td>STU 7</td>
+</tr>
+<tr class="odd">
+<td align="center">24</td>
+<td>STU 8</td>
+</tr>
+<tr class="even">
+<td align="center">25</td>
+<td>STU 9</td>
+</tr>
+<tr class="odd">
+<td align="center">26</td>
+<td>STU 10</td>
+</tr>
+<tr class="even">
+<td align="center">27</td>
+<td>STU 11</td>
+</tr>
+<tr class="odd">
+<td align="center">28</td>
+<td>STU 12</td>
+</tr>
+<tr class="even">
+<td align="center">29</td>
+<td>STU 13</td>
+</tr>
+<tr class="odd">
+<td align="center">30</td>
+<td>STU 14</td>
+</tr>
+<tr class="even">
+<td align="center">31</td>
+<td>Broadcast Without ACK</td>
+</tr>
+</tbody>
+</table>
+<p><a name="protocol:command"></a></p>
+</div>
+<div id="command" class="section level3 hasAnchor" number="10.2.3">
+<h3><span class="header-section-number">10.2.3</span> Command<a href="#command" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table>
 <thead>
 <tr class="header">
@@ -1992,8 +2136,8 @@ y = f(x) = k·x + d
 </tbody>
 </table>
 </div>
-<div id="abstracted-can-messages" class="section level3 hasAnchor" number="10.2.3">
-<h3><span class="header-section-number">10.2.3</span> Abstracted CAN Messages<a href="#abstracted-can-messages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="abstracted-can-messages" class="section level3 hasAnchor" number="10.2.4">
+<h3><span class="header-section-number">10.2.4</span> Abstracted CAN Messages<a href="#abstracted-can-messages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As mentioned in the introduction the MyTooliT protocol derives the priorities message concept from CAN 2.0. Therefore, the CAN header (identifier and DLC) are abstracted by a 4 byte header as described in the table below.</p>
 <p>Note: The <code>DLC0</code> bit is at position 0 and the command resides in the 2 bytes at the highest addresses.</p>
 <table>
@@ -2044,8 +2188,8 @@ y = f(x) = k·x + d
 </table>
 <p>The transport of messages over a data link layer (except CAN 2.0) are fulfilled by putting messages consisting of header and payload in a row up to the length of the data link layer payload. Each node manage the prioritization of messages in each send queue by a prioritized message queue.</p>
 </div>
-<div id="addressing" class="section level3 hasAnchor" number="10.2.4">
-<h3><span class="header-section-number">10.2.4</span> Addressing<a href="#addressing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="addressing" class="section level3 hasAnchor" number="10.2.5">
+<h3><span class="header-section-number">10.2.5</span> Addressing<a href="#addressing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A network consists of two or more subscribers and each subscriber use a unique number (1 – 30; 0 = Broadcast with ACK; 31 = Broadcast without ACK) called address. The address targets a specific subscriber (or all subscribers). Note that the send number is important for the acknowledgement.</p>
 <p>This addressing scheme yields an end-to-end management of the communication state i.e. the internal states of elements inside the end-to-end subscribers do not influence the logical communication state. Thus, only a single channel must be supported for a MyTooliT information exchange i.e. an incoming message that does not address the subscriber is discarded or forwarded. This means the MyTooliT commands can be used over other communication protocols like Bluetooth. Note that the simultaneous transport via CAN 2.0 may not possible due to the replication of the sender and receiver (and the command) at the data link layer.</p>
 <p>In the MyTooliT protocol the subscribers manage the error handling e.g. re-request something after a timeout. If that is not the case, then other counter measurements must be fulfilled.</p>
@@ -2055,29 +2199,29 @@ y = f(x) = k·x + d
 <p class="caption">End To End Communication</p>
 </div>
 </div>
-<div id="dlc" class="section level3 hasAnchor" number="10.2.5">
-<h3><span class="header-section-number">10.2.5</span> DLC<a href="#dlc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="dlc" class="section level3 hasAnchor" number="10.2.6">
+<h3><span class="header-section-number">10.2.6</span> DLC<a href="#dlc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The MyTooliT protocol uses the DLC as described the CAN-FD standard. The DLC must transfer over other protocols in the same format. Thus the DLC is limited by the data link layer i.e. requesting a command via CAN 2.0 and Bluetooth yields a limit of 8 bytes.</p>
 </div>
-<div id="payload" class="section level3 hasAnchor" number="10.2.6">
-<h3><span class="header-section-number">10.2.6</span> Payload<a href="#payload" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="payload" class="section level3 hasAnchor" number="10.2.7">
+<h3><span class="header-section-number">10.2.7</span> Payload<a href="#payload" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The payload transports user data and/or sub-payloads.</p>
 </div>
-<div id="startup-an-backup-strategy" class="section level3 hasAnchor" number="10.2.7">
-<h3><span class="header-section-number">10.2.7</span> Startup an Backup Strategy<a href="#startup-an-backup-strategy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="startup-an-backup-strategy" class="section level3 hasAnchor" number="10.2.8">
+<h3><span class="header-section-number">10.2.8</span> Startup an Backup Strategy<a href="#startup-an-backup-strategy" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>This is currently not implemented. CAN transmits at 1 MBit gross (gross bitrate: bitrate including physical protocol overhead) and Bluetooth transmits the payload at 1Mbit net (net bitrate: bitrate excluding physical protocol overhead). Note, that Bluetooth is a CSMA/CD protocol that will cause jitter without taking any other actions. Collisions also reduce the total bandwidth.</p>
 </div>
-<div id="transmission-speed" class="section level3 hasAnchor" number="10.2.8">
-<h3><span class="header-section-number">10.2.8</span> Transmission Speed<a href="#transmission-speed" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="transmission-speed" class="section level3 hasAnchor" number="10.2.9">
+<h3><span class="header-section-number">10.2.9</span> Transmission Speed<a href="#transmission-speed" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The transmission speed depends of the supported data link layer formats.</p>
 </div>
-<div id="bluetooth" class="section level3 hasAnchor" number="10.2.9">
-<h3><span class="header-section-number">10.2.9</span> Bluetooth<a href="#bluetooth" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="bluetooth" class="section level3 hasAnchor" number="10.2.10">
+<h3><span class="header-section-number">10.2.10</span> Bluetooth<a href="#bluetooth" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The actual Bluetooth transmissions speed is 1 MBit gross. However, a message transmission might be delayed due to CSMA/CD. CSMA/CD prevents transmission, if an ongoing transport is in process in the corresponding transport frequency interval. Each collision delays the transport time exponentially. Note that simultaneously sending or any radio interference may destroy any radio frame and the actual Bluetooth configuration avoids re-requests at the protocol stack level (application must do this).</p>
 <p>Bluetooth supports a net bandwidth of about 700 kBit if each frame is 255 bytes long. However, Bluetooth applications supports a maximum net bandwidth of about 420 kbit/s.</p>
 </div>
-<div id="can-2.0" class="section level3 hasAnchor" number="10.2.10">
-<h3><span class="header-section-number">10.2.10</span> CAN 2.0<a href="#can-2.0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="can-2.0" class="section level3 hasAnchor" number="10.2.11">
+<h3><span class="header-section-number">10.2.11</span> CAN 2.0<a href="#can-2.0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The transmission speed should be aligned to a maximum of 40% of the total bandwidth. However, in any case there must not be any higher utilization than 60% of the overall bandwidth. In the case of fair message distribution with many nodes and many sporadic messages, the limit should be a utilization of 40%. In cases with many permanent messages the limit may be set to 60%.</p>
 <p>The 40% utilization for CAN2.0 with bit stuffing is calculated as follows:</p>
 <p><span class="math display">\[
