@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>ICOtronic Documentation</title>
   <meta name="description" content="Documentation for the ICOTronic system: https://www.mytoolit.com/ICOtronic" />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="ICOtronic Documentation" />
   <meta property="og:type" content="book" />
@@ -55,7 +55,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -283,7 +283,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="download" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">2</span> Download<a href="#download" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>You can access this repository and its submodules using the following command:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--recursive</span> git@github.com:MyTooliT/Documentation.git</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--recursive</span> git@github.com:MyTooliT/Documentation.git</span></code></pre></div>
 </div>
 <div id="build" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">3</span> Build<a href="#build" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -294,14 +294,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>PDF</li>
 </ul>
 <p>versions of this documentation. To do that please use the following <a href="https://en.m.wikipedia.org/wiki/Makefile">make</a> commands:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate HTML documentation</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> html</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate PDF</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> pdf</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate EPUB document</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> epub</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># Generate HTML documentation</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">make</span> html</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># Generate PDF</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="fu">make</span> pdf</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co"># Generate EPUB document</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">make</span> epub</span></code></pre></div>
 
 </div>
 <div id="akronyms" class="section level1 hasAnchor" number="4">
@@ -339,40 +339,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="overview-icotronic-system" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">6</span> Overview ICOtronic System<a href="#overview-icotronic-system" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>The text below describes how the (lower levels) of the ICOtronic system <em>should work</em>. Currently the system works similarly, but</p>
+<p>The text below describes the (lower levels) of the ICOtronic system.</p>
 <ul>
-<li>the communication interface (ICOconnect),</li>
-<li>the tests (ICOtest), and</li>
-<li>the user interface (ICOc)</li>
-</ul>
-<p>are all part of a <a href="https://github.com/MyTooliT/ICOc">single monolithic code base</a>.</p>
-<ul>
-<li><p><strong>ICOconnect</strong></p>
-<ul>
-<li>Python package for CAN access to sensor hardware</li>
-<li>Based on <a href="http://github.com/MyTooliT/Protocol">MyTooliT Communication protocol</a></li>
-<li>Ideally available online (via <a href="https://pypi.org">PyPi</a>)
-(requires opening up the code)</li>
-</ul></li>
 <li><p><strong>ICOc</strong></p>
 <ul>
-<li>Uses ICOconnect to communicate with sensor hardware</li>
-<li>User interface for sensor hardware</li>
-<li>Configures STH/STU attributes (e.g. name, sampling frequency)</li>
-<li>Records data (e.g. acceleration values) as log files</li>
-</ul></li>
-<li><p><strong>ICOtest</strong></p>
+<li>Python package (library) for CAN access to sensor hardware</li>
+<li>Based on <a href="http://github.com/MyTooliT/Protocol">MyTooliT Communication protocol</a></li>
+<li>Available on <a href="https://pypi.org/project/icoc/">PyPi</a></li>
+<li>Contains scripts for
 <ul>
-<li>Uses ICOconnect to communicate with sensor hardware</li>
+<li>testing (<code>test-sth</code>, <code>test-stu</code>, …)
+<ul>
 <li>Test environment for sensor hardware (STH, STU)</li>
 <li>Tests if the hardware works correctly</li>
 </ul></li>
-<li><p><strong>ICOtools</strong></p>
+<li>measuring data and controlling the system (<code>icoc</code>, <code>icon</code>):
 <ul>
-<li>Scripts that use data stored by ICOc to analyze captured data</li>
+<li>User interface for sensor hardware</li>
+<li>Configures STH/STU attributes (e.g. name, sampling frequency)</li>
+<li>Record data (e.g. acceleration values) in HDF5 format</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p><strong>ICOlyzer</strong></p>
+<ul>
+<li>Scripts that uses measurement data stored by ICOc to analyze captured data</li>
+<li>Available on <a href="https://pypi.org/project/icolyzer/">PyPi</a></li>
 </ul></li>
 </ul>
-<p><img src="Pictures/ICOtronic.svg" width="45%" style="display: block; margin: auto;" /></p>
+<p><img src="Pictures/ICOtronic.svg" width="75%" style="display: block; margin: auto;" /></p>
 
 </div>
 <div id="data-analysis" class="section level1 hasAnchor" number="7">
@@ -1823,9 +1818,9 @@ y = f(x) = k·x + d
 <li>processing information.</li>
 </ul>
 <p>A standard base format (11 bit identifier) and an extended format (29 bit identifier) exist. The MyTooliT communication protocol is based on the extended format. The following figure describes the extended format:</p>
-<div class="figure">
-<img src="Pictures/CAN%20Frame.png" alt="" />
-<p class="caption">CAN Frame</p>
+<div class="float">
+<img src="Pictures/CAN%20Frame.png" alt="CAN Frame" />
+<div class="figcaption">CAN Frame</div>
 </div>
 <p>For more information, please take a look at the <a href="https://en.wikipedia.org/wiki/CAN_bus">Wikipedia article about CAN</a> or other available literature (e.g. <a href="https://repositum.tuwien.at/retrieve/27430">Experimental Framework for Controller Area Network based on a Multi-Processor-System-on-a- Chip</a>).</p>
 <p>A main feature of CAN are prioritized messages i.e. if two or more senders try to send messages simultaneously, the message with the highest priority (lowest identifier) will be sent instantly and the remaining ones afterwards (CSMA/CR).</p>
@@ -2194,9 +2189,9 @@ y = f(x) = k·x + d
 <p>This addressing scheme yields an end-to-end management of the communication state i.e. the internal states of elements inside the end-to-end subscribers do not influence the logical communication state. Thus, only a single channel must be supported for a MyTooliT information exchange i.e. an incoming message that does not address the subscriber is discarded or forwarded. This means the MyTooliT commands can be used over other communication protocols like Bluetooth. Note that the simultaneous transport via CAN 2.0 may not possible due to the replication of the sender and receiver (and the command) at the data link layer.</p>
 <p>In the MyTooliT protocol the subscribers manage the error handling e.g. re-request something after a timeout. If that is not the case, then other counter measurements must be fulfilled.</p>
 <p>The following figure shows the overall idea of network addressing.</p>
-<div class="figure">
-<img src="Pictures/End%20To%20End%20Communication.png" alt="" />
-<p class="caption">End To End Communication</p>
+<div class="float">
+<img src="Pictures/End%20To%20End%20Communication.png" alt="End To End Communication" />
+<div class="figcaption">End To End Communication</div>
 </div>
 </div>
 <div id="dlc" class="section level3 hasAnchor" number="10.2.6">
@@ -2611,30 +2606,30 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <li><p>Note that the state may not be set instantly.</p></li>
 <li><p>The node status word is defined differently for STH and STU</p></li>
 <li><p>STH node status word:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">typedef</span> <span class="kw">union</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">struct</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a> <span class="op">{</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint32_t</span> bError <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; Error or healthy */</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint32_t</span> u3NetworkState <span class="op">:</span><span class="dv">3</span><span class="op">;</span> <span class="co">/**&lt; Which state has node in the network */</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint32_t</span> Reserved <span class="op">:</span><span class="dv">28</span><span class="op">;</span> <span class="co">/**&lt; Reserved */</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a> <span class="op">};</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a> <span class="dt">uint32_t</span> u32Word<span class="op">;</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a> <span class="dt">uint8_t</span> au8Bytes<span class="op">[</span><span class="dv">4</span><span class="bu">U</span><span class="op">];</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> NodeStatusWord_t<span class="op">;</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">typedef</span> <span class="kw">union</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a> <span class="kw">struct</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a> <span class="op">{</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  <span class="dt">uint32_t</span> bError <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; Error or healthy */</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>  <span class="dt">uint32_t</span> u3NetworkState <span class="op">:</span><span class="dv">3</span><span class="op">;</span> <span class="co">/**&lt; Which state has node in the network */</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>  <span class="dt">uint32_t</span> Reserved <span class="op">:</span><span class="dv">28</span><span class="op">;</span> <span class="co">/**&lt; Reserved */</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a> <span class="op">};</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a> <span class="dt">uint32_t</span> u32Word<span class="op">;</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a> <span class="dt">uint8_t</span> au8Bytes<span class="op">[</span><span class="dv">4</span><span class="bu">U</span><span class="op">];</span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="op">}</span> NodeStatusWord_t<span class="op">;</span></span></code></pre></div></li>
 <li><p>STU node status word:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>  <span class="kw">struct</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">uint32_t</span> bError <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; Indicates an overall Error */</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">uint32_t</span> u3NetworkState <span class="op">:</span><span class="dv">3</span><span class="op">;</span> <span class="co">/**&lt; Which state has node in the network */</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">uint32_t</span> bEnabledRadio <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; Radio port enabled(1) or disabled(0) */</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">uint32_t</span> bEnabledCan <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; CAN port enabled(1) or disabled(0) */</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">uint32_t</span> bRadioActive <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; Radio Active(Connected to Bluetooth) or not */</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">uint32_t</span> Reserved <span class="op">:</span><span class="dv">25</span><span class="op">;</span> <span class="co">/**&lt; Reserved */</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="op">};</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint32_t</span> u32Word<span class="op">;</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint8_t</span> au8Bytes<span class="op">[</span><span class="dv">4</span><span class="bu">U</span><span class="op">];</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> NodeStatusWord_t<span class="op">;</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>  <span class="kw">struct</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>    <span class="dt">uint32_t</span> bError <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; Indicates an overall Error */</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>    <span class="dt">uint32_t</span> u3NetworkState <span class="op">:</span><span class="dv">3</span><span class="op">;</span> <span class="co">/**&lt; Which state has node in the network */</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>    <span class="dt">uint32_t</span> bEnabledRadio <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; Radio port enabled(1) or disabled(0) */</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>    <span class="dt">uint32_t</span> bEnabledCan <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; CAN port enabled(1) or disabled(0) */</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>    <span class="dt">uint32_t</span> bRadioActive <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; Radio Active(Connected to Bluetooth) or not */</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>    <span class="dt">uint32_t</span> Reserved <span class="op">:</span><span class="dv">25</span><span class="op">;</span> <span class="co">/**&lt; Reserved */</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>  <span class="op">};</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>  <span class="dt">uint32_t</span> u32Word<span class="op">;</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>  <span class="dt">uint8_t</span> au8Bytes<span class="op">[</span><span class="dv">4</span><span class="bu">U</span><span class="op">];</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="op">}</span> NodeStatusWord_t<span class="op">;</span></span></code></pre></div></li>
 <li><p><a name="value:error-bit"></a><code>Error Bit</code>:</p>
 <table>
 <thead>
@@ -3009,28 +3004,28 @@ U = \frac{1000·67}{1000000} + \frac{1000·512}{8000000} = 0.067 + 0.064 = 0.131
 <h3><span class="header-section-number">11.2.5</span> Command <code>Get Error Status</code><a href="#command-get-error-status" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>STH definition:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">typedef</span> <span class="kw">union</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">struct</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a> <span class="op">{</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint32_t</span> bTxBluetoothFail <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; Tx Fail Counter for Bluetooth (non single set) */</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint32_t</span> bAdcOverRun <span class="op">:</span><span class="dv">1</span><span class="op">;</span>  <span class="co">/**&lt; Determines ADC over run (not able to shuffle data in time) */</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint32_t</span> Reserved <span class="op">:</span><span class="dv">30</span><span class="op">;</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a> <span class="op">};</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a> <span class="dt">uint32_t</span> u32Word<span class="op">;</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a> <span class="dt">uint8_t</span> au8Bytes<span class="op">[</span><span class="dv">4</span><span class="bu">U</span><span class="op">];</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> ErrorStatusWord_t<span class="op">;</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">typedef</span> <span class="kw">union</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a> <span class="kw">struct</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a> <span class="op">{</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  <span class="dt">uint32_t</span> bTxBluetoothFail <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; Tx Fail Counter for Bluetooth (non single set) */</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>  <span class="dt">uint32_t</span> bAdcOverRun <span class="op">:</span><span class="dv">1</span><span class="op">;</span>  <span class="co">/**&lt; Determines ADC over run (not able to shuffle data in time) */</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>  <span class="dt">uint32_t</span> Reserved <span class="op">:</span><span class="dv">30</span><span class="op">;</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a> <span class="op">};</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a> <span class="dt">uint32_t</span> u32Word<span class="op">;</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a> <span class="dt">uint8_t</span> au8Bytes<span class="op">[</span><span class="dv">4</span><span class="bu">U</span><span class="op">];</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="op">}</span> ErrorStatusWord_t<span class="op">;</span></span></code></pre></div></li>
 <li><p>STU definition:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">typedef</span> <span class="kw">union</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">struct</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="op">{</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">uint32_t</span> bTxCanFail <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; Tx Fail Counter for CAN (non single set) */</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">uint32_t</span> Reserved <span class="op">:</span><span class="dv">31</span><span class="op">;</span> <span class="co">/**&lt; DAC was not fed */</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="op">};</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint32_t</span> u32Word<span class="op">;</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">uint8_t</span> au8Bytes<span class="op">[</span><span class="dv">4</span><span class="bu">U</span><span class="op">];</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> ErrorStatusWord_t<span class="op">;</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">typedef</span> <span class="kw">union</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>  <span class="kw">struct</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>  <span class="op">{</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>      <span class="dt">uint32_t</span> bTxCanFail <span class="op">:</span><span class="dv">1</span><span class="op">;</span> <span class="co">/**&lt; Tx Fail Counter for CAN (non single set) */</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>      <span class="dt">uint32_t</span> Reserved <span class="op">:</span><span class="dv">31</span><span class="op">;</span> <span class="co">/**&lt; DAC was not fed */</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>  <span class="op">};</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>  <span class="dt">uint32_t</span> u32Word<span class="op">;</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>  <span class="dt">uint8_t</span> au8Bytes<span class="op">[</span><span class="dv">4</span><span class="bu">U</span><span class="op">];</span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="op">}</span> ErrorStatusWord_t<span class="op">;</span></span></code></pre></div></li>
 <li><p><a name="value:transmission-failure"></a><code>Transmission Failure</code> (Bluetooth for STH, CAN for STU):</p>
 <table>
 <thead>
