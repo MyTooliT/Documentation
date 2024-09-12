@@ -1,37 +1,26 @@
 # Overview ICOtronic System
 
-The text below describes how the (lower levels) of the ICOtronic system _should work_. Currently the system works similarly, but
-
-- the communication interface (ICOconnect),
-- the tests (ICOtest), and
-- the user interface (ICOc)
-
-are all part of a [single monolithic code base](https://github.com/MyTooliT/ICOc).
-
-- **ICOconnect**
-
-  - Python package for CAN access to sensor hardware
-  - Based on [MyTooliT Communication protocol](http://github.com/MyTooliT/Protocol)
-  - Ideally available online (via [PyPi](https://pypi.org))
-    (requires opening up the code)
+The text below describes the (lower levels) of the ICOtronic system.
 
 - **ICOc**
 
-  - Uses ICOconnect to communicate with sensor hardware
-  - User interface for sensor hardware
-  - Configures STH/STU attributes (e.g. name, sampling frequency)
-  - Records data (e.g. acceleration values) as log files
+  - Python package (library) for CAN access to sensor hardware
+  - Based on [MyTooliT Communication protocol](http://github.com/MyTooliT/Protocol)
+  - Available on [PyPi](https://pypi.org/project/icoc/)
+  - Contains scripts for
+    - testing (`test-sth`, `test-stu`, …)
+      - Test environment for sensor hardware (STH, STU)
+      - Tests if the hardware works correctly
+    - measuring data and controlling the system (`icoc`, `icon`):
+      - User interface for sensor hardware
+      - Configures STH/STU attributes (e.g. name, sampling frequency)
+      - Record data (e.g. acceleration values) in HDF5 format
 
-- **ICOtest**
+- **ICOlyzer**
 
-  - Uses ICOconnect to communicate with sensor hardware
-  - Test environment for sensor hardware (STH, STU)
-  - Tests if the hardware works correctly
+  - Scripts that uses measurement data stored by ICOc to analyze captured data
+  - Available on [PyPi](https://pypi.org/project/icolyzer/)
 
-- **ICOtools**
-
-  - Scripts that use data stored by ICOc to analyze captured data
-
-```{r, fig.align="center", out.width = "45%", echo=FALSE}
+```{r, fig.align="center", out.width = "75%", echo=FALSE}
 knitr::include_graphics("Pictures/ICOtronic.svg", auto_pdf = TRUE)
 ```
