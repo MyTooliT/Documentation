@@ -8,7 +8,7 @@ jobs:
     runs-on: macOS-latest
     steps:
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: true
 
@@ -28,7 +28,7 @@ jobs:
         run: make
 
       - name: Upload documentation
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Bookdown
           path: Bookdown
@@ -42,7 +42,7 @@ jobs:
        uses: actions/checkout@master
 
      - name: Download HTML
-       uses: actions/download-artifact@v3
+       uses: actions/download-artifact@v4
        with:
          name: Bookdown
          path: Bookdown
