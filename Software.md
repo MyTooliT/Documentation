@@ -36,6 +36,11 @@ knitr::include_graphics("Pictures/ICOtronic Layers.svg", auto_pdf = TRUE)
 
     instead
 
+## ICOtest {#overview-icotest}
+
+- [Hardware tests](https://github.com/MyTooliT/ICOtest) for ICOtronic devices
+- Available on [PyPi](https://pypi.org/project/icotest/)
+
 ## ICOstate {#overview-icostate}
 
 - [Python Library](https://ift-tuwien.github.io/ICOstate/) for stateful access to ICOtronic system
