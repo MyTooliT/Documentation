@@ -1,6 +1,6 @@
-# Overview ICOtronic System
+# Software
 
-The text below describes the (lower software levels) of the ICOtronic system.
+The text below describes some of the software for the ICOtronic system.
 
 ```{r, fig.align="center", out.width = "50%", echo=FALSE}
 knitr::include_graphics("Pictures/ICOtronic Layers.svg", auto_pdf = TRUE)
