@@ -6,7 +6,7 @@ rmd_files:
   - ReadMe.md
   - General/Akronyms.md
   - General/Terms.md
-  - Software/Software.md
+  - Software.md
   - Analysis.md
   - ADC/ADC.md
   - EEPROM/EEPROM.md
